@@ -18,8 +18,8 @@ import in.fssa.globalfuncity.service.UserService;
 /**
  * Servlet implementation class UpdateRoomServlet
  */
-@WebServlet("/room/update")
-public class UpdateRoomServlet extends HttpServlet {
+@WebServlet("/admin/room/update")
+public class AdminUpdateRoomServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -30,12 +30,6 @@ public class UpdateRoomServlet extends HttpServlet {
 		Room room = new Room();
 		
 		try {
-			
-//			if(request.getParameter("hotel_name") == null || request.getParameter("hotel_name").isEmpty()) {
-//				System.out.println("Hotel Name cannot be null or empty");
-//			} else {
-//				room.setHotelName(request.getParameter("hotel_name"));
-//			}
 			
 			room.setHotelName(request.getParameter("hotel_name"));
 			room.setRoomName(request.getParameter("room_name"));
@@ -51,6 +45,9 @@ public class UpdateRoomServlet extends HttpServlet {
 			room.setPrice(roomPrice);
 			
 			System.out.println(room);
+			
+			
+			
 			
 			RoomService roomService = new RoomService();
 			

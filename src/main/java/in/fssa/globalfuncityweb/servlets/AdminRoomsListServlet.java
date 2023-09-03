@@ -19,8 +19,8 @@ import in.fssa.globalfuncity.service.RoomService;
 /**
  * Servlet implementation class UserCreateServlet
  */
-@WebServlet("/rooms_list")
-public class RoomsListServlet extends HttpServlet {
+@WebServlet("/admin/rooms_list")
+public class AdminRoomsListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
@@ -59,7 +59,7 @@ public class RoomsListServlet extends HttpServlet {
 		try {
 			Set<Room> listOfRooms = RoomService.getAllRooms();
 			request.setAttribute("rooms_list", listOfRooms);
-			RequestDispatcher rd = request.getRequestDispatcher("/rooms_list.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/admin/rooms_list.jsp");
 			rd.forward(request, response);
 			
 		} catch (PersistenceException e) {

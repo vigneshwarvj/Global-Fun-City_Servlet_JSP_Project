@@ -90,7 +90,7 @@ p{
                         <input type="email" name="email" placeholder="Email Address" required> &nbsp;
                         <input type="password" name="password" placeholder="Password" title="Please give one uppercase, one lowercase, one special character and one number miniumum is 8 character maximum is 10 characters" required> &nbsp;
                         <span class="pattern_desc_for_password" id="patternDescPassword" style="display: inline-block; width: 300px; font-family: 'poppins', sans-serif; font-size: 0.8rem;">
-                            Must contain at least one number, one uppercase, lowercase and one special character, and at least 8 - 10 characters.
+                            Must contain at least one number, one uppercase, lowercase and one special character, and at least 8 characters.
                         </span>
                         &nbsp;
     </div>     
@@ -105,10 +105,10 @@ p{
 
                         <br>
                         <br>
-                        <button class="btn-create-account" type="submit" value="Submit">Create Account</button>
+                         <button class="btn-create-account" type="submit" value="Submit">Create Account</button>
 
                         <h5>
-                            Already have an account? <a href="../../pages/signup for booking/signup.html">Sign In</a>
+                            Already have an account? <a href="/globalfuncityweb/login">Sign In</a>
                         </h5>
                     </form> 
                 </div>

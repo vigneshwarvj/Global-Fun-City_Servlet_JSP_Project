@@ -18,20 +18,21 @@ import in.fssa.globalfuncity.service.RoomService;
 /**
  * Servlet implementation class FindByRoomIdServlet
  */
-@WebServlet("/rooms_list/details")
+@WebServlet("/admin/rooms_list/details")
 public class FindByRoomIdServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		PrintWriter out = response.getWriter();
+		//PrintWriter out = response.getWriter();
 		
 		String roomId = request.getParameter("room_id");
+		int id = Integer.parseInt(roomId);
 		
 		try {
-			Room room = RoomService.findByRoomId(Integer.parseInt(roomId));
+			Room room = RoomService.findByRoomId(id);
 			request.setAttribute("roomDetails", room);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/get_room_by_id.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/get_room_by_id.jsp");
 			dispatcher.forward(request, response);
 		} catch (ServiceException e){
 			e.printStackTrace();
@@ -41,5 +42,3 @@ public class FindByRoomIdServlet extends HttpServlet {
 		}		
 }
 }
-
-

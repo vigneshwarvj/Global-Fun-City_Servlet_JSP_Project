@@ -24,12 +24,10 @@ import in.fssa.globalfuncity.service.UserService;
 public class AddUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		
-//		RequestDispatcher rd = request.getRequestDispatcher("add_user.jsp");
-//		
-//		rd.forward(request, response);
-//	}
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher rd = request.getRequestDispatcher("/add_user.jsp");
+		rd.forward(request, response);
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -54,7 +52,7 @@ public class AddUser extends HttpServlet {
 		
 		UserService userService = new UserService();
 		userService.createUser(user);
-		response.sendRedirect("add_user");
+		response.sendRedirect(request.getContextPath()+"/index.jsp");
 		
 		} catch (ValidationException e) {
 			e.printStackTrace();
