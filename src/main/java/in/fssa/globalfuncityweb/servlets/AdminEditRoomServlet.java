@@ -17,7 +17,7 @@ import in.fssa.globalfuncity.service.RoomService;
 /**
  * Servlet implementation class EditRoomServlet
  */
-@WebServlet("/admin/room/edit")
+@WebServlet("/admin/dashboard/room/edit")
 public class AdminEditRoomServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

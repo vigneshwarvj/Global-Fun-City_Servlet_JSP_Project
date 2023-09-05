@@ -18,7 +18,7 @@ import in.fssa.globalfuncity.service.UserService;
 /**
  * Servlet implementation class UpdateRoomServlet
  */
-@WebServlet("/admin/room/update")
+@WebServlet("/admin/dashboard/room/update")
 public class AdminUpdateRoomServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -55,7 +55,7 @@ public class AdminUpdateRoomServlet extends HttpServlet {
 			
 				int id = Integer.parseInt(stringId);
 				roomService.updateRoom(id, room);
-				response.sendRedirect(request.getContextPath()+"/rooms_list");				
+				response.sendRedirect(request.getContextPath()+"/admin/dashboard/rooms_list");				
 			
 			
 		} catch (ValidationException e) {

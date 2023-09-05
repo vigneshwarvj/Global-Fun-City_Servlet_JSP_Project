@@ -34,23 +34,10 @@ public class BookTicketServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		int userId = (Integer) request.getSession().getAttribute("userId");
+		
 		try {
-			Cookie[] ck = request.getCookies();
-	        String userId = null;
-	        if (ck != null) {
-	            for (Cookie cookie : ck) {
-	                if ("userId".equals(cookie.getName())) {
-	                    userId = cookie.getValue();
-	                    break;
-	                }
-	            }
-	        }
-	        if (userId == null) {
-	            // Handle the case where the userId cookie is not found.
-	            response.sendRedirect("login"); // Redirect to login page or appropriate error page.
-	            return;
-	        }
-	        
+		
 		Ticket ticket = new Ticket();
 		
 	    String checkInDate = request.getParameter("checkIndate");
@@ -69,7 +56,7 @@ public class BookTicketServlet extends HttpServlet {
 	    
 	    TicketService ticketService = new TicketService();
 		
-		ticketService.bookTicket(ticket,Integer.parseInt(userId));
+		ticketService.bookTicket(ticket,userId);
 		
 		response.sendRedirect("/globalfuncityweb/booked_success.jsp");
 			
@@ -78,6 +65,6 @@ public class BookTicketServlet extends HttpServlet {
 			PrintWriter consoleOutput = new PrintWriter(System.out);
 			consoleOutput.println(e.getMessage());
 		}
+}
 	}
 
-}

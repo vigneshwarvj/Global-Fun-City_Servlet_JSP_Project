@@ -5,7 +5,64 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&family=Poppins:wght@300;500&family=Rubik+Microbe&display=swap" rel="stylesheet">
+
 <title>Global Fun City - Profile</title>
+
+<style>
+.all-content{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px 0px 0px 0px;
+}
+h4{
+    text-align: center;
+}
+.profile{
+    line-height: 3;
+}
+.profile input{
+    padding: 10px;
+    width: 376px;
+    border-radius: 3px;
+    border: 2px solid #eee;
+}
+.profile select{
+    padding: 10px;
+    width: 400px;
+    border-radius: 3px;
+    border: 2px solid #eee;
+}
+.account, .tickets h1 {
+    font-family: 'league spartan', sans-serif;
+    font-size: 25px;
+}
+.btn-done button{
+    padding: 10px;
+    color: white;
+    background-color: #1c314d;
+    border: none;
+    border-radius: 3px;
+    width: 400px;
+    font-family: 'poppins',sans-serif;
+    cursor: pointer;
+}
+.btn-edit button{
+    padding: 10px;
+    color: white;
+    background-color: #1c314d;
+    border: none;
+    border-radius: 3px;
+    width: 400px;
+    font-family: 'poppins',sans-serif;
+    cursor: pointer;
+}
+
+</style>
+
 </head>
 <body>
 
@@ -83,6 +140,15 @@
                     </p>
                 </div>
 
+                <div class="btn-edit">
+                    <a href=delete><button type="submit" class="btn-1" id="delete-button">Delete Account</button> </a> 
+                </div>
+                
+               <div class="privacy">
+                    <p>
+                        By deleting your account, you may be unable to access certain Global services.
+                    </p>
+                </div>
 
 </body>
 </html>

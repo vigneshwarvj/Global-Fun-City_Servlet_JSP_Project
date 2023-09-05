@@ -44,6 +44,7 @@ tr:nth-child(even) {
     <th>Room Name</th>
     <th>No of Beds</th>
     <th>Price</th>
+    <th>Status</th>
     <th>View Details </th>
     <th>Edit</th>
     <th>Delete </th>
@@ -57,6 +58,7 @@ tr:nth-child(even) {
     <td> <%= room.getRoomName() %></td>
     <td> <%= room.getNoOfBeds() %></td>
     <td> $ <%= room.getPrice() %></td>
+    <td> <%=room.isActiveRoom() %>
     <td> <a href = "rooms_list/details?room_id=<%=room.getRoomId() %>"> <button type="submit">View Details</button> </a> </td>
     <td> <a href = "room/edit?room_id=<%=room.getRoomId()%>"> <button type="submit">Edit</button> </a> </td>
     <td> <a href = "room/delete?room_id="<%=room.getRoomId()%> > <button type="submit">Delete</button> </a> </td>

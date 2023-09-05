@@ -18,7 +18,7 @@
 <div class= "tickets">
 
 <h4>Get your Tickets Today</h4>
-<button type="submit">Book Now</button>
+<a href="user/book_tickets" > <button type="submit">Book Now</button> </a>
 
 </div>
 

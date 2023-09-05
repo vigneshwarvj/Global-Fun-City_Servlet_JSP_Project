@@ -31,29 +31,15 @@ public class BookingHistoryServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		Cookie[] ck = request.getCookies();
-        String userId = null;
-        if (ck != null) {
-            for (Cookie cookie : ck) {
-                if ("userId".equals(cookie.getName())) {
-                    userId = cookie.getValue();
-                    break;
-                }
-            }
-        }
-        if (userId == null) {
-            // Handle the case where the userId cookie is not found.
-            response.sendRedirect("login"); // Redirect to login page or appropriate error page.
-            return;
-        }
+		int userId = (Integer) request.getSession().getAttribute("userId");
         
        
         try {
         	 UserService userService =  new UserService();
              TicketService ticketService = new TicketService();
-			User user = userService.findByUserId(Integer.parseInt(userId));
+			User user = userService.findByUserId(userId);
 			
-			List<Ticket> ticket = ticketService.getAllBookedTicketsByUserId(Integer.parseInt(userId));
+			List<Ticket> ticket = ticketService.getAllBookedTicketsByUserId(userId);
 			
 			request.setAttribute("user", user);
 			request.setAttribute("ticket", ticket);

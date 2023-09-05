@@ -25,31 +25,23 @@ public class EditUserServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		Cookie[] ck = request.getCookies();
-        String userId = null;
-        if (ck != null) {
-            for (Cookie cookie : ck) {
-                if ("userId".equals(cookie.getName())) {
-                    userId = cookie.getValue();
-                    break;
-                }
-            }
-        }
-        if (userId == null) {
-            response.sendRedirect("login");
-            return;
-        }
+		int userId = (Integer) request.getSession().getAttribute("userId");
+
 		 UserService userService = new UserService();
-		 
 	        try {
-				User user = userService.findByUserId(Integer.parseInt(userId));
+	        	User user = userService.findByUserId(userId);
+	        	if(user!= null) {
 				request.setAttribute("user", user);
+				RequestDispatcher rd = request.getRequestDispatcher("/edit_user.jsp");
+				rd.forward(request, response);
+	        	} else {
+	        		response.sendError(HttpServletResponse.SC_NOT_FOUND, "USER NOT FOUND");
+	        	}
 			} catch (NumberFormatException | ValidationException | ServiceException e) {
 				e.printStackTrace();
 			} 
 	  
-		RequestDispatcher rd = request.getRequestDispatcher("/edit_user.jsp");
-		rd.forward(request, response);
+
 	
 		
 	}

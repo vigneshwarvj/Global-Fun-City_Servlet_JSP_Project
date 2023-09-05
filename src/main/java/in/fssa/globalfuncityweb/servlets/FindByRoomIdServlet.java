@@ -18,7 +18,7 @@ import in.fssa.globalfuncity.service.RoomService;
 /**
  * Servlet implementation class FindByRoomIdServlet
  */
-@WebServlet("/admin/rooms_list/details")
+@WebServlet("/admin/dashboard/rooms_list/details")
 public class FindByRoomIdServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

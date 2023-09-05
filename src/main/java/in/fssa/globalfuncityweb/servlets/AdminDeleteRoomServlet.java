@@ -17,7 +17,7 @@ import in.fssa.globalfuncity.service.RoomService;
 /**
  * Servlet implementation class DeleteRoomServlet
  */
-@WebServlet("/admin/room/delete")
+@WebServlet("/admin/dashboard/room/delete")
 public class AdminDeleteRoomServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

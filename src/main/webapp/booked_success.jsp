@@ -44,7 +44,7 @@
                                 <h2>Your Ticket is booked.</h2>
                                 <h2>Enjoy the Vibe in Global Fun City.</h2>
                                 <h2>Your e-ticket has been sent to email id</h2>
-                                <a href="index.jsp">
+                                <a href="index">
                                     <button> <i class="fa-solid fa-arrow-left"></i>Back to Home</button>
                                 </a>
                             </div>

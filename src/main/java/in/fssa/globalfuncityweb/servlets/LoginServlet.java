@@ -44,10 +44,12 @@ public class LoginServlet extends HttpServlet {
 		        System.out.println("Incorrect Email or Password:(");
 		    } else {
 		        System.out.println("Login Successfull:)");
-	            int id = user.getUserId();
-	            Cookie ck=new Cookie("userId",String.valueOf(id));
-		        response.addCookie(ck);
-	            response.sendRedirect(request.getContextPath()+"/index.jsp");
+		        Integer id = user.getUserId();
+	            if (id != null) {
+	                request.getSession().setAttribute("userId", id);
+	                response.sendRedirect(request.getContextPath() + "/index");
+	            }
+		    
 		    }
            
 		} catch (ServiceException e) {
