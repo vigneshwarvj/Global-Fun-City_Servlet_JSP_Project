@@ -27,6 +27,13 @@
   <label for="email">Price</label>
   <input type="text" name="room_price" value="<%=room.getPrice() %>" required><br>
   
+  <label for="photo">Room Image URL:</label>
+  <input type="url" name="room_image" value="<%=room.getRoomImageUrl() %>" required> <br>
+  
+  <label for="amenities">Amenities</label>
+  <input type="text" name="room_amenity" value="<%=room.getRoomAmenities() %>" > <br>
+  
+  
   <button type="submit" value="Submit"> Update </button>
 
 </form>

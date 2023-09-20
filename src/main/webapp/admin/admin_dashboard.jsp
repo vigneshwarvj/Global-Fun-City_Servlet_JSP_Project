@@ -293,7 +293,7 @@ th {
                         <input type="text" placeholder="Search here...">
                     </div>
                     <div class="user">
-                        <img src="../../../assets/images/Director.jpg" alt="">
+                        <img src="https://iili.io/J9ltwf2.jpg" alt="director">
                     </div>
                 </div>
 

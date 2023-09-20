@@ -32,7 +32,7 @@
   <label for="amenties">Amenities:</label>
   <input type= "text" name="room_amenties" value="<%=room.getRoomAmenities() %> ">
 
-  <button type="submit">Book Now</button>	
+  	
 
 </body>
 </html>

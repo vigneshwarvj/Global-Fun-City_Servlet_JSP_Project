@@ -33,7 +33,11 @@ tr:nth-child(even) {
 
 <h2>List of Rooms</h2>
 
-<% Set<Room> listOfRooms = (Set<Room>) request.getAttribute("rooms_list");%>
+<% Set<Room> listOfRooms = (Set<Room>) request.getAttribute("rooms_list");
+
+System.out.println(listOfRooms);
+
+%>
   
 
 
@@ -61,7 +65,7 @@ tr:nth-child(even) {
     <td> <%=room.isActiveRoom() %>
     <td> <a href = "rooms_list/details?room_id=<%=room.getRoomId() %>"> <button type="submit">View Details</button> </a> </td>
     <td> <a href = "room/edit?room_id=<%=room.getRoomId()%>"> <button type="submit">Edit</button> </a> </td>
-    <td> <a href = "room/delete?room_id="<%=room.getRoomId()%> > <button type="submit">Delete</button> </a> </td>
+    <td> <a href = "room/delete?room_id=<%=room.getRoomId()%>" > <button type="submit">Delete</button> </a> </td>
     
   </tr>
 

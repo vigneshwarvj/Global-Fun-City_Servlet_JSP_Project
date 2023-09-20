@@ -1,0 +1,413 @@
+body{
+	margin: 0;
+}
+.shipping{
+	text-align: center;
+	font-family: 'open sans', sans-serif;
+	background-color: #121a21;
+	color: #f6f6f6;
+	padding: 4px;
+}
+.header-navbar{
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	position: sticky;
+	box-shadow: 0 3px 6px 0 rgb(0 0 0 / 20%);
+	z-index: 1;
+
+}
+.header-navbar a{
+	font-family: 'poppins', sans-serif;
+}
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+  }
+.icons-info a{
+	text-decoration: none;
+    padding: 5px;	
+
+}
+.icons-info i{
+	color: #ff5757;
+	
+}
+
+.wrapper{
+	width: 1170px;
+	/* margin: 20px auto; */
+	display: none;
+}
+nav > ul{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	width: 1485px;
+	margin: 0 auto;
+	padding: 0;
+}
+nav{
+	position: absolute;
+	background: #eee;
+	font-size: 16px;
+}
+nav a{
+	display: block;
+	color: #ff5757;
+	text-decoration: none ;
+}
+nav ul li{
+	color: #ff5757;
+	list-style: none;
+	transition: 0.5s;
+}
+.bottom-color:hover{
+	border-bottom: 4px solid black;
+}
+
+nav > ul > li > a{
+	padding:30px;
+	font-family: 'league spartan', sans-serif;
+	font-size: 18px;
+}
+nav ul > li.dropdown > a:after{
+	position: relative;
+	float: right;
+	margin: 8px 10px 0px 0px;
+}
+nav > ul > li:hover{
+	background: white ;
+}
+nav ul.menu-area{
+	padding: 40px 40px 0px 40px;
+	background: white;
+	text-align: left;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+	z-index: 1;
+	position: absolute;
+	display: flex;
+	flex-wrap: wrap;
+	width: 1405px;
+	top: -9999px;
+	left: 0;
+}
+nav ul li:hover ul.menu-area{
+	top: 100%;
+}
+nav ul.menu-area ul{
+	/* width: 15%; */
+	margin-bottom: 40px;
+	color: black;
+	
+}
+nav ul.menu-area h4{
+	/* margin-bottom: 15px; */
+	font-family: 'poppins', sans-serif;
+	text-decoration: underline;
+}
+nav ul.menu-area ul li{
+	display: block;
+}
+nav ul.menu-area ul li a{
+	margin-top: 10px;
+	color: rgb(121, 113, 113);
+	font-family: 'open sans', sans-serif;
+	text-transform: none;
+}
+nav ul.menu-area ul li a:hover{
+	color: red;
+}
+/* completed dropdown */
+
+.image-for-shopping{
+	display: flex;
+	justify-content: center;
+}
+.words{
+	font-family: 'poppins', sans-serif;
+	font-size:x-large;
+	text-align: center;
+    color: #838485;
+	padding: 30px 0px 0px 0px ;
+}
+.h2-love{
+	text-align: center;
+}
+.shop-span{
+	color: black;
+}
+
+
+
+
+
+.circle{
+	display: flex;
+	justify-content: space-evenly
+}
+.circle-all{
+	border-radius: 120px;
+	background-color: antiquewhite;
+	padding: 80px;
+	text-align: center;
+}
+.circle h2{
+	font-family: 'open sans', sans-serif;
+	font-size: 20px;
+	color: #121a21;
+}
+.circle a{
+	color: #ff5757;
+	font-family: 'poppins', sans-serif;
+
+}
+.trending{
+	text-align: center;
+	font-family: 'league spartan', sans-serif;
+	padding: 50px 0px 40px 0px ;
+	letter-spacing: 3px;
+	font-size: 20px;
+}
+.images-of-persons{
+	display: flex;
+	justify-content: space-evenly;
+}
+.images-of-persons img{
+	width: 25%;
+}
+.images-of-persons img:hover{
+	transform: scale(1.1);
+	transition:1s;
+}
+
+
+.circle-2{
+	display: flex;
+	justify-content: space-evenly
+}
+.circle-all-2:hover{
+	transform: scale(1.1);
+	transition:1s;
+}
+.circle-all-2{
+	border-radius:80px ;
+	background-color: #ff5757;
+	padding: 60px;
+}
+.circle-2 h2{
+	font-family: 'open sans', sans-serif;
+	font-size: 20px;
+	color: white;
+}
+.circle-2 a{
+	color: black;
+	text-align: center;
+	font-family: 'poppins', sans-serif;
+
+}
+
+
+.brands h1{
+	font-family: 'league spartan', sans-serif;
+	width: 500px;
+	font-size: 70px;
+}
+.img-of-brands img{
+	padding: 10px;
+	padding-top: 70px;
+	
+}
+.brands-logos{
+	display: flex;
+	justify-content: space-evenly;
+	padding-top: 50px;
+
+}
+
+
+
+/* faq css */
+.background{
+	background-color: #eee;
+	/* margin: 70px 0px 0px 0px; */
+}
+.main-faq{
+	min-height: 80vh;
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.title{
+	padding: 40px 0px 0px 0px;
+	/* text-align: center; */
+	font-size: 3rem;
+	margin: 2rem 0rem;
+	font-family: 'league spartan', sans-serif;
+}
+hr{
+	width: 60%;
+}
+.faq{
+	max-width: 700px;
+	/* margin-top: 2rem; */
+	padding-bottom: 0.3rem;
+	cursor: pointer;
+}
+.question{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.question h3{
+	font-size: 1.5rem;
+	font-family: 'poppins', sans-serif;
+}
+.answer p{
+	color: #838485;
+	font-family: 'league spartan', sans-serif;
+	padding-top: 1rem;
+	line-height:1.6 ;
+	font-size: 1.3rem;
+}
+.answer{
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 1.4s ease;
+}
+.faq.active .answer{
+	max-height: 300px;
+	animation: fade 1s ease-in-out;
+}
+.faq.active .i{
+	transform: rotate(90deg);
+}
+i{
+	transition: transform 0.5s ease;
+}
+@keyframes fade{
+	from{
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	to{
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+/* faq completed */
+
+
+
+
+
+
+
+
+
+footer{
+	background-color: #121a21;
+	text-align:center;
+}
+.footer-logo{
+	width: 180px;
+	margin: 50px 0px 30px 0px;
+}
+.address-open-hours-contact{
+	display: flex;
+	justify-content:space-evenly;
+	text-align: left;
+	padding: 0px 0px 30px 0px;
+}
+.social-medias a{
+	display: inline-block;
+	width: 40px; 
+    margin:0 10px 10px 0;
+	text-align:center;
+	border-radius: 50px;
+	border: 1px solid white;
+	line-height: 40px;
+	color: #f6f6f6;
+	transition:0.5s;
+}
+.social-medias{
+	display: flex;
+	justify-content: center;
+	padding:10px 0px 0px 0px ;
+}
+
+.facebook a:hover{
+	background-color: #4267B2;
+}
+.twitter a:hover{
+	background-color:#1DA1F2;
+}
+.instagram a:hover{
+	background-color:#E1306C;
+}
+.pinterest a:hover{
+	background-color: #E60023;
+}
+.youtube a:hover{
+	background-color: #FF0000;
+}
+/* shop footer main */
+.shop-footer-main{
+	display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: left;
+    line-height: 20px;
+}
+/* footer-for-about-us-etc */
+.navbar-footer ul li a{
+	color: white;
+	text-decoration:none;
+}
+.navbar-footer ul li{
+	list-style: none;
+	font-family: 'league spartan', sans-serif;
+}
+.navbar-footer a:hover{
+	color:#ff5757;
+}
+/* footer-for-privacy-etc */
+.shop-footer ul li{
+	list-style: none;
+	font-family: 'league spartan', sans-serif;
+}
+.shop-footer ul li a{
+	color: white;
+	text-decoration:none;	
+} 
+.shop-footer a:hover{
+	color:#ff5757;	
+}
+/* .other-navbar-footer ul{
+    display: flex;
+	justify-content: center;
+} */
+.other-navbar-footer ul li{
+	font-family: 'league spartan', sans-serif;
+	list-style: none;
+}
+.other-navbar-footer ul li a{
+	text-decoration: none;
+	color: #f6f6f6;
+}
+.other-navbar-footer a:hover{
+	color: #ff5757;
+}
+.footer-hr{
+	width: 99.9%;
+}
+.copyright{
+	text-align: center;
+	font-family: 'poppins', sans-serif;
+	color: #eee;
+	padding: 20px;
+}

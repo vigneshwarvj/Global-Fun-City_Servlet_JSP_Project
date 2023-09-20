@@ -1,0 +1,201 @@
+body{
+	margin:0;
+}
+.shipping{
+	text-align: center;
+	font-family: 'open sans', sans-serif;
+	background-color: #121a21;
+	color: #f6f6f6;
+	padding: 4px;
+}
+.header-navbar{
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	position: sticky;
+	box-shadow: 0 3px 6px 0 rgb(0 0 0 / 20%);
+	z-index: 1;
+
+}
+.header-navbar a{
+	font-family: 'poppins', sans-serif;
+}
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+  }
+.icons-info a{
+	text-decoration: none;
+    padding: 5px;	
+
+}
+.icons-info i{
+	color: #ff5757;
+}
+
+
+
+.background-color{
+	height: 650px; 
+	/* 1430 for related products too */
+	width: 1485px;
+	background-color: #eee;
+}
+.photo-of-store{
+    margin-top: 70px;
+}
+.photo-and-content{
+    display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.content h2{
+    font-family: 'league spartan', sans-serif;
+    font-size: 40px;
+    color: black;
+}
+.content h3{
+    font-family: 'league spartan', sans-serif;
+    color: #ffa51d;
+    font-size: 28px;
+}
+.content p{
+    font-family: 'poppins', sans-serif;
+}
+.total_clicks_span{
+	padding: 20px;
+	font-family: 'poppins', sans-serif;
+}
+
+/* sizes */
+.size{
+	display: inline-block;
+	border: 1px solid rgb(150, 148, 148);
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	position: relative;
+	margin: 5px;
+}
+.s, .m, .x, .xl{
+	position: relative;
+	bottom: 10px;
+}
+.size:hover{
+	border: 2px solid #ffa51d;
+}
+/* sizes compl */
+/* .btn-sub, .btn-add{
+	padding: 14px 16px 14px 16px;
+	background-color: white;
+	border:white;
+	color: #ffa51d;
+	
+} */
+.btn-buynow{
+	background-color: #ffa51d;
+	color: white;
+	border: 3px solid #ffa51d;
+	padding: 15px 30px 15px 30px;
+	border-radius: 40px;
+	cursor: pointer;
+	font-size: 18px;
+	font-family: 'League Spartan', sans-serif;
+}
+.btn-wishlist{
+	margin: 0px 0px 0px 15px;
+	background-color: #ffa51d;
+	color: white;
+	border: 3px solid #ffa51d;
+	padding: 13px 30px 14px 30px;
+	border-radius: 40px;
+	cursor: pointer;
+	font-size: 18px;
+}
+.content h4{
+    font-family: 'poppins', sans-serif;
+}
+.relatable{
+	font-family: 'league spartan', sans-serif;
+	margin-left: 100px;
+	margin-top: 80px;
+	font-size: 25px;
+}
+.related-pics{
+	padding: 15px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+.product-img img:hover{
+	transition: 1s;
+	transform: scale(1.1);
+}
+.product-img a{
+	text-decoration: none;
+	color: black;
+}
+.related-pics h3{
+	font-family: 'league spartan', sans-serif;
+
+}
+.related-pics p{
+	font-family: 'poppins', sans-serif;
+	color: #ffa51d;
+}
+
+
+.full-subscribe-products{
+	display: flex;
+	justify-content: space-around;
+	padding: 30px 0px 30px 0px;
+}
+
+.subscribe h1{
+	font-family: 'league spartan', sans-serif;
+	font-size: 48px;
+	width: 400px;
+}
+
+
+.messages{
+	text-align: center;
+	padding: 50px 0px 0px 0px ;
+}
+.messages input{
+	border-radius: 80pc;
+	width: 350px;
+	background-color: white;
+	border: #eee;
+	padding: 20px 30px 20px 30px;
+	border-color: white;
+}
+.btn-subscribe button{
+	border-radius: 80pc;
+    background-color: #ffa51d;
+	border: #ffa51d;
+	font-family: 'league spartan', sans-serif;
+	padding: 20px 30px 20px 30px;
+	color: white;
+	cursor: pointer;
+	font-size: 16px;
+}
+.btn-subscribe{
+	padding: 50px 0px 0px 0px;
+	
+}
+.content .desc_about_product{
+	width:500px;
+}
+
+
+
+
+
+
+
+
+
+

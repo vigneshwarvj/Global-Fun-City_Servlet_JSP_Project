@@ -1,0 +1,131 @@
+body{
+	margin: 0;
+}
+.visit-signin{
+	display: flex;
+	justify-content: space-around;
+	box-shadow: 0 3px 6px 0 rgb(0 0 0 / 20%);
+	font-family: 'poppins', sans-serif;
+	font-weight: 5px;
+	font-size: 16px;
+}
+.sign-in a{
+	text-decoration: none;
+}
+.header{ 
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+    box-shadow:0 3px 6px 0 rgb(0 0 0 / 20%) ;
+}
+.header-logo{
+	width:180px;
+	margin:15px 0px 0px 50px;
+}
+.navbar ul li{
+	display:inline;
+	margin:10px;
+}
+.navbar ul li a{
+font-family:'Open Sans', sans-serif;
+text-decoration:none;
+padding:10px;
+}
+.navbar ul li a:hover {
+	border-bottom:3px solid #ff5757;
+} 
+.header button{
+	font-size:15px;	
+    background-color:#ff5757;
+	border-radius:8px;
+	padding:15px;
+	border:none;
+	margin-right:80px;
+}
+.header button a{
+	text-decoration: none;
+	color: #f6f6f6;
+}
+
+/* To back css like home, etc.., */
+.total-homepages-div{
+    padding: 35px 0px 0px 50px;
+    display: flex;
+}
+.homepages a {
+    font-family: 'poppins', sans-serif;
+    text-decoration: none;
+    color: #838285;
+}
+.homepages a:hover{
+    color: #ff5757;
+}
+/* completed */
+
+.font-your-orders{
+    text-align: center;
+    font-family: 'league spartan', sans-serif;
+    padding: 0px 30px 30px 30px;
+    font-size: 2rem;
+}
+
+/* .total-div-for-user-order{
+text-align: center;
+} */
+
+.card {
+    width: 190px;
+    height: 254px;
+    border-radius: 5px;
+    background: #f5f5f5;
+    position: relative;
+    padding: 1.8rem;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+   }
+   
+   .card-details {
+    color: black;
+    height: 100%;
+    gap: -4.5em;
+    display: grid;
+    place-content: center;
+   }
+   
+   .card-button {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color: #008bf8;
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+   }
+   
+   .text-body {
+    color: rgb(134, 134, 134);
+   }
+   
+   /*Text*/
+   .text-title {
+    font-size: 1.0em;
+    font-weight: bold;
+   }
+   
+   /*Hover*/
+   .card:hover {
+    border-color: #008bf8;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+   }
+   
+   .card:hover .card-button {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+   }

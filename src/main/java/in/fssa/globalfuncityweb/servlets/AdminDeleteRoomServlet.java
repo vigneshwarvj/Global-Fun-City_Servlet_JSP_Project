@@ -35,10 +35,12 @@ public class AdminDeleteRoomServlet extends HttpServlet {
 			int id = Integer.parseInt(roomId);
 			roomService.deleteRoom(id);
 			
-			response.sendRedirect(request.getContextPath() +"/rooms_list" );
+			response.sendRedirect(request.getContextPath() +"/admin/dashboard/rooms_list" );
 		} catch (ValidationException e) {
 			e.printStackTrace();
 		} catch (ServiceException e) {
+			e.printStackTrace();
+		} catch (NumberFormatException e) {
 			e.printStackTrace();
 		}
 	}

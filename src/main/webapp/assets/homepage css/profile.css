@@ -1,0 +1,186 @@
+body{
+    margin: 0;
+}
+.visit-signin{
+	display: flex;
+	justify-content: space-around;
+	box-shadow: 0 3px 6px 0 rgb(0 0 0 / 20%);
+	font-family: 'poppins', sans-serif;
+	font-weight: 5px;
+	font-size: 16px;
+}
+.sign-in a{
+	text-decoration: none;
+}
+.header{ 
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+    box-shadow:0 3px 6px 0 rgb(0 0 0 / 20%) ;
+}
+.header-logo{
+	width:180px;
+	margin:15px 0px 0px 50px;
+}
+.navbar ul li{
+	display:inline;
+	margin:10px;
+}
+.navbar ul li a{
+font-family:'Open Sans', sans-serif;
+text-decoration:none;
+padding:10px;
+}
+.navbar ul li a:hover {
+	border-bottom:3px solid #ff5757;
+} 
+.header button{
+	font-size:15px;	
+    background-color:#ff5757;
+	border-radius:8px;
+	padding:15px;
+	border:none;
+	margin-right:80px;
+    cursor: pointer;
+}
+.header a button{
+	text-decoration: none;
+	color: #f6f6f6;
+}
+
+/* To back css like home, etc.., */
+.total-homepages-div{
+    padding: 35px 0px 0px 50px;
+    display: flex;
+}
+.homepages a {
+    font-family: 'poppins', sans-serif;
+    text-decoration: none;
+    color: #838285;
+}
+.homepages a:hover{
+    color: #ff5757;
+}
+/* completed */
+
+.image{
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+}
+.all-content{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px 0px 0px 0px;
+}
+.profile-pic{
+    /* background-image: url(https://htmlcolorcodes.com/assets/images/colors/wheat-color-solid-background-1920x1080.png); */
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    vertical-align: middle;
+    text-align: center;
+    color: transparent;
+    transition: all .3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+.profile-pic:hover {
+    background-color: rgba(0,0,0,.5);
+    z-index: 10000;
+    color: #fff;
+    transition: all .3s ease;
+    text-decoration: none;
+}
+
+.profile-pic span {
+    display: inline-block;
+    padding-top: 4.5em;
+    padding-bottom: 4.5em;
+}
+
+form input[type="file"] {
+          display: none;
+          cursor: pointer;
+}
+h4{
+    text-align: center;
+}
+.profile{
+    line-height: 3;
+}
+.profile input{
+    padding: 10px;
+    width: 376px;
+    border-radius: 3px;
+    border: 2px solid #eee;
+}
+.profile select{
+    padding: 10px;
+    width: 400px;
+    border-radius: 3px;
+    border: 2px solid #eee;
+}
+.account, .tickets h1 {
+    font-family: 'league spartan', sans-serif;
+    font-size: 25px;
+}
+.btn-done button{
+    padding: 10px;
+    color: white;
+    background-color: #1c314d;
+    border: none;
+    border-radius: 3px;
+    width: 400px;
+    font-family: 'poppins',sans-serif;
+    cursor: pointer;
+}
+.btn-edit button{
+    padding: 10px;
+    color: red;
+    background-color: #1c314d;
+    border: none;
+    border-radius: 3px;
+    width: 400px;
+    font-family: 'poppins',sans-serif;
+    cursor: pointer;
+}
+.btn-delete button{
+    padding: 10px;
+    color: white;
+    background-color: #1c314d;
+    border: none;
+    border-radius: 3px;
+    width: 400px;
+    font-family: 'poppins',sans-serif;
+    cursor: pointer;
+}
+.input-field{
+    font-family: 'poppins', sans-serif;
+}
+.profile input[type=email]:focus{
+    outline: 2px solid #ff5757;
+}
+.profile input[type=password]:focus{
+    outline: 2px solid #ff5757;
+}
+.profile input[type=tel]:focus{
+    outline: 2px solid #ff5757;
+}
+.profile input[type=text]:focus{
+    outline: 2px solid #ff5757;
+}
+.profile select:focus{
+    outline: 2px solid #ff5757;
+}
+h3, h4{
+    font-family: 'open sans', sans-serif;
+}
+.privacy p, .btn-delete p{
+    width: 400px;
+    font-family: 'poppins', sans-serif;
+}
+

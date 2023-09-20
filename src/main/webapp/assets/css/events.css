@@ -1,0 +1,448 @@
+body{
+	margin:0;
+	padding: 0;
+}
+/* sidebar for mobile  */
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+	
+  }
+  .sidenav, .icon-bar{
+	display: none;
+  }
+  .sidenav a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+	color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+  }
+/* sidebar mobile completed */
+.visit-signin{
+	display: flex;
+	justify-content: space-around;
+	box-shadow: 0 3px 6px 0 rgb(0 0 0 / 20%);
+	font-family: 'poppins', sans-serif;
+	font-weight: 5px;
+	font-size: 16px;
+}
+.sign-in a{
+	text-decoration: none;
+	/* color: #ff5757; */
+}
+.header{ 
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	box-shadow: 0 3px 6px 0 rgb(0 0 0 / 20%);
+}
+.header-logo{
+	width:180px;
+	margin-left:50px;
+	margin-top: 20px;
+}
+.navbar ul li{
+	display:inline;
+	margin:10px;
+}
+.navbar ul li a{
+font-family:'Open Sans', sans-serif;
+text-decoration:none;
+padding:10px;
+border-bottom: #ff5757;
+font-size: 15px;
+margin-top: 10px;
+
+}
+.navbar ul li a:hover {
+	border-bottom:3px solid #ff5757;
+} 
+.navbar ul li a.active{
+    border-bottom: 3px solid #ff5757;
+}
+.btn-book-now{
+	font-size:15px;	
+    background-color:#ff5757;
+	color:white;
+	border-radius:8px;
+	padding:15px;
+	border:none;
+	margin-right:80px;
+	cursor: pointer;
+}
+.events{
+    text-align: center;
+    margin-top: 70px;
+	font-family: 'league spartan', sans-serif;
+	font-size: 20px;
+}
+.rollercoaster{
+    width:900px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+ /* .circus{
+	display: flex;
+	justify-content: space-evenly;
+	margin-top: 50px; */
+    
+.images-of-events{
+	display: flex;
+	justify-content: space-evenly;
+	padding: 50px 0px 0px 0px ;
+}
+.upcoming{
+	text-align: center;
+	margin: 50px 0px 50px 0px;
+	font-family: 'league spartan', sans-serif;
+	font-size: 29px;
+	top:80px;
+	position: relative;
+}
+.festivel img{
+	width: 400px;
+	height: 300px;
+}
+.festivel img:hover{
+	transform: scale(1.1);
+    transition: 1s;
+}
+.festivel h2{
+	font-family: 'poppins', sans-serif;
+	color: #ff4612;
+	
+}
+.festivel a{
+	text-decoration: none;
+}
+.upcoming-events{
+	display: flex;
+	justify-content: space-evenly;
+    position: relative;
+	top: 90px;
+}
+.upcoming-background{
+	height: 600px;
+	width: 1485px;
+	background-color: #eee;
+
+}
+.videos{
+	display: flex;
+	justify-content: space-evenly;
+	padding: 40px;
+}
+.circus h2{
+	font-family: 'Poppins', sans-serif;
+}
+.full-subscribe-products{
+	display: flex;
+	justify-content: space-around;
+	padding: 30px 0px 30px 0px;
+	width: 1485px;
+	height: 180px;
+	background-color: #eee;
+}
+
+.subscribe h1{
+	font-family: 'league spartan', sans-serif;
+	font-size: 48px;
+	width: 400px;
+}
+
+
+.messages{
+	text-align: center;
+	padding: 50px 0px 0px 0px ;
+}
+.messages input{
+	border-radius: 80pc;
+	width: 350px;
+	background-color: white;
+	border: #eee;
+	padding: 20px 30px 20px 30px;
+	border-color: white;
+	font-family: 'poppins', sans-serif;
+}
+.btn-subscribe button{
+	border-radius: 80pc;
+    background-color: #ffa51d;
+	border: #ffa51d;
+	font-family: 'league spartan', sans-serif;
+	padding: 20px 30px 20px 30px;
+	color: white;
+	cursor: pointer;
+	font-size: 16px;
+}
+.btn-subscribe{
+	padding: 50px 0px 0px 0px;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+footer{
+	background-color: #121a21;
+	text-align:center;
+}
+.footer-logo{
+	width: 180px;
+	margin: 50px 0px 30px 0px;
+}
+.address-open-hours-contact{
+	display: flex;
+	justify-content:space-evenly;
+	text-align: left;
+	padding: 0px 0px 30px 0px;
+}
+.address h3, .open-hours h3, .contact-for-more h3{
+	font-family: 'league spartan', sans-serif;
+	color: #ffa51d;
+}
+.address p, .contact-for-more p, .open-hours p{
+	font-family: 'poppins', sans-serif;
+	color: white;
+	width: 300px;
+}
+.social-medias a{
+	display: inline-block;
+	width: 40px; 
+    margin:0 10px 10px 0;
+	text-align:center;
+	border-radius: 50px;
+	border: 1px solid white;
+	line-height: 40px;
+	color: #f6f6f6;
+	transition:0.5s;
+}
+.social-medias{
+	display: flex;
+	justify-content: center;
+	padding:10px 0px 0px 0px ;
+}
+
+.facebook a:hover{
+	background-color: #4267B2;
+}
+.twitter a:hover{
+	background-color:#1DA1F2;
+}
+.instagram a:hover{
+	background-color:#E1306C;
+}
+.pinterest a:hover{
+	background-color: #E60023;
+}
+.youtube a:hover{
+	background-color: #FF0000;
+}
+/* footer-for-about-us-etc */
+.navbar-footer ul{
+	display: flex;
+	justify-content: center;
+}
+.navbar-footer ul li a{
+	padding: 10px;
+	color: white;
+	text-decoration:none;
+}
+.navbar-footer ul li{
+	list-style: none;
+	font-family: 'league spartan', sans-serif;
+}
+.navbar-footer a:hover{
+	color:#ff5757;
+}
+/* footer-for-privacy-etc */
+.other-navbar-footer ul{
+    display: flex;
+	justify-content: center;
+}
+.other-navbar-footer ul li{
+	padding: 10px;
+	font-family: 'league spartan', sans-serif;
+	list-style: none;
+}
+.other-navbar-footer ul li a{
+	text-decoration: none;
+	color: #f6f6f6;
+}
+.other-navbar-footer a:hover{
+	color: #ff5757;
+}
+.copyright{
+	text-align: center;
+	font-family: 'poppins', sans-serif;
+	color: #eee;
+	padding: 20px;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:450px) {
+	.sidenav, .icon-bar{
+		display: block;
+	}
+	.sidenav a{
+		color: white;
+		font-family: 'poppins', sans-serif;
+		font-size: medium;
+	}
+	.sidenav a:hover{
+		color: #ff5757;
+	}
+	.visit-signin, .navbar{
+		display: none;
+		/* display: flex;
+		justify-content: space-around;
+		width: 100%;
+		font-size: 8px; */
+	
+	}
+	.navbar ul li{
+		display: flex;
+		flex-direction: column;
+	}
+	.fa-bars:hover .navbar ul li {
+		display: block;
+	}
+	/* .icon-bar{
+		position: relative;
+		left: 5;
+	} */
+	.btn-book-now{
+		display: none;
+	}
+	
+	.header{
+		display: flex;
+		justify-content: space-around;
+		z-index: 3;
+		position: fixed;
+		background-color: #eee;
+		width: 100%;
+		top: 0px;
+	}
+	.header-logo{
+		margin: 0px;
+	}
+	.events{
+		margin: 150px 0px 0px 0px;
+	}
+	.rollercoaster{
+		width: 100%;
+	}
+	.images-of-events{
+		display: inline-block;
+	}
+	.circus h2{
+		text-align: center;
+	}
+	.upcoming-background{
+		width: 100%;
+		height: 1350px;
+	}
+	.upcoming-events{
+		display: inline;
+	}
+	.festivel img{
+		width: 100%;
+	}
+	.festivel h2{
+		text-align: center;
+	}
+	.videos{
+		padding: 10px;
+		display: inline-block;
+
+	}
+	.videos video{
+		width: 380px;
+	}
+	.subscribe h1{
+		width: 100%;
+		font-size: 30px;
+		text-align: center;
+	}
+	.messages input{
+		width: 70%;
+	}
+	.btn-subscribe{
+		text-align: center;
+	}
+	.full-subscribe-products{
+		width: 100%;
+		display: inline-block;
+		height: 100%;
+
+	}
+	.address-open-hours-contact{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		padding: 20px;
+	}
+
+	.footer-logo{
+		display: none;
+		
+	}
+	.address h3, .open-hours h3, .contact-for-more h3{
+		text-align: center;
+	}
+	.navbar-footer{
+		display: none;
+	}
+	.other-navbar-footer{
+		display: none;
+	}
+	.navbar-footer ul{
+		flex-direction: column;
+		padding: 0%;
+	}
+	.navbar-footer ul li, .other-navbar-footer ul li{
+		padding: 6px;
+	}
+	.other-navbar-footer ul{
+		flex-direction: column;
+		padding: 0%;
+	}
+}

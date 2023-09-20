@@ -23,41 +23,11 @@ import in.fssa.globalfuncity.service.RoomService;
 public class AdminRoomsListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//
-//		UserService userService = new UserService();
-//		Set<User> userList;
-//		
-//		PrintWriter out = response.getWriter();
-//		
-//		try {
-//			userList = userService.create(null);
-//			out.println(userList);
-//		} catch (){
-//			
-//		}
-//		
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
-//	}
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-//		RequestDispatcher rd = request.getRequestDispatcher("rooms_list.jsp");
-//		
-//		rd.forward(request, response);
 		
-		
-//		RoomService roomService = new RoomService();
-//		Set<Room> roomList;
-//		
-//		PrintWriter out = response.getWriter();
-//		
-		try {
+	try {
 			Set<Room> listOfRooms = RoomService.getAllRooms();
+			
 			request.setAttribute("rooms_list", listOfRooms);
 			RequestDispatcher rd = request.getRequestDispatcher("/admin/rooms_list.jsp");
 			rd.forward(request, response);
@@ -65,8 +35,6 @@ public class AdminRoomsListServlet extends HttpServlet {
 		} catch (PersistenceException e) {
 			e.printStackTrace();
 		}
-		
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 }

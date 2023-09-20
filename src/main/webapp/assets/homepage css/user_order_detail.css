@@ -1,0 +1,101 @@
+body{
+	margin: 0;
+}
+.visit-signin{
+	display: flex;
+	justify-content: space-around;
+	box-shadow: 0 3px 6px 0 rgb(0 0 0 / 20%);
+	font-family: 'poppins', sans-serif;
+	font-weight: 5px;
+	font-size: 16px;
+}
+.sign-in a{
+	text-decoration: none;
+}
+.header{ 
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+    box-shadow:0 3px 6px 0 rgb(0 0 0 / 20%) ;
+    position: sticky;
+}
+.header-logo{
+	width:180px;
+	margin:15px 0px 0px 50px;
+}
+.navbar ul li{
+	display:inline;
+	margin:10px;
+}
+.navbar ul li a{
+font-family:'Open Sans', sans-serif;
+text-decoration:none;
+padding:10px;
+}
+.navbar ul li a:hover {
+	border-bottom:3px solid #ff5757;
+} 
+.header button{
+	font-size:15px;	
+    background-color:#ff5757;
+	border-radius:8px;
+	padding:15px;
+	border:none;
+	margin-right:80px;
+}
+.header button a{
+	text-decoration: none;
+	color: #f6f6f6;
+}
+
+/* To back css like home, etc.., */
+.total-homepages-div{
+    padding: 35px 0px 0px 50px;
+    display: flex;
+}
+.homepages a {
+    font-family: 'poppins', sans-serif;
+    text-decoration: none;
+    color: #838285;
+}
+.homepages a:hover{
+    color: #ff5757;
+}
+/* completed */
+.delivery-address-h3, .more-actions-h3, .download-icon{
+	font-family: 'open sans', sans-serif;
+}
+
+.name-of-the-user, .delivery-address-of-the-user, .zip-code, .phone-number, .name-of-the-product, 
+.size-of-the-product, .price-of-the-product, .qty-of-the-product, .total-price-of-the-product, .order-date, .shipping-details-of-the-product,
+.order-id, .need-help{
+	font-family: 'poppins', sans-serif;
+}
+
+.box{
+	display: flex; 
+	justify-content: space-around; 
+	margin: 35px 0px 0px 0px; 
+	background-color: white;
+}
+
+.download-invoice-div-flex{
+	display: flex; 
+	align-items: center;
+}
+
+.background-color-for-product-detail{
+	display: flex; 
+	justify-content: space-evenly; 
+	align-items: center; 
+	background-color: white;
+}
+
+.flex-of-product{
+	display: flex; 
+	align-items: center;
+}
+
+.product-name{
+	padding: 0px 0px 0px 25px;
+}

@@ -1,0 +1,132 @@
+body{
+	margin:0;
+}
+.bag{
+   position: absolute;
+   top: 20px;
+   left: 30px;
+}
+.shop-logo{
+	display: flex;
+	justify-content: space-evenly;
+	box-shadow: 0 3px 6px 0 rgb(0 0 0 / 20%);
+}
+.bag i{
+	color: #ff5757;
+	
+	
+}
+.bag a{
+	text-decoration: none;
+	font-family: 'poppins ', sans-serif;
+}
+.checkout{
+    text-align: center;
+    font-family: 'league spartan', sans-serif;
+	padding: 40px;
+	font-size: 26px;
+}
+.billing{
+    font-family: 'league spartan', sans-serif;
+    font-size:20px ;
+}
+.first-last-name{
+    display: flex;
+    flex-direction: row;
+
+}
+.first-last-name input{
+    width: 250px;
+    border-top: 0;
+	border-right: 0;
+	border-left:0;
+	outline: none;
+}
+.billing-details-of-users{
+    font-family: 'poppins', sans-serif;
+	padding: 0px 0px 50px 0px;
+}
+.your-order{
+    font-family: 'league spartan', sans-serif;
+}
+.orders{
+    height: 300px;
+    width: 400px;
+    background-color: #eee;
+}
+.orders th{
+    font-family: 'open sans', sans-serif;
+    border-bottom: 3px solid white;
+}
+.tickets{
+    height:190px ;
+    width: 400px;
+    background-color: #eee;
+}
+.tickets ul li{
+	font-family: 'open sans', sans-serif;
+    list-style: none;
+    padding: 15px;
+}
+.billing-details-orders-payments{
+    display: flex;
+    justify-content: space-around;
+}
+.content-of-others input{
+    border-top: 0;
+	border-right: 0;
+	border-left:0;
+	outline: none;
+	width: 520px;
+}
+.billing-details-of-users g{
+	color: #ff4612;
+}
+.content-of-others select{
+    width: 515px;
+    border-top: 0;
+	border-right: 0;
+	border-left:0;
+	outline: none;
+}
+
+.payto-shirts{
+	font-family: 'league spartan', sans-serif;
+	padding-top:  70px ;
+}
+.btn-proceed, .btn-cancel{
+	background-color: #ffa51d;
+	border: 3px solid #ffa51d;
+	padding: 10px;
+    color: azure;
+	border-radius: 40px;
+	padding-left: 40px;
+	padding-right: 40px;
+	font-size: 18px;
+	font-family: 'League Spartan', sans-serif;
+    margin-top: 50px;
+}
+
+
+.background-footer{
+	background-color: #121a21;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.navbar-footer-logo{
+	padding: 25px 0px 0px 0px ;
+}
+.address{
+	font-family: 'open sans', sans-serif;
+	color: white;
+	padding: 20px 0px 0px 0px ;
+}
+.other-policies a{
+	font-family: 'open sans', sans-serif;
+	text-decoration: none;
+	color: white;
+}
+.other-policies a:hover{
+	color: #ff5757;
+}

@@ -1,0 +1,274 @@
+body{
+	margin:0;
+}
+.header{ 
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+}
+.header-logo{
+	width:180px;
+	margin-left:50px;
+	margin-top: 20px;
+}
+.navbar ul li{
+	display:inline;
+	margin:10px;
+}
+.navbar ul li a{
+font-family:'Open Sans', sans-serif;
+text-decoration:none;
+padding:10px;
+font-size:15px;
+margin-top:10px;
+}
+.navbar ul li a:hover {
+	border-bottom:3px solid #ff5757;
+} 
+.active{
+    border-bottom: 3px solid #ff5757;
+}
+.header button{
+	font-size:15px;	
+    background-color:#ff5757;
+	color:white;
+	border-radius:8px;
+	padding:15px;
+	border:none;
+	margin-right:80px;
+	cursor: pointer;
+}
+.header button a{
+	text-decoration: none;
+    color:white;
+}
+.background-color{
+	height: 1430px;
+	width: 1485px;
+	background-color: #eee;
+}
+.photo-of-store{
+    margin-top: 70px;
+}
+.photo-and-content{
+    display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+/* .content{
+    
+} */
+.content h2{
+    font-family: 'league spartan', sans-serif;
+    font-size: 40px;
+    color: black;
+}
+.content h3{
+    font-family: 'league spartan', sans-serif;
+    color: #ffa51d;
+    font-size: 28px;
+}
+.content p{
+    font-family: 'poppins', sans-serif;
+}
+input{
+    padding: 14px 13px 14px 13px;
+    /* border-radius: 50px; */
+    border: none;
+}
+.btn-sub, .btn-add{
+	padding: 14px 16px 14px 16px;
+	background-color: white;
+	border:white;
+	color: #ffa51d;
+	
+}
+.btn-buynow{
+	background-color: #ffa51d;
+	color: white;
+	border: 3px solid #ffa51d;
+	padding: 15px 30px 15px 30px;
+	border-radius: 40px;
+	cursor: pointer;
+	font-size: 18px;
+	font-family: 'League Spartan', sans-serif;
+}
+.content h4{
+    font-family: 'poppins', sans-serif;
+}
+.relatable{
+	font-family: 'league spartan', sans-serif;
+	margin-left: 100px;
+	margin-top: 80px;
+	font-size: 25px;
+}
+.related-pics{
+	padding: 15px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+.product-img img:hover{
+	transition: 1s;
+	transform: scale(1.1);
+}
+.product-img a{
+	text-decoration: none;
+	color: black;
+}
+.related-pics h3{
+	font-family: 'league spartan', sans-serif;
+
+}
+.related-pics p{
+	font-family: 'poppins', sans-serif;
+	color: #ffa51d;
+}
+
+
+.full-subscribe-products{
+	display: flex;
+	justify-content: space-around;
+	padding: 30px 0px 30px 0px;
+}
+
+.subscribe h1{
+	font-family: 'league spartan', sans-serif;
+	font-size: 48px;
+	width: 400px;
+}
+
+
+.messages{
+	text-align: center;
+	padding: 50px 0px 0px 0px ;
+}
+.messages input{
+	border-radius: 80pc;
+	width: 350px;
+	background-color: white;
+	border: #eee;
+	padding: 20px 30px 20px 30px;
+	border-color: white;
+}
+.btn-subscribe button{
+	border-radius: 80pc;
+    background-color: #ffa51d;
+	border: #ffa51d;
+	font-family: 'league spartan', sans-serif;
+	padding: 20px 30px 20px 30px;
+	color: white;
+	cursor: pointer;
+	font-size: 16px;
+}
+.btn-subscribe{
+	padding: 50px 0px 0px 0px;
+	
+}
+
+
+
+
+
+
+
+
+
+
+footer{
+	background-color: #121a21;
+	text-align:center;
+
+}
+.footer-logo{
+	width: 180px;
+	margin: 50px 0px 30px 0px;
+}
+.address-open-hours-contact{
+	display: flex;
+	justify-content:space-evenly;
+	text-align: left;
+	padding: 0px 0px 30px 0px;
+}
+.address h3, .open-hours h3, .contact-for-more h3{
+	font-family: 'league spartan', sans-serif;
+	color: #ffa51d;
+}
+.address p, .contact-for-more p, .open-hours p{
+	font-family: 'poppins', sans-serif;
+	color: white;
+	width: 300px;
+}
+.social-medias a{
+	display: inline-block;
+	width: 40px; 
+    margin:0 10px 10px 0;
+	text-align:center;
+	border-radius: 50px;
+	border: 1px solid white;
+	line-height: 40px;
+	color: #f6f6f6;
+	transition:0.5s;
+}
+.social-medias{
+	display: flex;
+	justify-content: center;
+	padding:10px 0px 0px 0px ;
+}
+
+.facebook a:hover{
+	background-color: #4267B2;
+}
+.twitter a:hover{
+	background-color:#1DA1F2;
+}
+.instagram a:hover{
+	background-color:#E1306C;
+}
+.pinterest a:hover{
+	background-color: #E60023;
+}
+.youtube a:hover{
+	background-color: #FF0000;
+}
+/* footer-for-about-us-etc */
+.navbar-footer ul{
+	display: flex;
+	justify-content: center;
+}
+.navbar-footer ul li a{
+	padding: 10px;
+	color: white;
+	text-decoration:none;
+}
+.navbar-footer ul li{
+	list-style: none;
+	font-family: 'league spartan', sans-serif;
+}
+.navbar-footer a:hover{
+	color:#ff5757;
+}
+/* footer-for-privacy-etc */
+.other-navbar-footer ul{
+    display: flex;
+	justify-content: center;
+}
+.other-navbar-footer ul li{
+	padding: 10px;
+	font-family: 'league spartan', sans-serif;
+	list-style: none;
+}
+.other-navbar-footer ul li a{
+	text-decoration: none;
+	color: #f6f6f6;
+}
+.other-navbar-footer a:hover{
+	color: #ff5757;
+}
+.copyright{
+	text-align: center;
+	font-family: 'poppins', sans-serif;
+	color: #eee;
+	padding: 20px;
+}

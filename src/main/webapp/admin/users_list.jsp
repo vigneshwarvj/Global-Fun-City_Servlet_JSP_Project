@@ -43,7 +43,6 @@ tr:nth-child(even) {
     <th>Last Name</th>
     <th>Phone Number</th>
     <th>Email</th>
-    <th>Password</th>
     <th>Status </th>
   </tr>
   
@@ -56,7 +55,6 @@ tr:nth-child(even) {
     <td> <%=user.getLastName()  %></td>
     <td> <%=user.getPhoneNumber()  %></td>
     <td> <%=user.getEmail() %> </td>
-    <td> <%=user.getPassword() %> </td>
     <td> <%=user.isActive() %>
     
   </tr>

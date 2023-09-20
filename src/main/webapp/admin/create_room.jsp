@@ -75,36 +75,36 @@ body{
             </div>
 
             <div class="products-details-from-admin">
-                <form class="form-for-admin">
+                <form class="form-for-admin" action="create_room" method="post">
 
                     <label class="input-field">Image of room</label>
                     <br>
-                    <input type="url" id="image_of_room" required>
+                    <input type="url" name="image_of_room" required>
                     <br>
 
                     <label class="input-field">Hotel Name</label>
                     <br>
-                    <input type="text" id="hotel_name" pattern="[a-z A-Z]+" required>
+                    <input type="text" name="hotel_name" pattern="[a-z A-Z]+" required>
                     <br>
 
                     <label class="input-field">Room name</label>
                     <br>
-                    <input type="text" id="room_name" required>
+                    <input type="text" name="room_name" required>
                     <br>
                     
                     <label class="input-field">Room Price</label>
                     <br>
-                    <input type="tel" id="room_price" pattern="[0-9$.]+" required>
+                    <input type="tel" name="room_price" pattern="[0-9$.]+" required>
                     <br>
             
             		<label class="input-field">No Of Beds</label>
             		<br>
-            		<input type="number" id="no_of_beds" required>
+            		<input type="number" name="no_of_beds" min="1" max="12" required>
             		<br>
 
-                    <label class="input-field">Amenties</label>
+                    <label class="input-field">Amenities</label>
                     <br>
-                    <input type="tel" id="amenties_1" pattern="[a-z A-Z]+" required>
+                    <input type="text" name="amenities" pattern="[a-z A-Z ,]+">
                     <br>
 
                     &NonBreakingSpace;

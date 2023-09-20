@@ -1,0 +1,81 @@
+body{
+	margin: 0;
+}
+.shipping{
+	text-align: center;
+	font-family: 'open sans', sans-serif;
+	background-color: #121a21;
+	color: #f6f6f6;
+	padding: 4px;
+}
+.header-navbar{
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	position: sticky;
+	box-shadow: 0 3px 6px 0 rgb(0 0 0 / 20%);
+	z-index: 1;
+
+}
+.header-navbar a{
+	font-family: 'poppins', sans-serif;
+}
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+  }
+.icons-info a{
+	text-decoration: none;
+    padding: 5px;	
+
+}
+.icons-info i{
+	color: #ff5757;
+	
+}
+
+
+.background-color{
+	height: 1294px;
+	width: 1485px;
+	background-color: #eee;
+}
+.store{
+    text-align: center;
+    font-family: 'league spartan', sans-serif;
+	padding: 40px;
+	font-size: 26px;
+}
+.store-things{
+	width: 97%;
+	height: 130vh;
+    padding: 15px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-evenly;
+	
+}
+.t-shirts a{
+	text-decoration: none;
+	color: #121a21;
+}
+.store-things img:hover {
+	transition: 1s;
+	transform: scale(0.9);
+	
+}
+.t-shirts h3{
+	font-family: 'league spartan', sans-serif;
+	font-size: 25px;
+	text-align: center;
+}
+.t-shirts p{
+	font-family: 'Poppins', sans-serif;
+	text-align: center;
+	color: #ffa51d;
+}
+
+
+

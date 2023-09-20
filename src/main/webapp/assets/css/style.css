@@ -1,0 +1,766 @@
+body{
+	margin:0;
+	padding: 0;
+}
+/* sidebar for mobile  */
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+	
+  }
+  .sidenav, .icon-bar{
+	display: none;
+  }
+  .sidenav a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+	color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+  }
+/* sidebar mobile completed */
+.visit-signin{
+	display: flex;
+	justify-content: space-around;
+	box-shadow: 0 3px 6px 0 rgb(0 0 0 / 20%);
+	font-family: 'poppins', sans-serif;
+	font-weight: 5px;
+	font-size: 16px;
+}
+.sign-in a{
+	text-decoration: none;
+	/* color: #ff5757; */
+}
+ /* .visit-signin p:hover{
+	color: #ff5757;
+} */
+.header{ 
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+}
+.header-logo{
+	width:180px;
+	margin:15px 0px 0px 50px;
+}
+.navbar ul li{
+	display:inline;
+	margin:10px;
+}
+.navbar ul li a{
+font-family:'Open Sans', sans-serif;
+text-decoration:none;
+padding:10px;
+}
+.navbar ul li a:hover {
+	border-bottom:3px solid #ff5757;
+} 
+/* .navbar ul li a:after{
+	width: 0;
+	transition: 0.3s;
+}
+.navbar ul li a:hover:after{
+	width: 100%;
+} */
+.active{
+    border-bottom: 3px solid #ff5757;
+}
+.header button{
+	font-size:15px;	
+    background-color:#ff5757;
+	border-radius:8px;
+	padding:15px;
+	border:none;
+	margin-right:80px;
+}
+.header button a{
+	text-decoration: none;
+	color: #f6f6f6;
+}
+.backgroundglobal img{
+	width:1485px;
+	z-index:-1;
+}
+.icons-of-menu-book-signup{
+	display: none;
+}
+
+/* Dropdown */
+
+.mobile-container {
+	max-width: 480px;
+	margin: auto;
+	background-color: #555;
+	height: 500px;
+	color: white;
+	border-radius: 10px;
+  }
+  
+  .topnav {
+	overflow: hidden;
+	background-color: #333;
+	position: relative;
+	display: none;
+  }
+  
+  .topnav #myLinks {
+	display: none;
+  }
+  
+  .topnav a {
+	color: white;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+	display: block;
+  }
+  
+  .topnav a.icon {
+	background: black;
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+  }
+  
+  .topnav a:hover {
+	background-color: #ddd;
+	color: black;
+  }
+  
+  .active {
+	background-color: #04AA6D;
+	color: white;
+  }
+
+  /* dropdown */
+.welcome-global-funcity{
+	position: relative;
+	z-index: 2;
+	bottom: 100px;
+}
+.bg2{
+	position:relative;
+	margin-left:260px;
+	bottom: 290px;
+}
+.box{
+	height: 12px;
+}
+.box h2,.box h1{
+	font-family:'League Spartan', sans-serif;
+	font-size: 30px;
+	position: relative;
+	top: 120px;
+	color: wheat ;
+	padding: 10px;
+}
+.box h2{
+	text-align: center;
+	color: white;
+}
+.box h1{
+    text-align: center;
+	padding: 5px;
+	font-size: 45px;
+}
+.sparkles{
+	position: relative;
+	bottom: 750px;
+	margin-left: 170px;
+}
+.messages{
+	padding:50px 0px 50px 0px;
+}
+.messages .step h3 {
+    font-family: 'League Spartan', sans-serif;
+}
+.step h3{
+margin-top:230px;
+font-family:'poppins',sans-serif;
+font-size:1.90em;
+font-weight:600;
+color:#ff5757;
+text-align: center;
+}
+.border{
+	background:#008288;
+	width:160px;
+	height:3px;
+	margin:10px auto;
+}
+
+.weare p{
+	text-align:center;
+	font-family:'Poppins', sans-serif;
+	font-size:1.00em;
+	padding-top:20px;
+	
+}
+.updown{
+padding:70px;
+background-color:#ffa51d;
+color:white;
+display:flex;
+align-items:center;
+justify-content:space-around;
+}
+
+.updown div h2{
+	margin-left:150px;
+	font-family: 'League Spartan', sans-serif;
+	font-size: 30px;
+}
+.updown div p{
+	margin-left:150px;
+	font-family: 'Poppins', sans-serif;
+	
+
+} 
+.recoil{
+	width:300px;
+	border-radius:20px;	
+}
+.biscuit{
+width:300px;
+display:block;
+margin: left 40px;
+border-radius:20px;
+height:auto;	
+}
+.biscuit1{
+	margin-left: 40px;
+}
+.goodfood-goodday{
+	display: flex;
+	justify-content: space-evenly;
+	padding: 40px;
+
+}
+.goodday{
+	padding: 60px;
+	font-family: 'Poppins', sans-serif;
+	font-size:15px ;
+	position: relative;
+	right: 120px;
+}
+.border2{
+	background:#008288;
+	width:90px;
+	height:3px;
+	margin:20px center;
+
+}
+.parktour{
+	width:1485px;
+	height: 1000px;
+	background-color:#eee; 
+	text-align: center;
+	
+}
+.gaiety-excursion{
+	padding-top:60px;
+	position: relative;
+	margin-bottom: 50px;
+}
+.gaiety-excursion h2{
+    color: #ff4612;
+	font-family:'league spartan', sans-serif;
+	font-size: 20px;
+}
+.gaiety-excursion h1{
+    font-family: 'league spartan', sans-serif;
+	font-size:50px ;
+}
+.gaiety-excursion p{
+    font-family: 'poppins', sans-serif;
+	padding-bottom: 40px;
+}
+.bubble{
+	z-index: 1;
+	width:1485px ;
+	height: 400px;
+}
+.tickets{
+	background-image: url("https://festy.ancorathemes.com/wp-content/uploads/2021/12/image-136-scaled.jpg");
+	height: 400px;
+	width: 1485px;
+	display: flex; 
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	font-family: 'League Spartan', sans-serif;
+	position: relative;
+    
+}
+.tickets h2{
+	color: #ff4612;
+
+}
+.tickets h1{
+	color: white;
+	font-size:60px ;
+}
+.tickets button{
+	background-color: #ffa51d;
+	color: white;
+	border: 3px solid #ffa51d;
+	padding: 15px 50px 15px 50px;
+	border-radius: 40px;
+	
+	font-size: 18px;
+	cursor: pointer;
+	font-family: 'League Spartan', sans-serif;
+}
+.tickets a{
+	text-decoration: none;
+	color: white;
+}
+.customer{
+	background-color: #eee;
+	text-align: center;
+	padding: 40px;
+}
+.customer h2{
+	font-family:'League Spartan', sans-serif;
+	font-size: 50px;
+}
+/* footer */
+footer{
+	background-color: #121a21;
+	text-align:center;
+}
+.footer-logo{
+	width: 180px;
+	margin: 50px 0px 30px 0px;
+}
+.address-open-hours-contact{
+	display: flex;
+	justify-content:space-evenly;
+	text-align: left;
+	padding: 0px 0px 30px 0px;
+}
+.address h3, .open-hours h3, .contact-for-more h3{
+	font-family: 'league spartan', sans-serif;
+	color: #ffa51d;
+}
+.address p, .contact-for-more p, .open-hours p{
+	font-family: 'poppins', sans-serif;
+	color: white;
+	width: 300px;
+}
+.contact-for-more a{
+	text-decoration: none;
+}
+.social-medias a{
+	display: inline-block;
+	width: 40px; 
+    margin:0 10px 10px 0;
+	border-radius: 50px;
+	border: 1px solid white;
+	line-height: 40px;
+	color: #f6f6f6;
+	transition:0.5s;
+}
+.social-medias{
+	display: flex;
+	justify-content: center;
+	padding:10px 0px 0px 0px ;
+}
+
+.facebook a:hover{
+	background-color: #4267B2;
+}
+.twitter a:hover{
+	background-color:#1DA1F2;
+}
+.instagram a:hover{
+	background-color: #E1306C;
+	/* linear-gradient(315deg, pink, purple); */
+}
+.pinterest a:hover{
+	background-color: #E60023;
+}
+.youtube a:hover{
+	background-color: #FF0000;
+}
+/* footer-for-about-us-etc */
+
+.navbar-footer ul{
+	display: flex;
+	justify-content: center;
+}
+.navbar-footer ul li a{
+	padding: 10px;
+	color: white;
+	text-decoration:none;
+}
+.navbar-footer ul li{
+	list-style: none;
+	font-family: 'league spartan', sans-serif;
+}
+.navbar-footer a:hover{
+	color:#ff5757;
+}
+/* footer-for-privacy-etc */
+.other-navbar-footer ul{
+    display: flex;
+	justify-content: center;
+}
+.other-navbar-footer ul li{
+	padding: 10px;
+	font-family: 'league spartan', sans-serif;
+	list-style: none;
+}
+.other-navbar-footer ul li a{
+	text-decoration: none;
+	color: white;
+}
+.other-navbar-footer a:hover{
+	color: #ff5757;
+}
+.copyright{
+	text-align: center;
+	font-family: 'poppins', sans-serif;
+	color: #eee;
+	padding: 20px;
+}
+
+
+/* review css started */
+/* * > * {
+    font-family: 'Poppins', sans-serif;
+} */
+
+:root{
+    --color-dark: #151C35;
+    --color-secodary-dark: #464C70;
+    --color-primary: #fa5757;
+    --color-text: #8297E2;
+    --color-light: #EBEBFB;
+}
+
+.container{
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.board{
+    max-width: 987px;
+    width: 100%;
+/*     background-color: var(--color-dark); */
+    text-align: center;
+    border-radius: 8px;
+    /* padding: 4em 0; */
+}
+
+#guestloveus{
+	font-family: 'league spartan', sans-serif;
+	font-size: 2.5rem;
+
+}
+.text-light{
+/*     color: var(--color-light); */
+}
+
+.swiper {
+    width: 600px;
+    height: auto;
+  }
+
+.swiper .swiper-slide .flex{
+    margin: 1em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.swiper .swiper-slide .comments{
+    background-color: #eee;
+    padding: 1.5em 2em;
+    width: 50%;
+    border-radius: 5px;
+    font-size: .9em;
+    position: relative;
+	font-family: 'Poppins', sans-serif;
+}
+
+.swiper .swiper-slide .comments::after{
+    content: '';
+    position: absolute;
+    bottom: -19px;
+    left: 45%;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #eee;
+    z-index: -99;
+}
+
+
+.swiper .profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.swiper .profile img{
+    width: 30%;
+    border-radius: 50%;
+    border: 5px solid var(--color-primary);
+    margin: 10px 0;
+}
+
+.swiper .profile > a{
+    text-decoration: none;
+    color: black;
+	font-family: 'open sans', sans-serif;
+}
+
+.swiper .profile > span{
+    color: var(--color-text);
+    font-size: .8em;
+}
+
+.swiper .swiper-button-prev, .swiper-button-next{
+    color: var(--color-text);
+    display: none;
+} 
+
+@media (min-width: 320px) {
+    .board{
+        width: auto;
+    }
+
+    .swiper {
+        width: 320px;
+      }
+
+      .board > h1, p{
+          padding: 0 2em;
+      }
+}
+
+@media (min-width: 768px) {
+    .board{
+        width: 100%;
+    }
+
+    .swiper {
+        width: 600px;
+      }
+
+    .swiper .swiper-button-prev, .swiper-button-next{
+        display: initial;
+    }
+
+}
+
+/* review css ended */
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:450px) {
+
+	/* sidenav mobile */
+	.sidenav, .icon-bar{
+		display: block;
+	}
+	.sidenav a{
+		color: white;
+		font-family: 'poppins', sans-serif;
+		font-size: medium;
+	}
+	.sidenav a:hover{
+		color: #ff5757;
+	}
+	/* sidenav complete */
+
+.visit-signin, .navbar{
+	display: none;
+	/* display: flex;
+	justify-content: space-around;
+	width: 100%;
+	font-size: 8px; */
+
+}
+.btn-book-now{
+	display: none;
+}
+
+.header{
+	display: flex;
+	justify-content: space-around;
+	z-index: 3;
+	position: fixed;
+	background-color: #eee;
+	width: 100%;
+}
+.header-logo{
+	margin: 0px;
+}
+.backgroundglobal img{
+	width: 100%;
+	height: 160px;
+	position: relative;
+	top: 92px;
+}
+.bg2{
+	margin-left: 0px;
+	height: 200px;
+	width: 350px;
+	position: relative;
+	bottom: 250px;
+
+
+}
+
+
+.welcome-global-funcity{
+	position: relative;
+	z-index: 0;
+	bottom: 0px;
+}
+.sparkles{
+	margin-left: 0px;
+}
+.box{
+	height: 0px;
+	
+}
+.box img{
+	display: none;
+}
+.box h2{
+	color: #121a21;
+	font-size: revert;
+}
+.box h2, .box h1{
+	padding: 0;
+
+}
+.updown{
+	padding: 0 5% ;
+}
+.recoil{
+	width: 100px;
+}
+.step h3{
+   font-size: 1.20em;
+   line-height: 24px;
+}
+.messages{
+	padding: 8%;
+}
+.updown div h2, .updown div p{
+	margin-left: 1%;
+	padding: 5px 0px 5px 0px;
+	font-size: 15px;
+}
+
+.weare p{
+	padding: 5px 0px 0px 0px ;
+}
+.goodfood-goodday{
+	padding: 50px;
+}
+.biscuit1 img{
+	margin-left: 0;
+	width: 100px;
+}
+.biscuit1{
+	margin-left: 0%;
+}
+.goodday{
+	padding: 0%;
+	right: 0%;
+	position: relative;
+	font-size: 10px;
+	left: 5%;
+}
+.parktour{
+	width: 100%;
+	height: 100%;
+}
+video{
+	width: 90%;
+	height: 100%;
+}
+.tickets{
+	/* width: 100%;
+	height: 100%;
+	background-size: 190%;
+	filter: brightness(0.9); */
+	display: none;
+	
+}
+.tickets h1{
+	font-size: 35px;
+}
+.location img{
+	width: 100%;
+	height: 100%;
+}
+.address-open-hours-contact{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+.footer-logo{
+	width: 50%;
+	
+}
+.address h3, .open-hours h3, .contact-for-more h3{
+	text-align: center;
+}
+.navbar-footer{
+	display: none;
+}
+.other-navbar-footer{
+	display: none;
+}
+.navbar-footer ul{
+	flex-direction: column;
+	padding: 0%;
+}
+.navbar-footer ul li, .other-navbar-footer ul li{
+	padding: 6px;
+}
+.other-navbar-footer ul{
+	flex-direction: column;
+	padding: 0%;
+}
+}

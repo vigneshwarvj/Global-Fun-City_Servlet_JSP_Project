@@ -44,6 +44,9 @@ public class AdminUpdateRoomServlet extends HttpServlet {
 			
 			room.setPrice(roomPrice);
 			
+			room.setRoomImageUrl(request.getParameter("room_image"));
+			room.setRoomAmenities(request.getParameter("room_amenity"));
+			
 			System.out.println(room);
 			
 			

@@ -1,0 +1,160 @@
+body{
+	margin:0;
+}
+.shipping{
+	text-align: center;
+	font-family: 'open sans', sans-serif;
+	background-color: #121a21;
+	color: #f6f6f6;
+	padding: 4px;
+}
+.header-navbar{
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	position: sticky;
+	z-index: 1;
+	box-shadow: 0 3px 6px 0 rgb(0 0 0 / 20%);
+
+}
+.header-navbar a{
+	font-family: 'poppins', sans-serif;
+}
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+  }
+.icons-info a{
+	text-decoration: none;
+    padding: 5px;	
+
+}
+.icons-info i{
+	color: #ff5757;
+	
+}
+.cart{
+    text-align: center;
+    font-family: 'league spartan', sans-serif;
+	padding: 40px;
+	font-size: 26px;
+}
+.product-table{
+    padding: 50px;
+    margin-left: 100px;
+    width: 1300px;
+    border-bottom: #ff5757;
+    border-collapse: collapse;
+}
+.product-table th{
+    padding-right: 25px;
+    font-family: 'league spartan', sans-serif;
+    height: 100px;
+    width: 1000px;
+    background-color: #eee;
+    color: black;
+    font-size: 20px;
+   
+
+}
+.product-table td{
+    padding-left: 60px;
+    font-family: 'poppins', sans-serif;
+    border-bottom: 3px solid #eee;
+}
+.product-table td input{
+    padding: 15px 20px 15px 20px;
+    border-radius: 50px;
+
+}
+.btn-shopping{
+    background-color: #ffa51d;
+	border: 3px solid #ffa51d;
+	padding: 15px;
+	border-radius: 40px;
+	padding-left: 40px;
+	padding-right: 40px;
+	font-size: 18px;
+	font-family: 'League Spartan', sans-serif;
+    margin: 80px 0px 0px 1100px;
+    
+}
+/* buttonplus&minus */
+.btn-sub, .btn-add{
+	padding: 4px 6px 4px 6px;
+    background-color: white;
+    border: #646464 2px solid;
+    color: #ffa51d;
+    border-radius: 110px;
+	
+}
+.btn-shopping a{
+    text-decoration: none;
+    color: white;
+}
+.cart-details{
+    font-family: 'league spartan', sans-serif;
+}
+.card-totals{
+    height: 100px;
+    width: 30px;
+    background-color: #eee;
+    padding:50px;
+    border-collapse: collapse;
+}
+.card-totals tr{
+    display: table-row;
+}
+.card-totals th{
+    font-family: 'poppins', sans-serif;
+    padding: 50px 60px 50px 60px;
+    border-bottom: 2px solid white;
+}
+.btn-checkout{
+    background-color: #ffa51d;
+	border: 3px solid #ffa51d;
+	padding: 15px;
+	border-radius: 40px;
+	padding-left: 70px;
+	padding-right: 70px;
+	font-size: 18px;
+	font-family: 'League Spartan', sans-serif;
+    margin-top: 30px;
+}
+.btn-checkout a{
+    text-decoration: none;
+    color: white;
+
+}
+.order-of-summary{
+    display: flex;
+    flex-direction: column;
+    align-content:center;
+    flex-wrap: wrap;
+    padding:30px;
+}
+
+
+.background-footer{
+	background-color: #121a21;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.navbar-footer-logo{
+	padding: 25px 0px 0px 0px ;
+}
+.address{
+	font-family: 'open sans', sans-serif;
+	color: white;
+	padding: 20px 0px 0px 0px ;
+}
+.other-policies a{
+	font-family: 'open sans', sans-serif;
+	text-decoration: none;
+	color: white;
+}
+.other-policies a:hover{
+	color: #ff5757;
+}

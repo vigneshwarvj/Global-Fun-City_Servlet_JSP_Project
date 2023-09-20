@@ -1,0 +1,103 @@
+footer{
+	background-color: #121a21;
+	text-align:center;
+}
+.footer-logo{
+	width: 180px;
+	margin: 50px 0px 30px 0px;
+}
+.address-open-hours-contact{
+	display: flex;
+	justify-content:space-evenly;
+	text-align: left;
+	padding: 0px 0px 30px 0px;
+}
+.social-medias a{
+	display: inline-block;
+	width: 40px; 
+    margin:0 10px 10px 0;
+	text-align:center;
+	border-radius: 50px;
+	border: 1px solid white;
+	line-height: 40px;
+	color: #f6f6f6;
+	transition:0.5s;
+}
+.social-medias{
+	display: flex;
+	justify-content: center;
+	padding:10px 0px 0px 0px ;
+}
+
+.facebook a:hover{
+	background-color: #4267B2;
+}
+.twitter a:hover{
+	background-color:#1DA1F2;
+}
+.instagram a:hover{
+	background-color:#E1306C;
+}
+.pinterest a:hover{
+	background-color: #E60023;
+}
+.youtube a:hover{
+	background-color: #FF0000;
+}
+/* shop footer main */
+.shop-footer-main{
+	display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: left;
+    line-height: 20px;
+}
+/* footer-for-about-us-etc */
+.navbar-footer ul li a{
+	color: white;
+	text-decoration:none;
+}
+.navbar-footer ul li{
+	list-style: none;
+	font-family: 'league spartan', sans-serif;
+}
+.navbar-footer a:hover{
+	color:#ff5757;
+}
+/* footer-for-privacy-etc */
+.shop-footer ul li{
+	list-style: none;
+	font-family: 'league spartan', sans-serif;
+}
+.shop-footer ul li a{
+	color: white;
+	text-decoration:none;	
+} 
+.shop-footer a:hover{
+	color:#ff5757;	
+}
+/* .other-navbar-footer ul{
+    display: flex;
+	justify-content: center;
+} */
+.other-navbar-footer ul li{
+	font-family: 'league spartan', sans-serif;
+	list-style: none;
+}
+.other-navbar-footer ul li a{
+	text-decoration: none;
+	color: #f6f6f6;
+}
+.other-navbar-footer a:hover{
+	color: #ff5757;
+}
+.footer-hr{
+	width: 99.9%;
+}
+.copyright{
+	text-align: center;
+	font-family: 'poppins', sans-serif;
+	color: #eee;
+	padding: 20px;
+}
