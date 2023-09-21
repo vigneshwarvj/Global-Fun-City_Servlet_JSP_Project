@@ -198,7 +198,7 @@
 
 <h2 class="name-of-the-title">Total No Of Days</h2>
 
-<p class="detail-from-user-to-buy"> <%=ticket.getBetweenDays() %> </p>
+<p class="detail-from-user-to-buy"> <%=ticket.getNoOfDays()%> </p>
 
 <h2 class="name-of-the-title">Status</h2>
 

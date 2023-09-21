@@ -11,7 +11,7 @@
 
         <title> Global Fun City </title>
         <script src="./main.js"></script>
-        <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/style.css">
+        <link rel="stylesheet" type="text/css"  href="<%=request.getContextPath()%>/assets/css/style.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

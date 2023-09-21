@@ -41,13 +41,19 @@ public class LoginServlet extends HttpServlet {
 		    if (user == null) {
 		        System.out.println("User not found");
 		    } else if (!password.equals(user.getPassword())) {
+		    	request.setAttribute("alertMessage", "Incorrect email or password.");
+		    	request.getRequestDispatcher("/user/login.jsp").forward(request, response);
+
 		        System.out.println("Incorrect Email or Password:(");
 		    } else {
-		        System.out.println("Login Successfull:)");
+		    	request.setAttribute("alertMessage", "Login successful");
+		    	System.out.println("Login Successfull:)");
+		       
 		        Integer id = user.getUserId();
 	            if (id != null) {
 	                request.getSession().setAttribute("userId", id);
-	                response.sendRedirect(request.getContextPath() + "/index");
+	                response.sendRedirect(request.getContextPath() + "/user/login-success.jsp");
+	                //response.sendRedirect(request.getContextPath() + "/index");
 	            }
 		    
 		    }

@@ -21,13 +21,15 @@ import in.fssa.globalfuncity.service.RoomService;
 public class BookedSuccess extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //		RequestDispatcher rd = request.getRequestDispatcher("/user/booked_success.jsp");
 //		rd.forward(request, response);
 		
 			try {
 				Set<Room> listOfRooms = RoomService.getAllRooms();
+				System.out.println(request.getAttribute("trackId"));
 				request.setAttribute("rooms_list", listOfRooms);
+				
 				RequestDispatcher rdDispatcher = request.getRequestDispatcher("/user/booked_success.jsp");
 				rdDispatcher.forward(request, response);
 				

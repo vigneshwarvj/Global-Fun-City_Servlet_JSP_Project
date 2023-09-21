@@ -101,5 +101,29 @@
                 
             </div>
         </div>
+        
+        <div id="alertMessage" style="display: none;"></div>
+
+    <script>
+    // Get the alert message from the server-side
+    const alertMessage = "<%= request.getAttribute("alertMessage") %>";
+
+    // Display the alert based on the message
+    if (alertMessage) {
+        const alertDiv = document.getElementById("alertMessage");
+        alertDiv.textContent = alertMessage;
+        alertDiv.style.display = "block";
+
+        // Check if the message contains "Login Successful"
+        if (alertMessage.includes("Login Successful")) {
+            alert("Login Successful");
+            window.location.href = "<%= request.getContextPath() %>/index";
+        } else {
+            //alert("Incorrect Email or Password");
+        }
+    }
+</script>
+
+    
 </body>
 </html>

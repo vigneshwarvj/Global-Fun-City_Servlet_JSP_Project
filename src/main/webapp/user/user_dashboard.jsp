@@ -39,7 +39,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/home">
+                        <a class="navigation__link" href="/globalfuncityweb/about">
                             <b>ABOUT</b> 
                         </a> 
                     </li>

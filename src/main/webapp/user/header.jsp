@@ -39,7 +39,7 @@ if (user == null) {
 </div>	
 
 <div class="sign-in">
-	<p><a href="user_dashboard"> Welcome, <%=user.getFirstName()+" "+ user.getLastName() %> ! </a> &nbsp; | <a href="user/logout" id="logOut"> Sign Out</a>  | <i class="fa-solid fa-globe"></i> United states (English)</p>
+	<p><a href="<%=request.getContextPath()%>/user_dashboard"> Welcome, <%=user.getFirstName()+" "+ user.getLastName() %> ! </a> &nbsp; | <a href="#" id="logOutLink"> Sign Out</a>  | <i class="fa-solid fa-globe"></i> United states (English)</p>
 </div>
 
 </div>
@@ -47,3 +47,22 @@ if (user == null) {
 <%
 }
 %>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const logOutLink = document.getElementById("logOutLink");
+
+        logOutLink.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            //Confirmation
+            const confirmed = window.confirm("Are you sure you want to log out of your account?");
+            
+            // If the user confirms, log them out
+            if (confirmed) {
+                window.location.href = "<%= request.getContextPath() %>/user/logout";
+            }
+        });
+    });
+</script>

@@ -56,7 +56,9 @@
 </head>
 <body>
 
-<div class="hurrah-gif">
+<jsp:include page="header.jsp"></jsp:include>
+
+				<div class="hurrah-gif">
                             <div class="hurrah">
                                 <h1>Hurrah! &#127881;</h1>
                                 <h2>Your Ticket is booked.</h2>
@@ -91,12 +93,14 @@
 <hr>
   
   <section class="total_section_to_rooms">
-  
+  	<input type="hidden" id="tickeId" value="<%= request.getAttribute("trackId")%>"/> 
+  	<input type="hidden" id="userId" value="<%=request.getSession(false).getAttribute("userId")%>" /> 
    <% for(Room room : listOfRooms){ %>
 
 
  <div class="photo-of-room-about">
     <!--brief-of-room-->
+
     
     <input type="radio" class="room-radio" name="radio_rooms" value="<%= room.getRoomId() %>" required>
     
@@ -129,10 +133,11 @@
         <span>$<%= room.getPrice() %></span>/ night
         <br>
         &nbsp; 
-            <button id="book-now-button"> Book Now </button>
+           <button class="book-now-button" data-room-id="<%= room.getRoomId() %>" data-room-price="<%= room.getPrice() %>">Book Now</button>
       
     </div>
 </div>
+
 
 <hr>
 
@@ -144,36 +149,50 @@
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const bookNowButton = document.getElementById("book-now-button");
-        const radioButtons = document.querySelectorAll(".room-radio");
+document.addEventListener("DOMContentLoaded", function () {
+    const bookNowButtons = document.querySelectorAll(".book-now-button");
 
-        bookNowButton.addEventListener("click", function () {
-            let selectedRoomId = null;
-            let radioSelected = false;
+    bookNowButtons.forEach(async function (button) {
+        button.addEventListener("click", async function () {
+            const roomId = button.getAttribute("data-room-id");
+            const roomPrice = button.getAttribute("data-room-price");
+            const ticketId = document.querySelector("#tickeId");
+            const userId = document.querySelector("#userId");
 
-            // Check if any radio button is selected
-            radioButtons.forEach(function (radioButton) {
-                if (radioButton.checked) {
-                    selectedRoomId = radioButton.value;
-                    radioSelected = true;
+            // Prepare the request parameters
+            const params = new URLSearchParams();
+            params.append("roomId", roomId);
+            params.append("roomPrice", roomPrice);
+            params.append("userId", userId);
+            params.append("ticketId", ticketId);
+
+            try {
+                const response = await fetch("/", {
+                    method: "POST",
+                    headers: {
+                        "Content-type": "application/x-www-form-urlencoded",
+                    },
+                    body: params.toString(),
+                });
+
+                if (response.status === 200) {
+                    // Handle the success response if needed
+                    const responseBody = await response.text();
+                    // Redirect to another page or show a success message
+                } else {
+                    // Handle the error response
+                    console.error("Request failed with status:", response.status);
                 }
-            });
-
-            // If a radio button is selected, redirect to another page
-            if (radioSelected) {
-                // Construct the URL for the next page with the selected room ID
-                const nextPageUrl = `/path/to/next/page?room_id=${selectedRoomId}`;
-
-                // Redirect to the next page
-                window.location.href = nextPageUrl;
-            } else {
-                // If no radio button is selected, show an alert
-                alert("Please select one of the rooms.");
+            } catch (error) {
+                // Handle network errors or other exceptions
+                console.error("Error:", error);
             }
         });
     });
+});
+
 </script>
+
 
 
 </body>

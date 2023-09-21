@@ -35,7 +35,7 @@ public class BookTicketServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int userId = (Integer) request.getSession().getAttribute("userId");
-		
+		int ticketId = -1;
 		try {
 		
 		Ticket ticket = new Ticket();
@@ -56,9 +56,11 @@ public class BookTicketServlet extends HttpServlet {
 	    
 	    TicketService ticketService = new TicketService();
 		
-		ticketService.bookTicket(ticket,userId);
-		
-		response.sendRedirect("/globalfuncityweb/user/booked_success.jsp");
+	    ticketId = ticketService.bookTicket(ticket,userId);
+	    request.setAttribute("trackId", ticketId);
+	    System.out.println(request.getAttribute("trackId"));
+		RequestDispatcher rdDispatcher = request.getRequestDispatcher("/user/booked_success");
+		rdDispatcher.forward(request, response);
 			
 		} catch (ValidationException | PersistenceException | SQLException e) {
 			e.printStackTrace();
