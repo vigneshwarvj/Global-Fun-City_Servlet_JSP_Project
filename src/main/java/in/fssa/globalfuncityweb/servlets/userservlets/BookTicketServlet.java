@@ -3,6 +3,8 @@ package in.fssa.globalfuncityweb.servlets.userservlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -45,6 +47,10 @@ public class BookTicketServlet extends HttpServlet {
 	    
 	    String checkOutDate = request.getParameter("checkOutdate");
 	    ticket.setToDate(checkOutDate);
+	    LocalDate fromDate = LocalDate.parse(checkInDate);
+	    LocalDate toDate = LocalDate.parse(checkOutDate);
+	    
+	    int numberOfNights = (int) ChronoUnit.DAYS.between(fromDate, toDate);
 	    
 		String noOfAdults = request.getParameter("totalClicksAdult");
 	    int numAdults = Integer.parseInt(noOfAdults);
@@ -57,6 +63,7 @@ public class BookTicketServlet extends HttpServlet {
 	    TicketService ticketService = new TicketService();
 		
 	    ticketId = ticketService.bookTicket(ticket,userId);
+	    request.setAttribute("noOfNights", numberOfNights);
 	    request.setAttribute("trackId", ticketId);
 	    System.out.println(request.getAttribute("trackId"));
 		RequestDispatcher rdDispatcher = request.getRequestDispatcher("/user/booked_success");

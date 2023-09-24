@@ -74,6 +74,9 @@ footer{
 .navbar-footer a:hover{
 	color:#ff5757;
 }
+.hr_gfc{
+	width:100%;
+}
 /* footer-for-privacy-etc */
 .other-navbar-footer ul{
     display: flex;

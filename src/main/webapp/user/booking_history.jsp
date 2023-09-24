@@ -1,3 +1,4 @@
+<%@page import="in.fssa.globalfuncity.model.UserRoom"%>
 <%@page import="in.fssa.globalfuncity.model.User"%>
 <%@page import="java.util.List"%>
 <%@page import="in.fssa.globalfuncity.model.Ticket"%>
@@ -230,6 +231,140 @@
 
 <%} %>
 <% } %>
+
+
+<%-- <% List<Ticket> listOfTickets = (List<Ticket>) request.getAttribute("ticket"); %>
+<% User user = (User) request.getAttribute("user"); %>
+<% List<UserRoom> listOfRoomsBookedByUser = (List<UserRoom>) request.getAttribute("userRoom"); %>
+
+<% if (listOfTickets.isEmpty()) { %>
+    <!-- User did not book any tickets -->
+    <p style="text-align:center; font-family: 'open sans', sans-serif">No tickets booked :(</p>
+    <p style="text-align:center; font-family: 'open sans', sans-serif">Click the "Book Now" button to grab your tickets today!</p>
+<% } else { %>
+    <!-- User booked tickets -->
+    <% for (Ticket ticket : listOfTickets) { %>
+        <!-- Display ticket information -->
+        <div class="background-image-fun-fair">
+            
+            <div class="total-div-for-ticket-detail">
+
+<div class="ticket-show-detail-0">
+<h2 class="name-of-the-title">Name </h2> 
+
+<p class="detail-from-user-to-buy"><%=user.getFirstName() %></p>
+
+<h2 class="name-of-the-title">Phone number </h2> 
+
+<p class="detail-from-user-to-buy"><%=user.getPhoneNumber() %></p>
+
+<h2 class="name-of-the-title">Email </h2> 
+
+<p class="detail-from-user-to-buy"><%=user.getEmail() %></p>
+
+<h2 class="name-of-the-title">Ticket ID </h2>
+
+<p class="detail-from-user-to-buy"> <%=ticket.getTicketId() %> </p>
+
+</div>
+
+<div class="ticket-show-detail-1">
+
+<h2 class="name-of-the-title">From Date</h2> 
+
+<p class="detail-from-user-to-buy"> <%=ticket.getFromDate() %></p>
+
+<h2 class="name-of-the-title">To Date </h2> 
+
+<p class="detail-from-user-to-buy"><%=ticket.getToDate() %></p>
+
+<h2 class="name-of-the-title">Total No Of Days</h2>
+
+<p class="detail-from-user-to-buy"> <%=ticket.getNoOfDays()%> </p>
+
+<h2 class="name-of-the-title">Status</h2>
+
+<p class="status-booked"> Booked </p>
+
+</div>
+
+
+<div class="ticket-show-detail-2">
+
+<h2 class="name-of-the-title">Adult </h2> 
+<p class="detail-from-user-to-buy"> <%=ticket.getNoOfAdult() %> </p>
+
+<h2 class="name-of-the-title">Children</h2>
+
+<p class="detail-from-user-to-buy"> <%=ticket.getNoOfChildren() %> </p>
+
+<h2 class="name-of-the-title">Total Price </h2>
+
+<p class="detail-from-user-to-buy">$ <%=ticket.getTotalPrice() %></p>
+
+</div> 
+
+</div>
+                  
+        </div>
+        <br>
+        <br>
+    <% } %>
+    
+    <% if (!listOfRoomsBookedByUser.isEmpty()) { %>
+        <!-- User also booked rooms -->
+        <% for (UserRoom userRoom : listOfRoomsBookedByUser) { %>
+            <!-- Display room information -->
+            <div class="background-image-hotel">
+                
+                <div class="total-div-for-ticket-detail">
+
+<div class="ticket-show-detail-0">
+<h2 class="name-of-the-title">Name </h2> 
+
+<p class="detail-from-user-to-buy"><%=user.getFirstName() %></p>
+
+<h2 class="name-of-the-title">Phone number </h2> 
+
+<p class="detail-from-user-to-buy"><%=user.getPhoneNumber() %></p>
+
+<h2 class="name-of-the-title">Email </h2> 
+
+<p class="detail-from-user-to-buy"><%=user.getEmail() %></p>
+
+<h2 class="name-of-the-title">Room ID </h2>
+
+<p class="detail-from-user-to-buy"> <%=userRoom.getRoomId()%> </p>
+
+</div>
+
+<div class="ticket-show-detail-1">
+
+<h2 class="name-of-the-title">Room Total Price</h2>
+
+<p class="detail-from-user-to-buy"> <%=userRoom.getTotalPrice()%> </p>
+
+<h2 class="name-of-the-title">Status</h2>
+
+<p class="status-booked"> Booked </p>
+
+</div>
+
+
+<div class="ticket-show-detail-2">
+
+</div> 
+
+</div>
+</div>
+                
+            </div>
+            <br>
+            <br>
+        <% } %>
+    <% } %>
+<% } %> --%>
+
 
 
 </body>

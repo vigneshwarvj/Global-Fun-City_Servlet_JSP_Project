@@ -13,6 +13,7 @@
         <title> About - Global Fun City </title>
 
         <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/home.css">
+        <link rel="stylesheet" type="text/css"  href="<%=request.getContextPath()%>/assets/homepage_css/footer_gfc.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -122,7 +123,7 @@
 
 <div class="para">
     <p>Welcome to GLOBAL FUN CITY, only one of its kind in this part of the region, promises you non-stop fun. Just like the waves.
-        It’s a place where you can treat your family to an out of world experience. A chance to be a part of the magic, allure, and grandeur
+        It's a place where you can treat your family to an out of world experience. A chance to be a part of the magic, allure, and grandeur
         that defies the very spirit of fun, entertainment, and relaxation also we have World-Class water sports. <br>
         <br>
 
@@ -227,118 +228,11 @@
 </div>
 </section>
 
-<footer>
-<div class="logo">
-    <img src="<%=request.getContextPath()%>/assets/images/globalfuncitylogo.png" class="footer-logo" alt="logo">
-</div>
+<footer class="footer_for_gfc">
 
-<div class="address-open-hours-contact">	
-    <div class="address">
-        <h3>Location</h3>
-        <p>11113 W Baldwin RD, Monrovia, MD 21770, United States of America.</p>
-    </div>
-
-    <div class="open-hours">
-        <h3>Open Hours</h3>
-        <p>
-            Weekdays: 09.30 am - 06:00 pm.<br>
-            Weekends and Holidays: 09.30 am - 06.30 pm.
-        </p>
-    </div>
-
-    <div class="contact-for-more">
-        <h3>Contact</h3>
-        <p>+1 860 817 1080</p>
-        <p>info@globalfuncity.in</p>
-    </div>
-</div>
-
-<div class="navbar-footer">
-    <ul>
-        <li>
-            <a class="navigation__link" href="/globalfuncityweb/index"> ABOUT US </a> 
-        </li>
-        <li>
-            <a class="navigation__link" href="/globalfuncityweb/events"> EVENTS  </a> 
-        </li>
-        <li>
-            <a class="navigation__link" href="/globalfuncityweb/offers"> OFFERS  </a> 
-        </li>
-        <li>
-            <a class="navigation__link" href="/globalfuncityweb/ticketprices"> TICKET  PRICES </a> 
-        </li>
-        <li>
-            <a class="navigation__link" href="../../pages/shop/shop.html"> SHOP </a> 
-        </li>
-        <li>
-            <a class="navigation__link" href="/globalfuncityweb/attractions"> ATTRACTIONS </a> 
-        </li>
-        <li>
-            <a class="navigation__link" href="/globalfuncityweb/contact"> CONTACT  </a> 
-        </li>
-    </ul>
-
-</div>
-
-<div class="other-navbar-footer">
-    <ul>
-        <li>
-            <a class="other-navigation-link" href="../../pages/footer other pages/privacypolicy.html">PRIVACY POLICY</a>
-        </li>
-        <li>
-            <a class="other-navigation-link" href="../../pages/footer other pages/safetyofvisitors.html">SAFETY AND HYGIENE</a>
-        </li>
-        <li>
-            <a class="other-navigation-link" href="../../pages/footer other pages/rulesandregulations.html">RULES & REGULTIONS</a>
-        </li>
-        <li>
-            <a class="other-navigation-link" href="../../pages/footer other pages/greeninitiatives.html">GREEN INITIATIVES</a>
-        </li>
-        <li>
-            <a class="other-navigation-link" href="../../pages/footer other pages/csrinitiatives.html">CSR INITIATIVES</a>
-        </li>
-    </ul>
-</div>
-
-<div class="social-medias">
-    <div class="facebook">
-        <a href="#">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-    </div>
-
-    <div class="twitter">
-        <a href="#">
-            <i class="fab fa-twitter"></i>
-        </a>
-    </div>
-
-    <div class="pinterest">
-        <a href="#">
-            <i class="fab fa-pinterest"></i>
-        </a>
-    </div>
-
-    <div class="instagram">
-        <a href="#">
-            <i class="fab fa-instagram"></i>
-        </a>
-    </div>
-
-    <div class="youtube">
-        <a href="#">
-            <i class="fab fa-youtube"></i>
-        </a>
-    </div>
-
-</div>
-<hr class="footer-hr">
-<div class="copyright">
-    <p>Global Fun City &#169; 2022. All rights Reserved.
-        <br>Site designed by Vignesh.in
-    </p>
-</div>
 </footer>
+
+<script src="<%=request.getContextPath()%>/js/footer.js"></script>
 
  <script>
  // sidebar for mobile started

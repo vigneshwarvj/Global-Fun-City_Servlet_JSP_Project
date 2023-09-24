@@ -57,7 +57,7 @@ if (user == null) {
             event.preventDefault();
 
             //Confirmation
-            const confirmed = window.confirm("Are you sure you want to log out of your account?");
+            const confirmed = window.confirm("Are you sure you want to sign out?");
             
             // If the user confirms, log them out
             if (confirmed) {

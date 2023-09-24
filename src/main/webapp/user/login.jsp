@@ -104,7 +104,7 @@
         
         <div id="alertMessage" style="display: none;"></div>
 
-    <script>
+<script>
     // Get the alert message from the server-side
     const alertMessage = "<%= request.getAttribute("alertMessage") %>";
 

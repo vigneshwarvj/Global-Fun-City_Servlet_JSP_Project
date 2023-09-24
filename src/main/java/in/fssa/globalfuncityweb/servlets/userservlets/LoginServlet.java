@@ -41,11 +41,18 @@ public class LoginServlet extends HttpServlet {
 		    if (user == null) {
 		        System.out.println("User not found");
 		    } else if (!password.equals(user.getPassword())) {
-		    	request.setAttribute("alertMessage", "Incorrect email or password.");
-		    	request.getRequestDispatcher("/user/login.jsp").forward(request, response);
+		    	
+		    	throw new ValidationException("Incorrect Password");
+		    	
+		    	//request.setAttribute("alertMessage", "Incorrect email or password.");
+		    	//request.getRequestDispatcher("/user/login.jsp").forward(request, response);
+		    	
+		    	
 
-		        System.out.println("Incorrect Email or Password:(");
+		        //System.out.println("Incorrect Email or Password:(");
+		        
 		    } else {
+		    	
 		    	request.setAttribute("alertMessage", "Login successful");
 		    	System.out.println("Login Successfull:)");
 		       
@@ -58,15 +65,16 @@ public class LoginServlet extends HttpServlet {
 		    
 		    }
            
-		} catch (ServiceException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
+			
 			PrintWriter consoleOutput = response.getWriter();
-			consoleOutput.println(e.getMessage());
-		} catch (ValidationException e) {
-			e.printStackTrace();
-			PrintWriter consoleOutput = response.getWriter();
-			consoleOutput.println(e.getMessage());
-		}
+			consoleOutput.println("<script>alert('"+ e.getMessage() +"');</script>");
+			consoleOutput.println("<script>window.history.back();</script>");
+			
+			//consoleOutput.println(e.getMessage());
+			
+		} 
 	}
 	}
 

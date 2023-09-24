@@ -8,6 +8,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import in.fssa.globalfuncity.exception.PersistenceException;
+import in.fssa.globalfuncity.service.RoomService;
+import in.fssa.globalfuncity.service.UserRoomService;
 
 /**
  * Servlet implementation class RoomBooking
@@ -26,18 +31,54 @@ public class RoomBooking extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    try {
+	    	HttpServletResponse res = (HttpServletResponse) response;
+			res.setHeader("Access-Control-Allow-Origin", "*"); // Replace '*' with your allowed origin(s)
+			res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+			res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+			
 	        // Get the roomId and roomPrice values from the request parameters
 	        String roomIdStr = request.getParameter("roomId");
-	        String roomPriceStr = request.getParameter("roomPrice");
-	        String userId = request.getParameter("userId");
-	        String ticketId = request.getParameter("tickerId");
-	        int roomId = Integer.parseInt(roomIdStr);
-	        int roomPrice = Integer.parseInt(roomPriceStr);
+	        System.out.println(roomIdStr);
 	        
-	        //int totalPrice = roomPrice *  
+	        String roomPriceStr = request.getParameter("roomPrice");
+	        System.out.println(roomPriceStr);
+	        
+	        HttpSession session = request.getSession(false);
 
-	    } catch (NumberFormatException e) {
+	        Integer userId = (Integer) session.getAttribute("userId");
+	        System.out.println(userId);
+	        
+	        int ticketId =Integer.parseInt(request.getParameter("ticketId"));
+	        System.out.println(ticketId);
+	        
+	        int roomId = Integer.parseInt(roomIdStr);
+	        System.out.println(ticketId);
+	        
+	        int roomPrice = Integer.parseInt(roomPriceStr);
+	        System.out.println(roomPrice);
+	        
+	        String roomName = request.getParameter("roomName");
+	        System.out.println(roomName);
+	        
+	        int noOfNights = Integer.parseInt(request.getParameter("noOfNights"));
+	        System.out.println(noOfNights);
+	        
+	        int totalPrice = noOfNights * roomPrice;
+	        System.out.println(totalPrice);
+	        
+	        UserRoomService userRoomSerivce = new UserRoomService();
+	        
+	        userRoomSerivce.bookRoom(userId, ticketId, roomId, roomName, noOfNights, totalPrice);
+	         
+	        response.setStatus(HttpServletResponse.SC_OK);
+
+	    } catch (NumberFormatException | PersistenceException e) {
 	        e.printStackTrace();
+	        String errorMessage = e.getMessage();
+			response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+			response.setContentType("application/json");
+			response.setCharacterEncoding("UTF-8");
+			response.getWriter().write(errorMessage);
 	    }
 	}
 

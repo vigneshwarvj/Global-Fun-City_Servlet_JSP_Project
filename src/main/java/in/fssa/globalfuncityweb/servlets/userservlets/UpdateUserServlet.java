@@ -41,6 +41,9 @@ public class UpdateUserServlet extends HttpServlet {
 			//FirstName
 			user.setFirstName(request.getParameter("first_name"));
 			
+			//MiddleName
+			user.setMiddleName(request.getParameter("middle_name"));
+			
 			//LastName
 			user.setLastName(request.getParameter("last_name"));
 			

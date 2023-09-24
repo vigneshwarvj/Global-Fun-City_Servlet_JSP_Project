@@ -4,12 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Room Booking | Global Fun City</title>
+<title>Insert title here</title>
 </head>
 <body>
-
-<h1>Room has been booked!</h1>
-<a href= "<%=request.getContextPath()%>/index">Home</a>
 
 </body>
 </html>

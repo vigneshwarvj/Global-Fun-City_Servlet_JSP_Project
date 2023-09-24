@@ -48,6 +48,76 @@
 	border: none;
 	cursor: pointer;
 }
+
+/* Style for checkbox */
+/* .checkbox-container {
+  display: inline-block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+}
+
+.custom-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.custom-checkbox:checked ~ .checkmark {
+  background-color: #2196F3;
+  box-shadow: 0 3px 7px rgba(33, 150, 243, 0.3);
+}
+
+.custom-checkbox:checked ~ .checkmark:after {
+  display: block;
+}
+
+@keyframes checkAnim {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 10px;
+  }
+}
+
+.custom-checkbox:checked ~ .checkmark:after {
+  animation: checkAnim 0.2s forwards;
+} */
+
+
+
 </style>
 
 </head>
@@ -116,7 +186,7 @@
 		<h1>Book Now</h1>
 	</div>
 
-<div class="background-color" style="height: 710px;">
+<div class="background-color" style="height: 750px;">
 <!--background color for search-->
 
 	<div class="search">
@@ -187,6 +257,11 @@
     </ol>
 </div>
 
+<p class="terms-and-conditions-p"><label class="checkbox-container">
+    <input class="custom-checkbox" checked="" type="checkbox" required>
+    <span class="checkmark"></span>
+</label>By Clicking, I have read and understood the Terms and Conditions.</p>
+
 <button class="btn-book-now" type="submit">Book Ticket</button>
 
 
@@ -215,53 +290,7 @@ document.getElementById("checkOutdate").setAttribute("min", tomorrowFormatted);
 
 
 
-//Counting Increment for Adult:
-let count = 1;
-document.getElementById("add_adult").addEventListener("click",function(event){
-    count++;
-    document.getElementById("totalClicksAdult").innerText = count;
-    //Increasing the total price in the price space:
-    //let newAdultPrice = count * adultPrice;
-    //document.getElementById("add_adultPrice").innerText = "Adult Price: $" + newAdultPrice;
-})
-
-//Counting Decrement for Adult:
-document.getElementById("sub_adult").addEventListener("click",function(event){
-    if(count > 1){
-        count--;
-        document.getElementById("totalClicksAdult").innerText = count;
-        //Decreasing the total price in the price space:
-        //let newAdultPrice = count * adultPrice;
-        //document.getElementById("add_adultPrice").innerText = "Adult Price: $" + newAdultPrice;
-    }
-    else{ //Goes down to 1: Alert
-        alert("Oops! Give a valid number")
-    }
-})
-
-//Counting Increment for Children:
-let countChildren = 0;
-document.getElementById("add_children").addEventListener("click", function (event) {
-    countChildren ++;
-    document.getElementById("totalClicksChildren").innerText = countChildren;
-    //Increasing the total price in the price space:
-    //let newChildrenPrice = countChildren * childrenPrice;
-    //document.getElementById("add_childrenPrice").innerText = "Children Price: $" + newChildrenPrice;
-})
-
-//Counting Decrement for Children:
-document.getElementById("sub_children").addEventListener("click", function (event) {
-    if(countChildren > 0){
-        countChildren --;
-        document.getElementById("totalClicksChildren").innerText = countChildren;
-        //Decreasing the total price in the price space:
-        //let newChildrenPrice = countChildren * childrenPrice;
-        //document.getElementById("add_childrenPrice").innerText = "Children Price: $" + newChildrenPrice;
-    }
-})
-
-
-    const yesRadioButton = document.getElementById("yes");
+/*     const yesRadioButton = document.getElementById("yes");
     const noRadioButton = document.getElementById("no");
 
     yesRadioButton.addEventListener("change", function () {
@@ -276,7 +305,7 @@ document.getElementById("sub_children").addEventListener("click", function (even
         if (noRadioButton.checked) {
             window.location.href = "booked_success.jsp";
         }
-    });
+    }); */
 
 </script>
 

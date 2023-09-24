@@ -93,8 +93,9 @@
 <hr>
   
   <section class="total_section_to_rooms">
-  	<input type="hidden" id="tickeId" value="<%= request.getAttribute("trackId")%>"/> 
-  	<input type="hidden" id="userId" value="<%=request.getSession(false).getAttribute("userId")%>" /> 
+  	<input type="hidden" id="ticketId" value="<%=request.getAttribute("trackId")%>"/>  
+  	<input type="hidden" id="noOfNights" value="<%=request.getAttribute("noOfNights")%>"/>
+  	<input type="hidden" id="roomName" value="<%=request.getAttribute("roomName") %>" />
    <% for(Room room : listOfRooms){ %>
 
 
@@ -116,6 +117,9 @@
             <h5>Room ID: <%=room.getRoomId() %> </h5>
         </div>
     </div>
+    
+    <div id="booking-status-<%= room.getRoomId() %>"></div>
+    
 </div>
 
 <div class="break-price-button"> 
@@ -130,10 +134,10 @@
     </div>
 
     <div class="price">
-        <span>$<%= room.getPrice() %></span>/ night
+        <span>$<%= room.getPrice()%></span>/ night
         <br>
         &nbsp; 
-           <button class="book-now-button" data-room-id="<%= room.getRoomId() %>" data-room-price="<%= room.getPrice() %>">Book Now</button>
+           <button class="book-now-button" data-room-id="<%= room.getRoomId() %>" data-room-price="<%= room.getPrice() %>" data-room-name="<%= room.getHotelName() %>">Book Now</button>
       
     </div>
 </div>
@@ -149,25 +153,31 @@
 </div>
 
 <script>
+
+/* const root = window.location.origin + "/globalfuncityweb";
 document.addEventListener("DOMContentLoaded", function () {
     const bookNowButtons = document.querySelectorAll(".book-now-button");
+    
 
     bookNowButtons.forEach(async function (button) {
         button.addEventListener("click", async function () {
             const roomId = button.getAttribute("data-room-id");
             const roomPrice = button.getAttribute("data-room-price");
-            const ticketId = document.querySelector("#tickeId");
-            const userId = document.querySelector("#userId");
-
+            const roomName = button.getAttribute("data-room-name");
+            const ticketId = document.querySelector("#ticketId").value;
+            console.log(ticketId);
+			const noOfnights = document.querySelector("#noOfNights").value;
+			console.log(noOfnights);
             // Prepare the request parameters
             const params = new URLSearchParams();
             params.append("roomId", roomId);
             params.append("roomPrice", roomPrice);
-            params.append("userId", userId);
+            params.append("roomName", roomName);
             params.append("ticketId", ticketId);
+            params.append("noOfNights", noOfnights);
 
             try {
-                const response = await fetch("/", {
+                const response = await fetch(root+"/user/roombooking_success", {
                     method: "POST",
                     headers: {
                         "Content-type": "application/x-www-form-urlencoded",
@@ -175,13 +185,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     body: params.toString(),
                 });
 
-                if (response.status === 200) {
+                if (!response.ok) {
                     // Handle the success response if needed
                     const responseBody = await response.text();
+                    alert("error occured")
                     // Redirect to another page or show a success message
                 } else {
                     // Handle the error response
                     console.error("Request failed with status:", response.status);
+                    window.location.href=root+"/user/roombooking_success";
                 }
             } catch (error) {
                 // Handle network errors or other exceptions
@@ -190,7 +202,355 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+ */
+ 
+ //Confirmation from Chat Alert "Select one of the rooms""
+ 
+ /* const root = window.location.origin + "/globalfuncityweb";
+ document.addEventListener("DOMContentLoaded", function () {
+	    const bookNowButtons = document.querySelectorAll(".book-now-button");
+	    const radioButtons = document.querySelectorAll(".room-radio");
 
+	    bookNowButtons.forEach(async function (button) {
+	        button.addEventListener("click", async function () {
+	            // Check if any radio button is selected
+	            let radioSelected = false;
+	            radioButtons.forEach(function (radioButton) {
+	                if (radioButton.checked) {
+	                    radioSelected = true;
+	                }
+	            });
+
+	            if (!radioSelected) {
+	                alert("Please select one of the rooms.");
+	                return; // Exit the function if no radio button is selected
+	            }
+
+	            const roomId = button.getAttribute("data-room-id");
+	            const roomPrice = button.getAttribute("data-room-price");
+	            const roomName = button.getAttribute("data-room-name");
+	            const ticketId = document.querySelector("#ticketId").value;
+	            const noOfNights = document.querySelector("#noOfNights").value;
+
+	            // Prepare the request parameters
+	            const params = new URLSearchParams();
+	            params.append("roomId", roomId);
+	            params.append("roomPrice", roomPrice);
+	            params.append("roomName", roomName);
+	            params.append("ticketId", ticketId);
+	            params.append("noOfNights", noOfNights);
+
+	            try {
+	                const response = await fetch(root + "/user/roombooking_success", {
+	                    method: "POST",
+	                    headers: {
+	                        "Content-type": "application/x-www-form-urlencoded",
+	                    },
+	                    body: params.toString(),
+	                });
+
+	                if (!response.ok) {
+	                    // Handle the success response if needed
+	                    const responseBody = await response.text();
+	                    alert("error occurred");
+	                    // Redirect to another page or show a success message
+	                } else {
+	                    // Handle the error response
+	                    console.error("Request failed with status:", response.status);
+	                    window.location.href = root + "/user/roombooking_success";
+	                }
+	            } catch (error) {
+	                // Handle network errors or other exceptions
+	                console.error("Error:", error);
+	            }
+	        });
+	    });
+	}); */
+	
+	
+	//Alert as Room has been booked
+	
+  	const root = window.location.origin + "/globalfuncityweb";
+	document.addEventListener("DOMContentLoaded", function () {
+	    const bookNowButtons = document.querySelectorAll(".book-now-button");
+	    const radioButtons = document.querySelectorAll(".room-radio");
+
+	    bookNowButtons.forEach(async function (button) {
+	        button.addEventListener("click", async function () {
+	            // Check if any radio button is selected
+	            let radioSelected = false;
+	            let selectedRoomId = null;
+
+	            radioButtons.forEach(function (radioButton) {
+	                if (radioButton.checked) {
+	                    radioSelected = true;
+	                    selectedRoomId = radioButton.value;
+	                }
+	            });
+
+	            if (!radioSelected) {
+	                alert("Please select one of the rooms.");
+	                return; // Exit the function if no radio button is selected
+	            }
+
+	            // Gather room ID, price, and other details
+	            const roomId = button.getAttribute("data-room-id");
+	            const roomPrice = button.getAttribute("data-room-price");
+	            const roomName = button.getAttribute("data-room-name");
+	            const ticketId = document.querySelector("#ticketId").value;
+	            const noOfNights = document.querySelector("#noOfNights").value;
+
+	            // Perform a database query to check for existing bookings
+	            const isRoomBooked = await checkRoomAvailability(selectedRoomId, ticketId);
+
+	            if (isRoomBooked) {
+	                alert("Room has already been booked for these dates. Please choose another room.");
+	                return; // Exit the function if the room is already booked
+	            }
+
+	            // If everything is okay, proceed with the booking
+	            const params = new URLSearchParams();
+	            params.append("roomId", roomId);
+	            params.append("roomPrice", roomPrice);
+	            params.append("roomName", roomName);
+	            params.append("ticketId", ticketId);
+	            params.append("noOfNights", noOfNights);
+
+	            try {
+	                const response = await fetch(root + "/user/roombooking_success", {
+	                    method: "POST",
+	                    headers: {
+	                        "Content-type": "application/x-www-form-urlencoded",
+	                    },
+	                    body: params.toString(),
+	                });
+
+	                if (!response.ok) {
+	                    // Handle the success response if needed
+	                    const responseBody = await response.text();
+	                    alert("error occurred");
+	                    // Redirect to another page or show a success message
+	                } else {
+	                    // Handle the error response
+	                    console.error("Request failed with status:", response.status);
+	                    window.location.href = root + "/user/roombooking_success";
+	                }
+	            } catch (error) {
+	                // Handle network errors or other exceptions
+	                console.error("Error:", error);
+	            }
+	        });
+	    });
+	});
+
+	async function checkRoomAvailability(roomId, ticketId) {
+	    try {
+	        const response = await fetch(root + `/checkAvailability?roomId=${roomId}&ticketId=${ticketId}`);
+
+	        if (response.ok) {
+	            const data = await response.json();
+	            return data.isRoomBooked; // Assuming your server returns a JSON object with a boolean field
+	        } else {
+	            console.error("Error checking room availability:", response.status);
+	            return true; // Assume room is booked in case of an error
+	        }
+	    } catch (error) {
+	        console.error("Error checking room availability:", error);
+	        return true; // Assume room is booked in case of an error
+	    }
+	}  
+
+
+/* 	 const root = window.location.origin + "/globalfuncityweb";
+	document.addEventListener("DOMContentLoaded", function () {
+	    const bookNowButtons = document.querySelectorAll(".book-now-button");
+	    const radioButtons = document.querySelectorAll(".room-radio");
+	    const bookingStatusDiv = document.getElementById("booking-status");
+
+	    bookNowButtons.forEach(async function (button) {
+	        button.addEventListener("click", async function () {
+	            // Check if any radio button is selected
+	            let radioSelected = false;
+	            let selectedRoomId = null;
+
+	            radioButtons.forEach(function (radioButton) {
+	                if (radioButton.checked) {
+	                    radioSelected = true;
+	                    selectedRoomId = radioButton.value;
+	                }
+	            });
+
+	            if (!radioSelected) {
+	                alert("Please select one of the rooms.");
+	                return; // Exit the function if no radio button is selected
+	            }
+
+	            // Gather room ID, price, and other details
+	            const roomId = button.getAttribute("data-room-id");
+	            const roomPrice = button.getAttribute("data-room-price");
+	            const roomName = button.getAttribute("data-room-name");
+	            const ticketId = document.querySelector("#ticketId").value;
+	            const noOfNights = document.querySelector("#noOfNights").value;
+
+	            // Perform a database query to check for existing bookings
+	            const isRoomBooked = await checkRoomAvailability(selectedRoomId, ticketId);
+
+	            if (isRoomBooked) {
+	                // Display booking status
+	                bookingStatusDiv.textContent = "Room has been booked.";
+	                bookingStatusDiv.style.color = "red";
+
+	                // Disable the "Book Now" button
+	                button.disabled = true;
+	                return; // Exit the function if the room is already booked
+	            }
+
+
+	            // If everything is okay, proceed with the booking
+	            const params = new URLSearchParams();
+	            params.append("roomId", roomId);
+	            params.append("roomPrice", roomPrice);
+	            params.append("roomName", roomName);
+	            params.append("ticketId", ticketId);
+	            params.append("noOfNights", noOfNights);
+
+	            try {
+	                const response = await fetch(root + "/user/roombooking_success", {
+	                    method: "POST",
+	                    headers: {
+	                        "Content-type": "application/x-www-form-urlencoded",
+	                    },
+	                    body: params.toString(),
+	                });
+
+	                if (!response.ok) {
+	                    // Handle the success response if needed
+	                    const responseBody = await response.text();
+	                    alert("error occurred");
+	                    // Redirect to another page or show a success message
+	                } else {
+	                    // Handle the error response
+	                    console.error("Request failed with status:", response.status);
+	                    window.location.href = root + "/user/roombooking_success";
+	                }
+	            } catch (error) {
+	                // Handle network errors or other exceptions
+	                console.error("Error:", error);
+	            }
+	        });
+	    });
+	});
+	
+	// Define the checkRoomAvailability function
+    async function checkRoomAvailability(roomId, ticketId) {
+        try {
+            const response = await fetch(`/globalfuncityweb/user/checkRoomAvailability?roomId=${roomId}&ticketId=${ticketId}`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const data = await response.json();
+            return data.isAvailable; // Assuming the response contains a property 'isAvailable'
+        } catch (error) {
+            console.error('Error checking room availability:', error);
+            return false; // Return false on error
+        }
+    } */
+
+ 
+    
+ // ...
+/*  
+  const root = window.location.origin + "/globalfuncityweb";
+	document.addEventListener("DOMContentLoaded", function () {
+	    const bookNowButtons = document.querySelectorAll(".book-now-button");
+	    const radioButtons = document.querySelectorAll(".room-radio");
+	    const bookingStatusDiv = document.getElementById("booking-status");
+
+	 // ...
+
+	    bookNowButtons.forEach(async function (button) {
+	        button.addEventListener("click", async function () {
+	            // Check if any radio button is selected
+	            let radioSelected = false;
+	            let selectedRoomId = null;
+
+	            radioButtons.forEach(function (radioButton) {
+	                if (radioButton.checked) {
+	                    radioSelected = true;
+	                    selectedRoomId = radioButton.value;
+	                }
+	            });
+
+	            if (!radioSelected) {
+	                alert("Please select one of the rooms.");
+	                return; // Exit the function if no radio button is selected
+	            }
+
+	            // Gather room ID, price, and other details
+	            const roomId = button.getAttribute("data-room-id");
+	            const roomPrice = button.getAttribute("data-room-price");
+	            const roomName = button.getAttribute("data-room-name");
+	            const ticketId = document.querySelector("#ticketId").value;
+	            const noOfNights = document.querySelector("#noOfNights").value;
+
+	            // Perform a database query to check for existing bookings
+	            const isRoomBooked = await checkRoomAvailability(selectedRoomId, ticketId);
+
+	            // Display the message in the specific room details
+	            const bookingStatusDiv = document.querySelector(`#booking-status-${selectedRoomId}`);
+	            if (bookingStatusDiv) {
+	                if (isRoomBooked) {
+	                    bookingStatusDiv.textContent = "Room has been booked. Choose any other room.";
+	                    bookingStatusDiv.style.color = "red"; // You can apply styles if needed
+	                    // Disable the "Book Now" button
+	                    button.disabled = true;
+	                    return; // Exit the function if the room is already booked
+	                } else {
+	                    // Clear the message if the room is available
+	                    bookingStatusDiv.textContent = "";
+	                    bookingStatusDiv.style.color = ""; // Reset the style
+	                    // Enable the "Book Now" button
+	                    button.disabled = false;
+	                }
+	            }
+
+	            // If everything is okay, proceed with the booking
+	            const params = new URLSearchParams();
+	            params.append("roomId", roomId);
+	            params.append("roomPrice", roomPrice);
+	            params.append("roomName", roomName);
+	            params.append("ticketId", ticketId);
+	            params.append("noOfNights", noOfNights);
+
+	            try {
+	                const response = await fetch(root + "/user/roombooking_success", {
+	                    method: "POST",
+	                    headers: {
+	                        "Content-type": "application/x-www-form-urlencoded",
+	                    },
+	                    body: params.toString(),
+	                });
+
+	                if (!response.ok) {
+	                    // Handle the success response if needed
+	                    const responseBody = await response.text();
+	                    alert("error occurred");
+	                    // Redirect to another page or show a success message
+	                } else {
+	                    // Handle the error response
+	                    console.error("Request failed with status:", response.status);
+	                    window.location.href = root + "/user/roombooking_success";
+	                }
+	            } catch (error) {
+	                // Handle network errors or other exceptions
+	                console.error("Error:", error);
+	            }
+	        });
+	    }); */
+
+
+ 
+ 
 </script>
 
 

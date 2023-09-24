@@ -186,7 +186,7 @@
                 <div class="account-manage">
                     <div class="account">
                         <h1>
-                            <a href="../../pages/homepage/user_hotels.html">
+                            <a href="/globalfuncityweb/user_dashboard/roomshistory">
                                 <i class="fa-solid fa-hotel"></i></i> &NonBreakingSpace; Booked Rooms
                             </a>
                         </h1>
@@ -198,7 +198,7 @@
                 </div>
         
                 <span class="arrow">
-                    <a href="">
+                    <a href="/globalfuncityweb/user_dashboard/roomshistory">
                         <i class="fa-solid fa-angle-right"></i> 
                     </a>
                 </span>
