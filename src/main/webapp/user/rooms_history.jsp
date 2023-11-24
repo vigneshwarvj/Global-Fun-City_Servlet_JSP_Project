@@ -10,7 +10,7 @@
 <head>
 		<meta charset="ISO-8859-1">
 		<meta charset="UTF-8">
-        <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+        <link rel="icon" type="image/x-icon" href="<%=request.getContextPath()%>/assets/images/favicon.png">
 
         <title> Your Rooms History | Global Fun City </title>
         <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/homepage css/user_tickets.css">
@@ -72,48 +72,48 @@
 <jsp:include page="header.jsp"></jsp:include>
 
 		<div class="header">
-            <a href="/globalfuncityweb/index">
+            <a href="<%=request.getContextPath()%>/index">
                 <img src="<%=request.getContextPath()%>/assets/images/globalfuncitylogo.png" class="header-logo" width="200px" alt="logo">
             </a>
             <nav class="navbar">
                 <ul>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/index">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/index">
                             <b>HOME</b>
                         </a>
                     </li>   
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/about">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/about">
                             <b>ABOUT</b> 
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/events">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/events">
                             <b>EVENTS </b> 
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/offers">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/offers">
                             <b>OFFERS </b> 
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/ticketprices">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/ticketprices">
                             <b>TICKET  PRICES </b>
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="../../pages/shop/shop.html">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/globalshop">
                             <b>SHOP</b>
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/attractions">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/attractions">
                             <b>ATTRACTIONS </b>
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/contact">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/contact">
                             <b>CONTACT </b> 
                         </a> 
                     </li>
@@ -193,7 +193,8 @@
 					<p class="detail-from-user-to-buy">Check Out: <%=ticket.getToDate() %></p>
 					<p class="detail-from-user-to-buy"> Adult : <%=ticket.getNoOfAdult() %></p>
 					<p class="detail-from-user-to-buy"> Children: <%=ticket.getNoOfChildren() %></p>
-					<p class="detail-from-user-to-buy">Ticket Total Price: $<%=ticket.getTotalPrice() %></p>  
+					<p class="detail-from-user-to-buy">Ticket Total Price: $<%=ticket.getTotalPrice() %></p>
+					<%-- <p class="detail-from-user-to-buy">Booked at: <%=ticket.getCreatedAt() %></p> --%>
                 </div>
             <% } %>
         <% } %>
@@ -204,7 +205,7 @@
 
 <h2 class="name-of-the-title">Room Details </h2>
 
-<p class="detail-from-user-to-buy">Room ID: <%=userRooms.getRoomId()%></p>
+<p class="detail-from-user-to-buy">Room No: <%=userRooms.getRoomId()%></p>
 <p class="detail-from-user-to-buy">Room Name: <%=userRooms.getRoomName()%></p>
 <p class="detail-from-user-to-buy">Room Total Price: $<%=userRooms.getTotalPrice() %></p>
 
@@ -229,6 +230,15 @@
 
 <% } %>
 <% } %>
+
+
+<footer class="footer_for_gfc">
+
+</footer>
+
+<script>var contextPath = '<%=request.getContextPath()%>';</script>
+
+<script src="<%=request.getContextPath()%>/js/footer.js"></script>
 
 
 </body>

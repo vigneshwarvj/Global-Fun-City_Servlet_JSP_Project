@@ -1,6 +1,9 @@
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
 encoding//src/main/resources=UTF-8
+encoding//src/main/webapp/footer/csr_initiatives.jsp=UTF-8
+encoding//src/main/webapp/footer/privacy_policy.jsp=UTF-8
+encoding//src/main/webapp/globalshop/globalshop.jsp=UTF-8
 encoding//src/main/webapp/user/about.jsp=UTF-8
 encoding//src/test/java=UTF-8
 encoding/<project>=UTF-8

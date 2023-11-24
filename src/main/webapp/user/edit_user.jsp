@@ -28,48 +28,48 @@
 	<jsp:include page="header.jsp"></jsp:include>
 
         <div class="header">
-            <a href="/globalfuncityweb/index">
+            <a href="<%=request.getContextPath()%>/index">
                 <img src="<%=request.getContextPath()%>/assets/images/globalfuncitylogo.png" class="header-logo" width="200px" alt="logo">
             </a>
             <nav class="navbar">
                 <ul>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/index">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/index">
                             <b>HOME</b>
                         </a>
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/about">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/about">
                             <b>ABOUT</b> 
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/events">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/events">
                             <b>EVENTS </b> 
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/offers">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/offers">
                             <b>OFFERS </b> 
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/ticketprices">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/ticketprices">
                             <b>TICKET  PRICES </b>
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="../../pages/shop/shop.html">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/globalshop">
                             <b>SHOP</b>
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/attractions">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/attractions">
                             <b>ATTRACTIONS </b>
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/contact">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/contact">
                             <b>CONTACT </b> 
                         </a> 
                     </li>
@@ -85,16 +85,16 @@
         <div class="total-homepages-div"> 
             <!-- Total Homepage div -->
         <div class="homepages">
-            <a href="/globalfuncityweb/index">Home <i class="fa-light fa-greater-than" style="color: #655b5b;"></i></a>
+            <a href="<%=request.getContextPath()%>/index">Home <i class="fa-light fa-greater-than" style="color: #655b5b;"></i></a>
         </div> &nbsp;
         <div class="homepages">
-            <a href="/globalfuncityweb/user_dashboard">Account <i class="fa-light fa-greater-than" style="color: #655b5b;"></i></a>
+            <a href="<%=request.getContextPath()%>/user_dashboard">Account <i class="fa-light fa-greater-than" style="color: #655b5b;"></i></a>
         </div> &nbsp;
         <div class="homepages">
-            <a href="/globalfuncityweb/user_dashboard/profile">Account Settings <i class="fa-light fa-greater-than" style="color: #655b5b;"></i> </a>
+            <a href="<%=request.getContextPath()%>/user_dashboard/profile">Account Settings <i class="fa-light fa-greater-than" style="color: #655b5b;"></i> </a>
         </div> &nbsp;
         <div class="homepages">
-            <a href="/globalfuncityweb/user_dashboard/edit">Edit Profile</a>
+            <a href="<%=request.getContextPath()%>/user_dashboard/edit">Edit Profile</a>
         </div>
 
         </div>
@@ -127,7 +127,7 @@
 
                         <label class="input-field">Mobile Phone </label>
                         <br>
-                        <input name="mobile_number" class="input-field" type="tel" value="<%=user.getPhoneNumber() %>" >
+                        <input name="mobile_number" class="input-field" type="tel" oninput="this.value = this.value.replace(/[^0-9]/g,'')" minlength="10" maxlength="10" pattern="[0-9]{10}" title="Phone Number must be exactly 10 digits" value="<%=user.getPhoneNumber() %>" >
 
                 </div>
 
@@ -135,7 +135,7 @@
 
                         <label class="input-field">Password</label>
                         <br>
-                        <input name="password" class="input-field" type="password" value = <%=user.getPassword() %> >
+                        <input name="password" class="input-field" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&amp;*_=+-]).{8,24}$" maxlength="10" minlength="8" title="Must contain at least one number, one uppercase, lowercase and one special character, and at least 8 - 10 characters." type="password" value = <%=user.getPassword() %> >
 
                 </div>
 
@@ -147,7 +147,7 @@
 
                         <label class="input-field">First Name</label>
                         <br>
-                        <input name="first_name" class="input-field" type="text" value="<%=user.getFirstName() %>" >
+                        <input name="first_name" class="input-field" type="text" pattern="[a-zA-Z]+" title="Don't give Numbers or empty space in the First Name"  value="<%=user.getFirstName() %>" >
 
                 </div>
 
@@ -155,7 +155,7 @@
 
                         <label class="input-field">Middle Name (optional)</label>
                         <br>
-                        <input name="middle_name" class="input-field" type="text" value="<%=user.getMiddleName() %>" >
+                        <input name="middle_name" class="input-field" type="text" pattern="[a-zA-Z]+" title="Don't give Numbers or empty space in the Middle Name" value="<%=user.getMiddleName() %>" >
 
                 </div>
 
@@ -163,16 +163,28 @@
 
                         <label class="input-field">Last Name</label>
                         <br>
-                        <input name="last_name" class="input-field" type="text" value="<%=user.getLastName() %>" >
+                        <input name="last_name" class="input-field" type="text" pattern="[a-zA-Z]+" title="Don't give Numbers or empty space in the Last Name" value="<%=user.getLastName() %>" >
 
                 </div>
 
 
                 <br>
                 <div class="btn-edit">
-                    <button type="submit" class="btn-1" id="edit-button">Update Information</button> 
+                    <button type="submit" class="btn-1" id="edit-button" style="color:white;">Update Information</button> 
                 </div>
-
+<br>
+<br>
+<br>
 				</form>
+		
+		</div>
+		</div>		
+<footer class="footer_for_gfc">
+
+</footer>
+
+<script>var contextPath = '<%=request.getContextPath()%>';</script>
+
+<script src="<%=request.getContextPath()%>/js/footer.js"></script>
 </body>
 </html>

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import in.fssa.globalfuncity.exception.PersistenceException;
+import in.fssa.globalfuncity.exception.ServiceException;
 import in.fssa.globalfuncity.model.Room;
 import in.fssa.globalfuncity.service.RoomService;
 
@@ -27,12 +28,18 @@ public class UserRoomsListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		try {
-			Set<Room> listOfRooms = RoomService.getAllRooms();
+			String checkIn = (String) request.getAttribute("checkIn");
+			String checkOut = (String) request.getAttribute("checkOut");
+			RoomService roomService = new RoomService();
+			Set<Room> listOfRooms = roomService.getAllRooms(checkIn,checkOut);
 			request.setAttribute("rooms_list", listOfRooms);
 			RequestDispatcher rd = request.getRequestDispatcher("user/rooms_list.jsp");
 			rd.forward(request, response);
 			
 		} catch (PersistenceException e) {
+			e.printStackTrace();
+		} catch (ServiceException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

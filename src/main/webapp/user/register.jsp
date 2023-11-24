@@ -99,7 +99,9 @@ p{
                         </span>
                       &nbsp;
                       
-                        <input type="email" name="email" placeholder="Email Address" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" required> &nbsp;
+                        <input type="email" name="email" placeholder="Email Address" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" 
+                        title="Enter a valid email address using the format email@domain.com. Your email address can only have letters, numbers, the @ symbol and a period, with no spaces." required> &nbsp;
+                        
                         <input type="password" name="password" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&amp;*_=+-]).{8,24}$" maxlength="10" minlength="8" title="Must contain at least one number, one uppercase, lowercase and one special character, and at least 8 - 10 characters." required> &nbsp;
                         <span class="pattern_desc_for_password" id="patternDescPassword" style="display: inline-block; width: 300px; font-family: 'poppins', sans-serif; font-size: 0.8rem;">
                             Must contain at least one number, one uppercase, lowercase and one special character, and at least 8 - 10 characters.
@@ -112,7 +114,7 @@ p{
                         </div>
                         <br>
                         <label>
-                            By creating an account, I agree to the Terms of Use and acknowledge that I have read the Privacy Policy.</a>
+                            By creating an account, I agree to the Terms of Use and acknowledge that I have read the <a href="<%=request.getContextPath()%>/privacy-policy">Privacy Policy</a>
                         </label>
 
                         <br>
@@ -120,7 +122,7 @@ p{
                          <button class="btn-create-account" type="submit" value="Submit">Create Account</button>
 
                         <h5>
-                            Already have an account? <a href="/globalfuncityweb/login">Sign In</a>
+                            Already have an account? <a href="<%=request.getContextPath()%>/login">Sign In</a>
                         </h5>
                     </form> 
                 </div>

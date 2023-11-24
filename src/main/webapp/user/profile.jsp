@@ -79,48 +79,48 @@ h4{
 	<jsp:include page="header.jsp"></jsp:include>
 
         <div class="header">
-            <a href="/globalfuncityweb/index">
+            <a href="<%=request.getContextPath()%>/index">
                 <img src="<%=request.getContextPath()%>/assets/images/globalfuncitylogo.png" class="header-logo" width="200px" alt="logo">
             </a>
             <nav class="navbar">
                 <ul>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/index">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/index">
                             <b>HOME</b>
                         </a>
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/about">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/about">
                             <b>ABOUT</b> 
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/events">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/events">
                             <b>EVENTS </b> 
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/offers">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/offers">
                             <b>OFFERS </b> 
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/ticketprices">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/ticketprices">
                             <b>TICKET  PRICES </b>
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="../../pages/shop/shop.html">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/globalshop">
                             <b>SHOP</b>
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/attractions">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/attractions">
                             <b>ATTRACTIONS </b>
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/contact">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/contact">
                             <b>CONTACT </b> 
                         </a> 
                     </li>
@@ -136,13 +136,13 @@ h4{
         <div class="total-homepages-div"> 
             <!-- Total Homepage div -->
         <div class="homepages">
-            <a href="/globalfuncityweb/index">Home <i class="fa-light fa-greater-than" style="color: #655b5b;"></i></a>
+            <a href="<%=request.getContextPath()%>/index">Home <i class="fa-light fa-greater-than" style="color: #655b5b;"></i></a>
         </div> &nbsp;
         <div class="homepages">
-            <a href="/globalfuncityweb/user_dashboard">Account <i class="fa-light fa-greater-than" style="color: #655b5b;"></i></a>
+            <a href="<%=request.getContextPath()%>/user_dashboard">Account <i class="fa-light fa-greater-than" style="color: #655b5b;"></i></a>
         </div> &nbsp;
         <div class="homepages">
-            <a href="/globalfuncityweb/user_dashboard/profile">Account Settings </a>
+            <a href="<%=request.getContextPath()%>/user_dashboard/profile">Account Settings </a>
         </div> 
 
         </div>
@@ -218,7 +218,7 @@ h4{
 
                 <div class="privacy">
                     <p>
-                        Global treats this information with care and respect. For details, review our Privacy Policy.
+                        Global treats this information with care and respect. For details, review our <a href="<%=request.getContextPath()%>/privacy-policy">Privacy Policy.</a>
                     </p>
                 </div>
 
@@ -231,6 +231,16 @@ h4{
                         By deleting your account, you may be unable to access certain Global services.
                     </p>
                 </div>
+                
+</div>
+</div>
+<footer class="footer_for_gfc">
+
+</footer>
+
+<script>var contextPath = '<%=request.getContextPath()%>';</script>
+
+<script src="<%=request.getContextPath()%>/js/footer.js"></script>
 
 </body>
 </html>

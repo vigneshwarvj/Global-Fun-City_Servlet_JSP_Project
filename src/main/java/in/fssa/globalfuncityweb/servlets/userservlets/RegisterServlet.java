@@ -1,6 +1,7 @@
 package in.fssa.globalfuncityweb.servlets.userservlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -35,6 +36,7 @@ public class RegisterServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		User user = new User();
+		PrintWriter out = response.getWriter();
 		
 		try {
 		user.setFirstName(request.getParameter("first_name"));
@@ -48,17 +50,17 @@ public class RegisterServlet extends HttpServlet {
 		user.setPhoneNumber(phNumber);
 		
 		System.out.println(user);
-		//doGet(request, response);
 		
 		UserService userService = new UserService();
 		userService.createUser(user);
 		response.sendRedirect(request.getContextPath()+"/login");
 		
-		} catch (ValidationException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		}  catch (PersistenceException e) {
-			e.printStackTrace();
-		}
+			
+			out.println("<script>alert('"+ e.getMessage() +"');</script>");
+			out.println("<script>window.history.back();</script>");
+		} 
 	}
 
 }

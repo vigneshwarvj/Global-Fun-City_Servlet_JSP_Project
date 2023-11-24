@@ -82,14 +82,15 @@
                 <img src="https://iili.io/Hy1uZru.png" width="250" alt="global-account">
                 <h3>Welcome Back!</h3>
             <form action="login" method="post">
-                    <input type="email" name="email" placeholder="Email Address" required> &nbsp;
-                    <input type="password" id="password" name="password" placeholder="Password" title="Please give one uppercase, one lowercase, one special character and one number miniumum is 8 character maximum 10 characters" required="true">
+                    <input type="email" name="email" placeholder="Email Address" id= "email" autofocus required> &nbsp;
+                    <input type="password" id="password" name="password" placeholder="Password"  title="Please give one uppercase, one lowercase, one special character and one number miniumum is 8 character maximum 10 characters" maxlength="10" minlength="8" required>
     
-                    <a href="">
+    &nbsp;
+                    <a href="" style="display:none">
                         <h4>Forgot Password?</h4> 
                     </a>
                     
-                   <button type="submit">Sign In</button>
+                   <button type="submit" id="submit_btn">Sign In</button>
                     
             </form>
             
@@ -103,6 +104,13 @@
         </div>
         
         <div id="alertMessage" style="display: none;"></div>
+        
+        <div class="rights" style="margin: 70px 0px 0px 0px;
+    color: black;
+    text-align: center; font-family: 'open sans', sans-serif;">
+        © 2023, Global Fun City, Inc. or its affiliates. All rights reserved.
+        </div>
+        
 
 <script>
     // Get the alert message from the server-side

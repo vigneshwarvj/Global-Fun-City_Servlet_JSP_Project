@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import in.fssa.globalfuncity.exception.PersistenceException;
+import in.fssa.globalfuncity.exception.ServiceException;
 import in.fssa.globalfuncity.model.Room;
 import in.fssa.globalfuncity.service.RoomService;
 
@@ -26,14 +27,17 @@ public class BookedSuccess extends HttpServlet {
 //		rd.forward(request, response);
 		
 			try {
-				Set<Room> listOfRooms = RoomService.getAllRooms();
+				String checkIn = (String) request.getAttribute("checkIn");
+				String checkOut = (String) request.getAttribute("checkOut");
+				RoomService roomService = new RoomService();
+				Set<Room> listOfRooms = roomService.getAllRooms(checkIn,checkOut);
 				System.out.println(request.getAttribute("trackId"));
 				request.setAttribute("rooms_list", listOfRooms);
 				
 				RequestDispatcher rdDispatcher = request.getRequestDispatcher("/user/booked_success.jsp");
 				rdDispatcher.forward(request, response);
 				
-			} catch (PersistenceException e) {
+			} catch (PersistenceException | ServiceException e) {
 				e.printStackTrace();
 			}
 		}

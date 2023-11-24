@@ -53,48 +53,48 @@
             <div class="icon-bar">
                 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
             </div>
-            <a href="/globalfuncityweb/index">
+            <a href="<%=request.getContextPath()%>/index">
                 <img src="<%=request.getContextPath()%>/assets/images/globalfuncitylogo.png" class="header-logo" width="200px" alt="logo">
             </a>
             <nav class="navbar">
                 <ul>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/index">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/index">
                             <b>HOME</b>
                         </a> 
                     </li>		
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/about">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/about">
                             <b>ABOUT</b> 
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/events">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/events">
                             <b>EVENTS </b> 
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/offers">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/offers">
                             <b>OFFERS </b> 
                         </a> 
                     </li>
                     <li>
-                        <a class="active" href="/globalfuncityweb/ticketprices">
+                        <a class="active" href="<%=request.getContextPath()%>/ticketprices">
                             <b>TICKET  PRICES </b>
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="../../pages/shop/shop.html">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/globalshop">
                             <b>SHOP</b>
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/attractions">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/attractions">
                             <b>ATTRACTIONS </b>
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/contact">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/contact">
                             <b>CONTACT </b> 
                         </a> 
                     </li>
@@ -130,9 +130,19 @@
                             $<span class="price-colour">80</span>/person
                         </h2>
                         <p>This ticket grants access to waterpark attractions, including waterslides, pools.</p>
-                        <button class="btn-book-now" id="btn-booknow-adult">
-                            <b>BOOK NOW </b>
-                        </button>
+                        
+						 <% if(request.getSession().getAttribute("userId") != null){ %>
+						
+						<button class="btn-book-now" id="btn-booknow-adult"> <a href="/globalfuncityweb/user/book_tickets" id = "btn-booknow"> <b>BOOK NOW </b> </a> </button>
+						
+						 <%}else { %>
+						 
+						 <button class="btn-book-now" id="btn-booknow-adult"> <a href="/globalfuncityweb/login" id = "btn-booknow"> <b>BOOK NOW </b> </a> </button>
+						 
+						 <%	 
+						} 
+						%>
+						
                     </div>
 
                     <div class="adult-ticket">
@@ -143,9 +153,19 @@
                             $<span class="price-colour">65</span>/person(5-17 years)
                         </h2>
                         <p>This ticket grants access to waterpark attractions, including waterslides, pools.</p>
-                        <button class="btn-ticket-book-now" id="btn-booknow-children">
-                            <b>BOOK NOW</b>
-                        </button> 
+                        
+                        
+                        <% if(request.getSession().getAttribute("userId") != null){ %>
+						
+						<button class="btn-ticket-book-now" id="btn-booknow-children"> <a href="<%=request.getContextPath()%>/book_tickets" id = "btn-booknow"> <b>BOOK NOW </b> </a> </button>
+						
+						 <%}else { %>
+						 
+						 <button class="btn-ticket-book-now" id="btn-booknow-children"> <a href="<%=request.getContextPath()%>/login" id = "btn-booknow"> <b>BOOK NOW </b> </a> </button>
+						 
+						 <%	 
+						} 
+						%>                        
                     </div>
                 </section>
             </div>
@@ -181,120 +201,13 @@
 	</div>
 </section>
 
+<footer class="footer_for_gfc">
 
-					<footer>
-                        <div class="logo">
-                            <img src="<%=request.getContextPath()%>/assets/images/globalfuncitylogo.png" class="footer-logo" alt="logo">
-                        </div>
+</footer>
 
-                        <div class="address-open-hours-contact">	
-                            <div class="address">
-                                <h3>Location</h3>
-                                <p>11113 W Baldwin RD, Monrovia, MD 21770, United States of America.</p>
-                            </div>
+<script>var contextPath = '<%=request.getContextPath()%>';</script>
 
-                            <div class="open-hours">
-                                <h3>Open Hours</h3>
-                                <p>
-                                    Weekdays: 09.30 am - 06:00 pm.<br>
-                                    Weekends and Holidays: 09.30 am - 06.30 pm.
-                                </p>
-                            </div>
+<script src="<%=request.getContextPath()%>/js/footer.js"></script>
 
-                            <div class="contact-for-more">
-                                <h3>Contact</h3>
-                                <p>+1 860 817 1080</p>
-                                <p>info@globalfuncity.in</p>
-                            </div>
-                        </div>
-
-                        <div class="navbar-footer">
-                            <ul>
-                                <li>
-                                    <a class="navigation__link" href="/globalfuncityweb/about"> ABOUT US </a> 
-                                </li>
-                                <li>
-                                    <a class="navigation__link" href="/globalfuncityweb/events"> EVENTS  </a> 
-                                </li>
-                                <li>
-                                    <a class="navigation__link" href="/globalfuncityweb/offers"> OFFERS  </a> 
-                                </li>
-                                <li>
-                                    <a class="navigation__link" href="/globalfuncityweb/ticketprices"> TICKET  PRICES </a> 
-                                </li>
-                                <li>
-                                    <a class="navigation__link" href="../../pages/shop/shop.html"> SHOP </a> 
-                                </li>
-                                <li>
-                                    <a class="navigation__link" href="/globalfuncityweb/attractions"> ATTRACTIONS </a> 
-                                </li>
-                                <li>
-                                    <a class="navigation__link" href="/globalfuncityweb/contact"> CONTACT  </a> 
-                                </li>
-                            </ul>
-
-                        </div>
-
-                        <div class="other-navbar-footer">
-                            <ul>
-                                <li>
-                                    <a class="other-navigation-link" href="../../pages/footer other pages/privacypolicy.html">PRIVACY POLICY</a>
-                                </li>
-                                <li>
-                                    <a class="other-navigation-link" href="../../pages/footer other pages/safetyofvisitors.html">SAFETY AND HYGIENE</a>
-                                </li>
-                                <li>
-                                    <a class="other-navigation-link" href="../../pages/footer other pages/rulesandregulations.html">RULES & REGULTIONS</a>
-                                </li>
-                                <li>
-                                    <a class="other-navigation-link" href="../../pages/footer other pages/greeninitiatives.html">GREEN INITIATIVES</a>
-                                </li>
-                                <li>
-                                    <a class="other-navigation-link" href="../../pages/footer other pages/csrinitiatives.html">CSR INITIATIVES</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="social-medias">
-                            <div class="facebook">
-                                <a href="#">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                            </div>
-
-                            <div class="twitter">
-                                <a href="#">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </div>
-
-                            <div class="pinterest">
-                                <a href="#">
-                                    <i class="fab fa-pinterest"></i>
-                                </a>
-                            </div>
-	
-                            <div class="instagram">
-                                <a href="#">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                            </div>
-
-                            <div class="youtube">
-                                <a href="#">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                            </div>
-		
-                        </div>
-                        <hr>
-                        <div class="copyright">
-                            <p>Global Fun City &#169; 2022. All rights Reserved.
-                                <br>Site designed by Vignesh.in
-                            </p>
-                        </div>
-                    </footer>
-
-                    <script>
 </body>
 </html>

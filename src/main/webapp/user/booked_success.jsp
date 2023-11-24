@@ -61,13 +61,14 @@
 				<div class="hurrah-gif">
                             <div class="hurrah">
                                 <h1>Hurrah! &#127881;</h1>
-                                <h2>Your Ticket is booked.</h2>
+                                <h2>Your Ticket is booked. <a href="<%=request.getContextPath()%>/user_dashboard">#<%=request.getAttribute("trackId")%></a> </h2>
                                 <h2>Enjoy the Vibe in Global Fun City.</h2>
                                 <h2>Your e-ticket has been sent to email id</h2>
-                                <a href="/globalfuncityweb/index">
+                                <a href="<%=request.getContextPath()%>/index">
                                     <button> <i class="fa-solid fa-arrow-left"></i> Back to Home</button>
                                 </a>
                             </div>
+                            
 
                             <div class="gif">
                                 <img src="https://iili.io/J9Fj8CX.gif" width="500" alt="gif">
@@ -75,9 +76,7 @@
                         </div>
 
 
-<% Set<Room> listOfRooms = (Set<Room>) request.getAttribute("rooms_list");%>
-  
-  
+		<% Set<Room> listOfRooms = (Set<Room>) request.getAttribute("rooms_list");%>
 
             <div class="background-0" style="height: auto;">
                 <div class="book-now">
@@ -86,6 +85,12 @@
   
   
 <div class="paddingFortotalAssign">
+
+					<div class="check-in" style="font-family: 'open sans', sans-serif;">
+                            <h4>You can Book Rooms Within these Check-in & Check-Out Dates:</h4>
+                            <h5>Check In Date: <%=request.getAttribute("checkIn") %> </h5>
+                            <h5>Check Out Date: <%=request.getAttribute("checkOut") %> </h5>
+                            </div>
 
 <div class="search-2">
     <h2>We also provide Excellent rooms to stay and Enjoy</h2>
@@ -96,6 +101,9 @@
   	<input type="hidden" id="ticketId" value="<%=request.getAttribute("trackId")%>"/>  
   	<input type="hidden" id="noOfNights" value="<%=request.getAttribute("noOfNights")%>"/>
   	<input type="hidden" id="roomName" value="<%=request.getAttribute("roomName") %>" />
+  	<input type="hidden" id="checkIn" value="<%=request.getAttribute("checkIn") %>" />
+  	<input type="hidden" id="checkOut" value="<%=request.getAttribute("checkOut") %>" />
+  	
    <% for(Room room : listOfRooms){ %>
 
 
@@ -114,7 +122,7 @@
             <h3><%= room.getHotelName() %></h3>
             <h4><%= room.getRoomName() %></h4>
             <h5>No of Beds:<%= room.getNoOfBeds() %></h5>
-            <h5>Room ID: <%=room.getRoomId() %> </h5>
+            <h5>Room No: <%=room.getRoomId() %> </h5>
         </div>
     </div>
     
@@ -152,9 +160,18 @@
 </div>
 </div>
 
+<footer class="footer_for_gfc">
+
+</footer>
+
+<script>var contextPath = '<%=request.getContextPath()%>';</script>
+
+<script src="<%=request.getContextPath()%>/js/footer.js"></script>
+
+
 <script>
 
-/* const root = window.location.origin + "/globalfuncityweb";
+ const root = window.location.origin + contextPath;
 document.addEventListener("DOMContentLoaded", function () {
     const bookNowButtons = document.querySelectorAll(".book-now-button");
     
@@ -168,6 +185,18 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(ticketId);
 			const noOfnights = document.querySelector("#noOfNights").value;
 			console.log(noOfnights);
+ 			const checkin = document.querySelector("#checkIn").value;
+			console.log(checkin);
+			const checkout = document.querySelector("#checkOut").value;
+			console.log(checkOut);
+			
+			
+			// Build the URL with query parameters
+            /* const nextPageUrl = `/globalfuncityweb/book_tickets?ticketId=${ticketId}`;
+
+            // Redirect to the next page with the updated URL
+            window.location.href = nextPageUrl; */
+			
             // Prepare the request parameters
             const params = new URLSearchParams();
             params.append("roomId", roomId);
@@ -175,6 +204,8 @@ document.addEventListener("DOMContentLoaded", function () {
             params.append("roomName", roomName);
             params.append("ticketId", ticketId);
             params.append("noOfNights", noOfnights);
+            params.append("checkIn", checkin);
+            params.append("checkOut", checkout);
 
             try {
                 const response = await fetch(root+"/user/roombooking_success", {
@@ -202,7 +233,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
- */
  
  //Confirmation from Chat Alert "Select one of the rooms""
  
@@ -270,7 +300,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	
 	//Alert as Room has been booked
 	
-  	const root = window.location.origin + "/globalfuncityweb";
+  /* 	const root = window.location.origin + "/globalfuncityweb";
 	document.addEventListener("DOMContentLoaded", function () {
 	    const bookNowButtons = document.querySelectorAll(".book-now-button");
 	    const radioButtons = document.querySelectorAll(".room-radio");
@@ -358,7 +388,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	        console.error("Error checking room availability:", error);
 	        return true; // Assume room is booked in case of an error
 	    }
-	}  
+	}   */
 
 
 /* 	 const root = window.location.origin + "/globalfuncityweb";

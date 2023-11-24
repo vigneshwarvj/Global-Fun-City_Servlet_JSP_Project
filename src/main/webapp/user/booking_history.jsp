@@ -72,48 +72,48 @@
 <jsp:include page="header.jsp"></jsp:include>
 
 <div class="header">
-<a href="/globalfuncityweb/index">
+<a href="<%=request.getContextPath()%>/index">
 <img src="<%=request.getContextPath()%>/assets/images/globalfuncitylogo.png" class="header-logo" width="200px" alt="logo">
 </a>
 <nav class="navbar">
 <ul>
 <li>
-    <a class="navigation__link" href="/globalfuncityweb/index">
+    <a class="navigation__link" href="<%=request.getContextPath()%>/index">
         <b>HOME</b>
     </a>
 </li>
 <li>
-    <a class="navigation__link" href="/globalfuncityweb/about">
+    <a class="navigation__link" href="<%=request.getContextPath()%>/about">
         <b>ABOUT</b> 
     </a> 
 </li>
 <li>
-    <a class="navigation__link" href="/globalfuncityweb/events">
+    <a class="navigation__link" href="<%=request.getContextPath()%>/events">
         <b>EVENTS </b> 
     </a> 
 </li>
 <li>
-    <a class="navigation__link" href="/globalfuncityweb/offers">
+    <a class="navigation__link" href="<%=request.getContextPath()%>/offers">
         <b>OFFERS </b> 
     </a> 
 </li>
 <li>
-    <a class="navigation__link" href="/globalfuncityweb/ticketprices">
+    <a class="navigation__link" href="<%=request.getContextPath()%>/ticketprices">
         <b>TICKET  PRICES </b>
     </a> 
 </li>
 <li>
-    <a class="navigation__link" href="../../pages/shop/shop.html">
+    <a class="navigation__link" href="<%=request.getContextPath()%>/globalshop">
         <b>SHOP</b>
     </a> 
 </li>
 <li>
-    <a class="navigation__link" href="/globalfuncityweb/attractions">
+    <a class="navigation__link" href="<%=request.getContextPath()%>/attractions">
         <b>ATTRACTIONS </b>
     </a> 
 </li>
 <li>
-    <a class="navigation__link" href="/globalfuncityweb/contact">
+    <a class="navigation__link" href="<%=request.getContextPath()%>/contact">
         <b>CONTACT </b> 
     </a> 
 </li>
@@ -123,7 +123,7 @@
 </nav>
 <div>
 <button>
-<a href="/globalfuncityweb/book_tickets">
+<a href="<%=request.getContextPath()%>/book_tickets">
     <b>BOOK NOW </b> 
 </a>
 </button>
@@ -133,13 +133,13 @@
 <div class="total-homepages-div"> 
     <!-- Total Homepage div -->
 <div class="homepages">
-    <a href="/globalfuncityweb/index">Home <i class="fa-light fa-greater-than" style="color: #655b5b;"></i></a>
+    <a href="<%=request.getContextPath()%>/index">Home <i class="fa-light fa-greater-than" style="color: #655b5b;"></i></a>
 </div> &nbsp;
 <div class="homepages">
-    <a href="/globalfuncityweb/user_dashboard">Account <i class="fa-light fa-greater-than" style="color: #655b5b;"></i></a>
+    <a href="<%=request.getContextPath()%>/user_dashboard">Account <i class="fa-light fa-greater-than" style="color: #655b5b;"></i></a>
 </div> &nbsp;
 <div class="homepages">
-    <a href="/globalfuncityweb/user_dashboard/ticketshistory">Your Tickets </a>
+    <a href="<%=request.getContextPath()%>/user_dashboard/ticketshistory">Your Tickets </a>
 </div>
 
 </div>
@@ -201,9 +201,9 @@
 
 <p class="detail-from-user-to-buy"> <%=ticket.getNoOfDays()%> </p>
 
-<h2 class="name-of-the-title">Status</h2>
+<h2 class="name-of-the-title">Booked At </h2>
 
-<p class="status-booked"> Booked </p>
+<p class="detail-from-user-to-buy"><%=ticket.getCreatedAt() %></p>
 
 </div>
 
@@ -219,7 +219,11 @@
 
 <h2 class="name-of-the-title">Total Price </h2>
 
-<p class="detail-from-user-to-buy">$ <%=ticket.getTotalPrice() %></p>
+<p class="detail-from-user-to-buy">$<%=ticket.getTotalPrice() %></p>
+
+<h2 class="name-of-the-title">Status</h2>
+
+<p class="status-booked"> Booked </p>
 
 </div> 
 
@@ -232,139 +236,13 @@
 <%} %>
 <% } %>
 
+<footer class="footer_for_gfc">
 
-<%-- <% List<Ticket> listOfTickets = (List<Ticket>) request.getAttribute("ticket"); %>
-<% User user = (User) request.getAttribute("user"); %>
-<% List<UserRoom> listOfRoomsBookedByUser = (List<UserRoom>) request.getAttribute("userRoom"); %>
+</footer>
 
-<% if (listOfTickets.isEmpty()) { %>
-    <!-- User did not book any tickets -->
-    <p style="text-align:center; font-family: 'open sans', sans-serif">No tickets booked :(</p>
-    <p style="text-align:center; font-family: 'open sans', sans-serif">Click the "Book Now" button to grab your tickets today!</p>
-<% } else { %>
-    <!-- User booked tickets -->
-    <% for (Ticket ticket : listOfTickets) { %>
-        <!-- Display ticket information -->
-        <div class="background-image-fun-fair">
-            
-            <div class="total-div-for-ticket-detail">
+<script>var contextPath = '<%=request.getContextPath()%>';</script>
 
-<div class="ticket-show-detail-0">
-<h2 class="name-of-the-title">Name </h2> 
-
-<p class="detail-from-user-to-buy"><%=user.getFirstName() %></p>
-
-<h2 class="name-of-the-title">Phone number </h2> 
-
-<p class="detail-from-user-to-buy"><%=user.getPhoneNumber() %></p>
-
-<h2 class="name-of-the-title">Email </h2> 
-
-<p class="detail-from-user-to-buy"><%=user.getEmail() %></p>
-
-<h2 class="name-of-the-title">Ticket ID </h2>
-
-<p class="detail-from-user-to-buy"> <%=ticket.getTicketId() %> </p>
-
-</div>
-
-<div class="ticket-show-detail-1">
-
-<h2 class="name-of-the-title">From Date</h2> 
-
-<p class="detail-from-user-to-buy"> <%=ticket.getFromDate() %></p>
-
-<h2 class="name-of-the-title">To Date </h2> 
-
-<p class="detail-from-user-to-buy"><%=ticket.getToDate() %></p>
-
-<h2 class="name-of-the-title">Total No Of Days</h2>
-
-<p class="detail-from-user-to-buy"> <%=ticket.getNoOfDays()%> </p>
-
-<h2 class="name-of-the-title">Status</h2>
-
-<p class="status-booked"> Booked </p>
-
-</div>
-
-
-<div class="ticket-show-detail-2">
-
-<h2 class="name-of-the-title">Adult </h2> 
-<p class="detail-from-user-to-buy"> <%=ticket.getNoOfAdult() %> </p>
-
-<h2 class="name-of-the-title">Children</h2>
-
-<p class="detail-from-user-to-buy"> <%=ticket.getNoOfChildren() %> </p>
-
-<h2 class="name-of-the-title">Total Price </h2>
-
-<p class="detail-from-user-to-buy">$ <%=ticket.getTotalPrice() %></p>
-
-</div> 
-
-</div>
-                  
-        </div>
-        <br>
-        <br>
-    <% } %>
-    
-    <% if (!listOfRoomsBookedByUser.isEmpty()) { %>
-        <!-- User also booked rooms -->
-        <% for (UserRoom userRoom : listOfRoomsBookedByUser) { %>
-            <!-- Display room information -->
-            <div class="background-image-hotel">
-                
-                <div class="total-div-for-ticket-detail">
-
-<div class="ticket-show-detail-0">
-<h2 class="name-of-the-title">Name </h2> 
-
-<p class="detail-from-user-to-buy"><%=user.getFirstName() %></p>
-
-<h2 class="name-of-the-title">Phone number </h2> 
-
-<p class="detail-from-user-to-buy"><%=user.getPhoneNumber() %></p>
-
-<h2 class="name-of-the-title">Email </h2> 
-
-<p class="detail-from-user-to-buy"><%=user.getEmail() %></p>
-
-<h2 class="name-of-the-title">Room ID </h2>
-
-<p class="detail-from-user-to-buy"> <%=userRoom.getRoomId()%> </p>
-
-</div>
-
-<div class="ticket-show-detail-1">
-
-<h2 class="name-of-the-title">Room Total Price</h2>
-
-<p class="detail-from-user-to-buy"> <%=userRoom.getTotalPrice()%> </p>
-
-<h2 class="name-of-the-title">Status</h2>
-
-<p class="status-booked"> Booked </p>
-
-</div>
-
-
-<div class="ticket-show-detail-2">
-
-</div> 
-
-</div>
-</div>
-                
-            </div>
-            <br>
-            <br>
-        <% } %>
-    <% } %>
-<% } %> --%>
-
+<script src="<%=request.getContextPath()%>/js/footer.js"></script>
 
 
 </body>

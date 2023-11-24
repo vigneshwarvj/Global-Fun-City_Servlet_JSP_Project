@@ -49,12 +49,9 @@
 
             <div class="icons-info" id="sign-in">
 
-                <a href="#" id="wishlist_anchor">
-                    <i class="fa-solid fa-heart"></i> &nbsp; My Wishlist (0) 
-                </a> &nbsp;
-                <a href="#" id="mybag_anchor">
-                    <i class="fa-solid fa-bag-shopping"></i> &nbsp; <p class="mybag" style="display: inline;"></p>
-                </a> 
+     <a href="<%=request.getContextPath()%>/login"> <i class="fa-solid fa-user"></i> &nbsp; Sign In | Sign Up </a> &nbsp;
+	<a href="<%=request.getContextPath()%>/wishlist"> <i class="fa-solid fa-heart"></i> &nbsp; My Wishlist (0)</a> &nbsp;
+	<a href="<%=request.getContextPath()%>/bag"> <i class="fa-solid fa-bag-shopping"></i> &nbsp; My Bag (0)</a>
             </div>
         </div>
 
@@ -312,7 +309,7 @@
 
             <div class="circle-all-2">
                 <h2>Home</h2>
-                <a href="../../pages/shop/home.html">Shop Now</a>
+                <a href="#">Shop Now</a>
             </div>
         </div>
 
@@ -398,25 +395,25 @@
                 <div class="navbar-footer">
                     <ul>
                         <li>
-                            <a class="navigation__link" href="../../pages/other pages/home.html"> ABOUT US </a> 
+                            <a class="navigation__link" href="<%=request.getContextPath()%>/about"> ABOUT US </a> 
                         </li>
                         <li>
-                            <a class="navigation__link" href="../../pages/other pages/events.html"> EVENTS  </a> 
+                            <a class="navigation__link" href="<%=request.getContextPath()%>/events"> EVENTS  </a> 
                         </li>
                         <li>
-                            <a class="navigation__link" href="../../pages/other pages/offer.html"> OFFERS  </a> 
+                            <a class="navigation__link" href="<%=request.getContextPath()%>/offers"> OFFERS  </a> 
                         </li>
                         <li>
-                            <a class="navigation__link" href="../../pages/other pages/ticketprices.html"> TICKET  PRICES </a> 
+                            <a class="navigation__link" href="<%=request.getContextPath()%>/ticketprices"> TICKET  PRICES </a> 
                         </li>
                         <li>
-                            <a class="navigation__link" href="../../pages/shop/shop.html"> SHOP </a> 
+                            <a class="navigation__link" href="<%=request.getContextPath()%>/globalshop"> SHOP </a> 
                         </li>
                         <li>
-                            <a class="navigation__link" href="../../pages/other pages/attractions.html"> ATTRACTIONS </a> 
+                            <a class="navigation__link" href="<%=request.getContextPath()%>/attractions"> ATTRACTIONS </a> 
                         </li>
                         <li>
-                            <a class="navigation__link" href="../../pages/other pages/contact.html"> CONTACT  </a> 
+                            <a class="navigation__link" href="<%=request.getContextPath()%>/contact"> CONTACT  </a> 
                         </li>
                     </ul>
 
@@ -445,22 +442,22 @@
                 <div class="other-navbar-footer">
                     <ul>
                         <li>
-                            <a class="other-navigation-link" href="../../pages/footer other pages/privacypolicy.html">PRIVACY POLICY</a>
+                            <a class="other-navigation-link" href="<%=request.getContextPath()%>/privacy-policy">PRIVACY POLICY</a>
                         </li>
                         <li>
-                            <a class="other-navigation-link" href="#">CAREERS</a>
+                            <a class="other-navigation-link" href="<%=request.getContextPath()%>/careers">CAREERS</a>
                         </li>
                         <li>
-                            <a class="other-navigation-link" href="../../pages/footer other pages/safetyofvisitors.html">SAFETY AND HYGIENE</a>
+                            <a class="other-navigation-link" href="<%=request.getContextPath()%>/safety-and-hygiene">SAFETY AND HYGIENE</a>
                         </li>
                         <li>
-                            <a class="other-navigation-link" href="../../pages/footer other pages/rulesandregulations.html">RULES & REGULTIONS</a>
+                            <a class="other-navigation-link" href="<%=request.getContextPath()%>/rules-and-regulations">RULES & REGULTIONS</a>
                         </li>
                         <li>
-                            <a class="other-navigation-link" href="../../pages/footer other pages/greeninitiatives.html">GREEN INITIATIVES</a>
+                            <a class="other-navigation-link" href="<%=request.getContextPath()%>/green-initiatives">GREEN INITIATIVES</a>
                         </li>
                         <li>
-                            <a class="other-navigation-link" href="../../pages/footer other pages/csrinitiatives.html">CSR INITIATIVES</a>
+                            <a class="other-navigation-link" href="<%=request.getContextPath()%>/csr-initivatives">CSR INITIATIVES</a>
                         </li>
                     </ul>
                 </div>

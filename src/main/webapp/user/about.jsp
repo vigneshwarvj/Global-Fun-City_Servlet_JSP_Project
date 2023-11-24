@@ -56,7 +56,7 @@
                 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
             </div>
             
-            <a href="/globalfuncityweb/index">
+            <a href="<%=request.getContextPath()%>/index">
                 <img src="<%=request.getContextPath()%>/assets/images/globalfuncitylogo.png" class="header-logo" width="200px" alt="logo">
             </a>
 
@@ -65,41 +65,41 @@
 <nav class="navbar">
 <ul>
 <li>
-<a class="navigation__link" href="/globalfuncityweb/index">
+<a class="navigation__link" href="<%=request.getContextPath()%>/index">
 <b>HOME</b>
 </a>
 <li>
-<a class="active" href="/globalfuncityweb/about">
+<a class="active" href="<%=request.getContextPath()%>/about">
     <b>ABOUT</b> 
 </a> 
 </li>
 <li>
-<a class="navigation__link" href="/globalfuncityweb/events">
+<a class="navigation__link" href="<%=request.getContextPath()%>/events">
     <b>EVENTS </b> 
 </a> 
 </li>
 <li>
-<a class="navigation__link" href="/globalfuncityweb/offers">
+<a class="navigation__link" href="<%=request.getContextPath()%>/offers">
     <b>OFFERS </b> 
 </a> 
 </li>
 <li>
-<a class="navigation__link" href="/globalfuncityweb/ticketprices">
+<a class="navigation__link" href="<%=request.getContextPath()%>/ticketprices">
     <b>TICKET  PRICES </b>
 </a> 
 </li>
 <li>
-<a class="navigation__link" href="../../pages/shop/shop.html">
+<a class="navigation__link" href="<%=request.getContextPath()%>/globalshop">
     <b>SHOP</b>
 </a> 
 </li>
 <li>
-<a class="navigation__link" href="/globalfuncityweb/attractions">
+<a class="navigation__link" href="<%=request.getContextPath()%>/attractions">
     <b>ATTRACTIONS </b>
 </a> 
 </li>
 <li>
-<a class="navigation__link" href="/globalfuncityweb/contact">
+<a class="navigation__link" href="<%=request.getContextPath()%>/contact">
     <b>CONTACT </b> 
 </a> 
 </li>
@@ -222,7 +222,7 @@
 <div class="gaiety-holiday">
     <h2>G A I E T Y  H O L I D A Y</h2>
     <p>We Make The Best Offers For You </p>
-    <a href="../../pages/other pages/offer.html">
+    <a href="/globalfuncityweb/offers">
         <button class="btn-learn-more">Learn More</button>
     </a>
 </div>
@@ -231,6 +231,8 @@
 <footer class="footer_for_gfc">
 
 </footer>
+
+<script>var contextPath = '<%=request.getContextPath()%>';</script>
 
 <script src="<%=request.getContextPath()%>/js/footer.js"></script>
 

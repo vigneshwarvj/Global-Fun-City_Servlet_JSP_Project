@@ -28,48 +28,48 @@
 <header>
 
 		<div class="header">
-            <a href="/globalfuncityweb/index">
+            <a href="<%=request.getContextPath()%>/index">
                 <img src="<%=request.getContextPath()%>/assets/images/globalfuncitylogo.png" class="header-logo" width="200px" alt="logo">
             </a>
             <nav class="navbar">
                 <ul>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/index">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/index">
                             <b>HOME</b>
                         </a>
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/about">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/about">
                             <b>ABOUT</b> 
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/events">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/events">
                             <b>EVENTS </b> 
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/offers">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/offers">
                             <b>OFFERS </b> 
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/ticketprices">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/ticketprices">
                             <b>TICKET  PRICES </b>
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="../../pages/shop/shop.html">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/globalshop">
                             <b>SHOP</b>
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/attractions">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/attractions">
                             <b>ATTRACTIONS </b>
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/contact">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/contact">
                             <b>CONTACT </b> 
                         </a> 
                     </li>
@@ -86,10 +86,10 @@
         <div class="total-homepages-div"> 
             <!-- Total Homepage div -->
         <div class="homepages">
-            <a href="/globalfuncityweb/index">Home <i class="fa-light fa-greater-than" style="color: #655b5b;"></i></a>
+            <a href="<%=request.getContextPath()%>/index">Home <i class="fa-light fa-greater-than" style="color: #655b5b;"></i></a>
         </div> &nbsp;
         <div class="homepages">
-            <a href="/globalfuncity/user_dashboard">Account </a>
+            <a href="<%=request.getContextPath()%>/user_dashboard">Account </a>
         </div>
         </div>
 
@@ -108,7 +108,7 @@
                 <div class="account-manage">
                     <div class="account">
                         <h1>
-                        <a href="/globalfuncityweb/user_dashboard/profile">
+                        <a href="<%=request.getContextPath()%>/user_dashboard/profile">
                        <i class="fa-sharp fa-solid fa-gear"></i> &NonBreakingSpace; Account Settings
                             </a>
                         </h1>
@@ -120,7 +120,7 @@
                 </div>
 
                 <span class="arrow">
-                    <a href="/globalfuncityweb/user_dashboard/profile">
+                    <a href="<%=request.getContextPath()%>/user_dashboard/profile">
                         <i class="fa-solid fa-angle-right"></i> 
                     </a>
                 </span>
@@ -134,7 +134,7 @@
                 <div class="account-manage">
                     <div class="account">
                         <h1>
-                            <a href="/globalfuncityweb/user_dashboard/ticketshistory">
+                            <a href="<%=request.getContextPath()%>/user_dashboard/ticketshistory">
                                 <i class="fa-sharp fa-solid fa-ticket"></i> &NonBreakingSpace; Your Tickets
                             </a>
                         </h1>
@@ -146,16 +146,16 @@
                 </div>
     
                 <span class="arrow">
-                    <a href="/globalfuncityweb/user_dashboard/ticketshistory">
+                    <a href="<%=request.getContextPath()%>/user_dashboard/ticketshistory">
                         <i class="fa-solid fa-angle-right"></i> 
                     </a>
                 </span>
             </div>
             <!-- tickets completed     -->
-            <hr class="hr-for-break">
+            <hr class="hr-for-break" style="display:none;">
 
             <!-- orders -->
-            <div class="settings">
+            <div class="settings" style="display:none;">
 
                 <div class="account-manage">
                     <div class="account">
@@ -186,7 +186,7 @@
                 <div class="account-manage">
                     <div class="account">
                         <h1>
-                            <a href="/globalfuncityweb/user_dashboard/roomshistory">
+                            <a href="<%=request.getContextPath()%>/user_dashboard/roomshistory">
                                 <i class="fa-solid fa-hotel"></i></i> &NonBreakingSpace; Booked Rooms
                             </a>
                         </h1>
@@ -198,7 +198,7 @@
                 </div>
         
                 <span class="arrow">
-                    <a href="/globalfuncityweb/user_dashboard/roomshistory">
+                    <a href="<%=request.getContextPath()%>/user_dashboard/roomshistory">
                         <i class="fa-solid fa-angle-right"></i> 
                     </a>
                 </span>
@@ -210,9 +210,13 @@
         <br>
     </br>
 
-    <footer class="footer_for_gfc">
+   <footer class="footer_for_gfc">
 
-    </footer>
+</footer>
+
+<script>var contextPath = '<%=request.getContextPath()%>';</script>
+
+<script src="<%=request.getContextPath()%>/js/footer.js"></script>
 
 </body>
 </html>

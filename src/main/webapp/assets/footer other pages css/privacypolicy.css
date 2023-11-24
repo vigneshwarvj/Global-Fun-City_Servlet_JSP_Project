@@ -218,3 +218,6 @@ footer{
 	color: #eee;
 	padding: 20px;
 }
+.contact-for-more a {
+    text-decoration: none;
+}

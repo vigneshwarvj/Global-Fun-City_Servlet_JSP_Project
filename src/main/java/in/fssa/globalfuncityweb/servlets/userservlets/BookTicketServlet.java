@@ -38,6 +38,8 @@ public class BookTicketServlet extends HttpServlet {
 		
 		int userId = (Integer) request.getSession().getAttribute("userId");
 		int ticketId = -1;
+		PrintWriter out = response.getWriter();
+		
 		try {
 		
 		Ticket ticket = new Ticket();
@@ -65,12 +67,20 @@ public class BookTicketServlet extends HttpServlet {
 	    ticketId = ticketService.bookTicket(ticket,userId);
 	    request.setAttribute("noOfNights", numberOfNights);
 	    request.setAttribute("trackId", ticketId);
+	    
+	    //Setting the check - in date
+	    request.setAttribute("checkIn", checkInDate);
+	    request.setAttribute("checkOut", checkOutDate);
+	    
 	    System.out.println(request.getAttribute("trackId"));
 		RequestDispatcher rdDispatcher = request.getRequestDispatcher("/user/booked_success");
 		rdDispatcher.forward(request, response);
 			
-		} catch (ValidationException | PersistenceException | SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
+			
+			out.println("<script>alert('"+ e.getMessage() +"');</script>");
+			out.println("<script>window.history.back();</script>");
 		}
 }
 	}

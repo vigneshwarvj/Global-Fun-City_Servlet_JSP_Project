@@ -51,17 +51,21 @@ contactTitle.textContent = 'Contact';
 
 const contactPhoneLink = document.createElement('a');
 contactPhoneLink.href = 'tel:+18608171080';
+contactPhoneLink.style = 'text-decoration:none !important';
 
 const contactPhone = document.createElement('p');
 contactPhone.textContent = '+1 860 817 1080';
+contactPhone.style = 'text-decoration:none';
 
 contactPhoneLink.appendChild(contactPhone);
 
 const contactEmailLink = document.createElement('a');
 contactEmailLink.href = 'mailto:info@globalfuncity.in';
+contactEmailLink.style = 'text-decoration:none !important';
 
 const contactEmail = document.createElement('p');
 contactEmail.textContent = 'info@globalfuncity.in';
+contactEmail.style = 'text-decoration:none';
 
 contactEmailLink.appendChild(contactEmail);
 
@@ -81,13 +85,13 @@ const navbarList = document.createElement('ul');
 
 // Create and append list items
 const navLinks = [
-  { text: 'ABOUT US', href: '/globalfuncityweb/about' },
-  { text: 'EVENTS', href: '/globalfuncityweb/events' },
-  { text: 'OFFERS', href: '/globalfuncityweb/offers' },
-  { text: 'TICKET PRICES', href: '/globalfuncityweb/ticketprices' },
-  { text: 'SHOP', href: '../../pages/shop/shop.html' },
-  { text: 'ATTRACTIONS', href: '/globalfuncityweb/attractions' },
-  { text: 'CONTACT', href: '/globalfuncityweb/contact' },
+  { text: 'ABOUT US', href: contextPath + '/about' },
+  { text: 'EVENTS', href: contextPath + '/events' },
+  { text: 'OFFERS', href: contextPath + '/offers' },
+  { text: 'TICKET PRICES', href: contextPath + '/ticketprices' },
+  { text: 'SHOP', href: contextPath + '/globalshop' },
+  { text: 'ATTRACTIONS', href: contextPath + '/attractions' },
+  { text: 'CONTACT', href: contextPath + '/contact' },
 ];
 
 navLinks.forEach(navLink => {
@@ -110,11 +114,11 @@ const otherNavbarList = document.createElement('ul');
 
 // Create and append list items
 const otherNavLinks = [
-  { text: 'PRIVACY POLICY', href: '/globalfuncityweb/privacy-policy' },
-  { text: 'SAFETY AND HYGIENE', href: '../../pages/footer other pages/safetyofvisitors.html' },
-  { text: 'RULES & REGULATIONS', href: '../../pages/footer other pages/rulesandregulations.html' },
-  { text: 'GREEN INITIATIVES', href: '../../pages/footer other pages/greeninitiatives.html' },
-  { text: 'CSR INITIATIVES', href: '../../pages/footer other pages/csrinitiatives.html' },
+  { text: 'PRIVACY POLICY', href:  contextPath + '/privacy-policy' },
+  { text: 'SAFETY AND HYGIENE', href: contextPath + '/safety-and-hygiene' },
+  { text: 'RULES & REGULATIONS', href: contextPath + '/rules-and-regulations' },
+  { text: 'GREEN INITIATIVES', href: contextPath +  '/green-initiatives' },
+  { text: 'CSR INITIATIVES', href:  contextPath + '/csr-initiatives' },
 ];
 
 otherNavLinks.forEach(otherNavLink => {

@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import in.fssa.globalfuncity.exception.PersistenceException;
 import in.fssa.globalfuncity.exception.ServiceException;
 import in.fssa.globalfuncity.exception.ValidationException;
 import in.fssa.globalfuncity.model.User;
@@ -24,6 +23,8 @@ public class UpdateUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		PrintWriter out = response.getWriter();
 		
 		try {
 			
@@ -57,24 +58,12 @@ public class UpdateUserServlet extends HttpServlet {
 			//System.out.println(id);
 			response.sendRedirect("/globalfuncityweb/user_dashboard/profile");
 			
-	   }  catch (ValidationException e) {
-			e.printStackTrace();
-			PrintWriter consoleOutput = new PrintWriter(System.out);
-			consoleOutput.println(e.getMessage());
+	   }  catch (Exception e) {
+		   e.printStackTrace();
+			out.println("<script>alert('"+ e.getMessage() +"');</script>");
+			out.println("<script>window.history.back();</script>");
 			
-		} catch (ServiceException e) {
-			e.printStackTrace();
-			PrintWriter consoleOutput = new PrintWriter(System.out);
-			consoleOutput.println(e.getMessage());
-		} catch (PersistenceException e) {
-			e.printStackTrace();
-			PrintWriter consoleOutput = new PrintWriter(System.out);
-			consoleOutput.println(e.getMessage());
-		} catch (NumberFormatException e) {
-			e.printStackTrace();
-			PrintWriter consoleOutput = new PrintWriter(System.out);
-			consoleOutput.println(e.getMessage());
-	    }
+		}
 
 }
 }

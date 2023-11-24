@@ -1,16 +1,15 @@
 <%@page import="in.fssa.globalfuncity.service.UserService"%>
 <%@page import="in.fssa.globalfuncity.model.User"%>
 
-
+<!DOCTYPE html>
 <html>
 <head>
 		<meta charset="ISO-8859-1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png">
+        <link rel="icon" type="image/x-icon" href="<%=request.getContextPath()%>/assets/images/favicon.png">
 
         <title> Global Fun City </title>
-        <script src="./main.js"></script>
         <link rel="stylesheet" type="text/css"  href="<%=request.getContextPath()%>/assets/css/style.css">
         <link rel="stylesheet" type="text/css"  href="<%=request.getContextPath()%>/assets/homepage_css/footer_gfc.css">
 
@@ -60,43 +59,43 @@
 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 </div>
 
-<a href="/globalfuncityweb/index">
-<img src="./assets/images/globalfuncitylogo.png" class="header-logo" width="200px" alt="logo">
+<a href="<%=request.getContextPath()%>/index">
+<img src="<%=request.getContextPath()%>/assets/images/globalfuncitylogo.png" class="header-logo" width="200px" alt="logo">
 </a>
 <nav class="navbar">
 <ul>
     <li>
-        <a class="navigation__link" href="/globalfuncityweb/about">
+        <a class="navigation__link" href="<%=request.getContextPath()%>/about">
             <b>ABOUT</b> 
         </a> 
     </li>
     <li>
-        <a class="navigation__link" href="/globalfuncityweb/events">
+        <a class="navigation__link" href="<%=request.getContextPath()%>/events">
             <b>EVENTS </b> 
         </a> 
     </li>
     <li>
-        <a class="navigation__link" href="/globalfuncityweb/offers">
+        <a class="navigation__link" href="<%=request.getContextPath()%>/offers">
             <b>OFFERS </b> 
         </a> 
     </li>
     <li>
-        <a class="navigation__link" href="/globalfuncityweb/ticketprices">
+        <a class="navigation__link" href="<%=request.getContextPath()%>/ticketprices">
             <b>TICKET  PRICES </b>
         </a> 
     </li>
     <li>
-        <a class="navigation__link" href="/globalfuncityweb/globalshop">
+        <a class="navigation__link" href="<%=request.getContextPath()%>/globalshop">
             <b>SHOP</b>
         </a> 
     </li>
     <li>
-        <a class="navigation__link" href="/globalfuncityweb/attractions">
+        <a class="navigation__link" href="<%=request.getContextPath()%>/attractions">
             <b>ATTRACTIONS </b>
         </a> 
     </li>
     <li>
-        <a class="navigation__link" href="/globalfuncityweb/contact">
+        <a class="navigation__link" href="<%=request.getContextPath()%>/contact">
             <b>CONTACT </b> 
         </a> 
     </li>
@@ -113,7 +112,7 @@
 </header>
 <div>
 <div class="backgroundglobal">
-<img src="./assets/images/bg1.jpg" alt="background-image">
+<img src="<%=request.getContextPath()%>/assets/images/bg1.jpg" alt="background-image">
 
 </div>
 
@@ -173,7 +172,7 @@
 <p>Give your child joy. Let's gift your baby an unforgettable experience and funny at our amusement park.	</p>
 
 <video class="video-of-park-tour" width="1100" height="600" controls>
-    <source src="./assets/videos/takeaparktour.mp4" type="video/mp4"> 
+    <source src="<%=request.getContextPath()%>/assets/videos/takeaparktour.mp4" type="video/mp4"> 
 </video>
 </div>
 </section>
@@ -184,11 +183,11 @@
 
 <% if(request.getSession().getAttribute("userId") != null){ %>
 
-<button id="btn-buytickets"> <a href="/globalfuncityweb/user/book_tickets" id = "btn-booknow"> Buy Tickets </a> </button>
+<button id="btn-buytickets"> <a href="<%=request.getContextPath()%>/user/book_tickets" id = "btn-booknow"> Buy Tickets </a> </button>
 
  <%}else { %>
  
- <button id="btn-buytickets"> <a href="/globalfuncityweb/login" id = "btn-booknow"> Buy Tickets </a> </button>
+ <button id="btn-buytickets"> <a href="<%=request.getContextPath()%>/login" id = "btn-booknow"> Buy Tickets </a> </button>
  
  <%	 
 } 
@@ -276,7 +275,7 @@
             </div>
 
             <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination" style="display:none";></div>
 
             <!-- If we need navigation buttons -->
             <div class="swiper-button-prev"></div>
@@ -290,16 +289,17 @@
 
 
 <div class="customer">
-<h2>Our Partner</h2>
+<h2>Our Partners</h2>
 <div class="photo-of-partner" style="display: flex; justify-content: center;">
-<a href="https://deploy-preview-1--sr-catering.netlify.app/"> <img src="./assets/images/main-logo.png" class="srcatering" width="200px" alt="sr-catering-logo"> </a>
-<a href="https://deploy-preview-1--only-home-food.netlify.app"> <img src="./assets/images/only-home-food.png" class="srcatering" width="200px" alt="sr-catering-logo"> </a>
+<a href="https://deploy-preview-1--sr-catering.netlify.app/"> <img src="<%=request.getContextPath()%>/assets/images/main-logo.png" class="srcatering" width="180px" alt="sr-catering-logo"> </a>
+<a href="https://deploy-preview-1--only-home-food.netlify.app"> <img src="<%=request.getContextPath()%>/assets/images/only-home-food.png" class="srcatering" width="180px" alt="only-home-food-logo"> </a>
+<a href="#"><img src="https://iili.io/JqHDZxa.png" width="200px" class="srcatering" alt="annalakshmi-logo" style="top: 55px; position: relative;"/></a>
 </div>
 </div>
 
 
 <div class="location">
-<img src="./assets/images/location.png" alt="location-of-global-fun-city" width="1485" height="550">
+<img src="<%=request.getContextPath()%>/assets/images/location.png" alt="location-of-global-fun-city" width="1485" height="550">
 </div>
 
 </div>
@@ -307,6 +307,8 @@
 <footer class="footer_for_gfc">
 
 </footer>
+
+<script>var contextPath = '<%=request.getContextPath()%>';</script>
 
 <script src="<%=request.getContextPath()%>/js/footer.js"></script>
 

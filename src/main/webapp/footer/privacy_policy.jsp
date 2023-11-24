@@ -23,12 +23,7 @@
 </head>
 <body>
 
-<jsp:include page="<%=request.getContextPath() %>../user/header.jsp"></jsp:include>
-
-
-<%-- <jsp:include page="<%=request.getContextPath() %>./footer/header_for_footer.jsp"></jsp:include> --%>
-
-
+	<jsp:include page="../user/header.jsp"></jsp:include>
 
         <div class="background-color">
             <!--background-->
@@ -106,6 +101,10 @@
         <footer class="footer_for_gfc">
         
         </footer>
+        
+        <script>
+    		var contextPath = '<%=request.getContextPath()%>';
+		</script>
         
         <script src="<%=request.getContextPath()%>/js/footer.js"></script>
 

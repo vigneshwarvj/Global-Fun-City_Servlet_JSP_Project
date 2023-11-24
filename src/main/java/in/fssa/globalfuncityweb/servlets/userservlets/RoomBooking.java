@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import in.fssa.globalfuncity.exception.PersistenceException;
+import in.fssa.globalfuncity.exception.ServiceException;
+import in.fssa.globalfuncity.exception.ValidationException;
 import in.fssa.globalfuncity.service.RoomService;
 import in.fssa.globalfuncity.service.UserRoomService;
 
@@ -57,6 +59,12 @@ public class RoomBooking extends HttpServlet {
 	        int roomPrice = Integer.parseInt(roomPriceStr);
 	        System.out.println(roomPrice);
 	        
+	        String checkInDate = request.getParameter("checkIn");
+	        System.out.println(checkInDate);
+	        
+	        String checkOutDate = request.getParameter("checkOut");
+	        System.out.println(checkOutDate);
+	        
 	        String roomName = request.getParameter("roomName");
 	        System.out.println(roomName);
 	        
@@ -68,7 +76,11 @@ public class RoomBooking extends HttpServlet {
 	        
 	        UserRoomService userRoomSerivce = new UserRoomService();
 	        
-	        userRoomSerivce.bookRoom(userId, ticketId, roomId, roomName, noOfNights, totalPrice);
+	        try {
+				UserRoomService.bookRoom(userId, ticketId, roomId, checkInDate, checkOutDate, roomName, noOfNights, totalPrice);
+			} catch (ValidationException e) {
+				e.printStackTrace();
+			}
 	         
 	        response.setStatus(HttpServletResponse.SC_OK);
 

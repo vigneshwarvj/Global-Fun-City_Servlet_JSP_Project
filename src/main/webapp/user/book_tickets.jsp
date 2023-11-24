@@ -126,48 +126,48 @@
 <jsp:include page="header.jsp"></jsp:include>
 
 		<div class="header">
-            <a href="/globalfuncityweb/index">
+            <a href="<%=request.getContextPath()%>/index">
                 <img src="<%=request.getContextPath()%>/assets/images/globalfuncitylogo.png" class="header-logo" width="200px" alt="logo">
             </a>
             <nav class="navbar">
                 <ul>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/index">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/index">
                             <b>HOME</b>
                         </a>
                     </li>   
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/about">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/about">
                             <b>ABOUT</b> 
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/events">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/events">
                             <b>EVENTS </b> 
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/offers">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/offers">
                             <b>OFFERS </b> 
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/ticketprices">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/ticketprices">
                             <b>TICKET  PRICES </b>
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="../../pages/shop/shop.html">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/globalshop">
                             <b>SHOP</b>
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/attractions">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/attractions">
                             <b>ATTRACTIONS </b>
                         </a> 
                     </li>
                     <li>
-                        <a class="navigation__link" href="/globalfuncityweb/contact">
+                        <a class="navigation__link" href="<%=request.getContextPath()%>/contact">
                             <b>CONTACT </b> 
                         </a> 
                     </li>
@@ -196,21 +196,22 @@
 	<hr>
 
 <div class="search-availablity-information-msg">
-		<form class="proceeding_ticket" action="/globalfuncityweb/book_tickets" method="post">
+		<form class="proceeding_ticket" action="/globalfuncityweb/book_tickets" method="post" onsubmit="return validateDates();">
 			<div class="display_for_checkin_and_info" style="display: flex; justify-content: space-between;">
 				<div class="search-availablity">
 				
 				<div class="search-information">
-						<p> Check in  &nbsp; <input type="date" id="checkIndate" name="checkIndate"  required> </p> &nbsp;
-						<p> Check out  &nbsp;<input type="date" id="checkOutdate" name="checkOutdate"  required></p>
+						<p> Check in  &nbsp; <input type="date" id="checkIndate" name="checkIndate"  required style="padding: 10px;"> </p> &nbsp;
+						<p> Check out  &nbsp;<input type="date" id="checkOutdate" name="checkOutdate"  required style="padding: 10px;"></p>
 				</div>
 
 			<div class="room-adult-children">
 					<p>Adult &nbsp; </p>
-						<input type="number" id="numbers" name="totalClicksAdult" min="1" max="12" required> &nbsp;
+						<input type="number" id="numbers" name="totalClicksAdult" min="1" max="12" step="1" title="Don't give decimal numbers" oninput="validateInteger(this);" required> &nbsp;
+						<span id="error" style="color: red;"></span>
 
 					<p>Children (5-17 years) &nbsp;</p>
-						<input type="number" id="numbers" name="totalClicksChildren" min="0" max="6" required>
+						<input type="number" id="numbers" name="totalClicksChildren" min="0" max="6" title="Don't give decimal numbers" required>
 			</div>
 
 
@@ -262,7 +263,9 @@
     <span class="checkmark"></span>
 </label>By Clicking, I have read and understood the Terms and Conditions.</p>
 
-<button class="btn-book-now" type="submit">Book Ticket</button>
+ <input type="hidden" id="ticketId" name="ticketId" value="">
+
+<button class="btn-book-now" type="submit" onclick="setTicketId()">Book Ticket</button>
 
 
 </form>
@@ -270,9 +273,47 @@
 
 <script>
 
+/* document.addEventListener("DOMContentLoaded", function () {
+    const bookNowButton = document.querySelector(".btn-book-now");
+
+    bookNowButton.addEventListener("click", function () {
+        const ticketId = document.querySelector("#ticketId").value;
+        const redirectUrl = `/globalfuncityweb/book_tickets?ticketId=${ticketId}`;
+
+        window.location.href = redirectUrl;
+    });
+}); */
+
+
+//JavaScript function to set the ticketId in the hidden input field
+/* function setTicketId() {
+    // Assuming you have a JavaScript variable 'ticketIdValue' that holds the ticketId
+    var ticketIdValue = getTicketId(); // Replace with your logic to get the ticketId
+
+    // Set the ticketId value in the hidden input field
+    document.getElementById("ticketId").value = ticketIdValue;
+}
+
+// Function to get the ticketId (you can replace this with your logic)
+function getTicketId() {
+    // Replace this with your logic to retrieve the ticketId
+    // For example, you can use AJAX to fetch the ticketId from the server
+    // and return it here.
+    
+    
+    return 123; // Example ticketId
+} */
+
+
+
+
+
+
+//Normal Validation
+
 //Check In
 //Get the current date
-var currentDate = new Date();
+/* var currentDate = new Date();
 
 //Calculate tomorrow's date
 var tomorrow = new Date(currentDate);
@@ -286,26 +327,102 @@ document.getElementById("checkIndate").setAttribute("min", tomorrowFormatted);
 
 //Check Out
 //Set the minimum date for the "Check Out" date input field (also tomorrow)
-document.getElementById("checkOutdate").setAttribute("min", tomorrowFormatted);
+document.getElementById("checkOutdate").setAttribute("min", tomorrowFormatted); */
 
 
 
-/*     const yesRadioButton = document.getElementById("yes");
-    const noRadioButton = document.getElementById("no");
 
-    yesRadioButton.addEventListener("change", function () {
-        // Check if "Yes" is selected, then redirect to another page
-        if (yesRadioButton.checked) {
-            window.location.href = "another_page.jsp";
-        }
-    });
+//from kp
 
-    noRadioButton.addEventListener("change", function () {
-        // Check if "No" is selected, then redirect to the payment page
-        if (noRadioButton.checked) {
-            window.location.href = "booked_success.jsp";
-        }
-    }); */
+/* // Getting  the current date in "yyyy-MM-dd" format
+		const currentDate = new Date().toISOString().split('T')[0];
+
+// Setting the minimum date attribute to the current date
+const startDate = document.getElementById('checkIndate');
+startDate.setAttribute('min', currentDate);
+document.getElementById('checkOutdate').setAttribute('min', currentDate);
+
+// Getting the date input elements
+const startDateInput = document.getElementById('checkIndate');
+const endDateInput = document.getElementById('checkOutdate');
+
+// Function to handle date change events
+function handleDateChange() {
+    const str = startDate.value;
+    console.log(str);
+
+    endDateInput.setAttribute('min', str);
+}
+
+// Adding an event listener to the end date input element
+endDateInput.addEventListener('change', handleDateChange); */
+
+
+
+//Get tomorrow's date
+const tomorrow = new Date();
+tomorrow.setDate(tomorrow.getDate() + 1);
+
+// Convert tomorrow's date to the ISO date format (yyyy-mm-dd)
+const tomorrowFormatted = tomorrow.toISOString().split('T')[0];
+
+// Set the minimum date attribute for both input fields
+document.getElementById('checkIndate').setAttribute('min', tomorrowFormatted);
+document.getElementById('checkOutdate').setAttribute('min', tomorrowFormatted);
+
+// Function to calculate the number of days between two dates
+function calculateDays(startDate, endDate) {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    const timeDifference = end - start;
+    const daysDifference = timeDifference / (1000 * 60 * 60 * 24);
+    return daysDifference;
+}
+
+// Adding an event listener to the end date input element
+const endDateInput = document.getElementById('checkOutdate');
+endDateInput.addEventListener('change', function() {
+    const checkInDate = document.getElementById('checkIndate').value;
+    const checkOutDate = endDateInput.value;
+    
+    // Calculate the number of days between check-in and check-out
+    const daysDifference = calculateDays(checkInDate, checkOutDate);
+    
+    if (daysDifference < 0) {
+        alert("Check-out date cannot be earlier than check-in date");
+        endDateInput.value = checkInDate; // Reset the check-out date
+    }
+});
+
+
+//Validation for Adult count
+/* const adultInput = document.getElementById('numbersAdult');
+adultInput.addEventListener('change', function() {
+    const inputValue = adultInput.value;
+    
+    // Check if the input value is a valid integer
+    if (!Number.isInteger(parseFloat(inputValue))) {
+        alert('Please enter a valid number for Adult');
+        adultInput.value = ''; // Clear the input
+    }
+}); */
+
+
+
+function validateInteger(input) {
+    const value = input.value;
+    const isValid = /^\d+$/.test(value); // Use regex to check if it's a positive integer
+
+    if (!isValid) {
+        document.getElementById('error').textContent = 'Please enter a valid Number.';
+        input.setCustomValidity(''); // Clear browser's validation message
+    } else {
+        document.getElementById('error').textContent = '';
+        input.setCustomValidity(''); // Clear browser's validation message
+    }
+}
+
+
 
 </script>
 

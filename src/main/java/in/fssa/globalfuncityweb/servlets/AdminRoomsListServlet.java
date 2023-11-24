@@ -26,7 +26,10 @@ public class AdminRoomsListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	try {
-			Set<Room> listOfRooms = RoomService.getAllRooms();
+//		String checkIn = (String) request.getAttribute("checkIn");
+//		String checkOut = (String) request.getAttribute("checkOut");
+		RoomService roomService = new RoomService();
+		Set<Room> listOfRooms = roomService.listAllRoomsForAdmin();
 			
 			request.setAttribute("rooms_list", listOfRooms);
 			RequestDispatcher rd = request.getRequestDispatcher("/admin/rooms_list.jsp");
