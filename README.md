@@ -1,9 +1,9 @@
 # 🎡 Global Fun City Backend Servlet JSP Project
 
 ## 📖 About this repo:
-This repository contains the backend code for the Global Fun City web application. The frontend development is handled separately in the following repository: [Link to Frontend Repository.](https://github.com/fssa-batch3/vigneshwar.vijayakumar__web_project)
+This repository contains the backend code for the Global Fun City web application. The frontend development is handled separately in the following repository: [Link to Frontend Repository](https://github.com/vigneshwarvj/Global-Fun-City_Web_Project)
 
-The backend is developed using Core Java and integrated with an SQL database for data storage.
+The backend is developed using Core Java and integrated with an SQL database for data storage. [Link to CoreJava Repository](https://github.com/vigneshwarvj/Global-Fun-City_CoreJava_Project)
 
 ### 🔨Tech Stack used in this repository:
 * JSP
